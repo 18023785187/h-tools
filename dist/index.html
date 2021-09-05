@@ -114,7 +114,7 @@
                     img.setAttribute('data-src', res.imgurl)
                     app.children[0].appendChild(img)
                     img.onclick = function () {
-                        img.parentNode?.removeChild(img)
+                        img.parentNode.removeChild(img)
                         waterfall.reset(1000)
                     }
 
