@@ -41,18 +41,6 @@
             box-sizing: border-box;
             text-align: center;
         }
-
-        .insert {
-            padding: 2vw;
-            border: 2px solid;
-            margin: 5px 0;
-            text-align: center;
-        }
-
-        input {
-            font-size: 4vw;
-            padding: 2vw;
-        }
     </style>
     <script src="./h-tools.min.js"></script>
 </head>
@@ -60,14 +48,9 @@
 <body>
     <h2>该测试用例用于测试h-tools-js<span style="color: red;">(安装 npm i h-tools-js)</span>的各项功能，用例中包括轮播图、瀑布流和懒加载组件。点击get按钮生成图片
     </h2>
-    <div class="insert">
-        <h3>往轮播图插入图片</h3>
-        <div>
-            <button id="show-index">点击获取索引范围</button>
-            <span id="index">: 0 ~ ?</span>
-        </div>
-        <input id="input" type="text" placeholder="请输入在哪个索引处前插入图片">
-        <button id="set">确认</button>
+    <div>
+        <button id="create">点击自动生成图片</button>
+        <button id="stop">停止自动生成</button>
     </div>
     <div id="app">
         <div class="box">
@@ -93,7 +76,7 @@
             Waterfall
         } = h
         btn.onclick = function () {
-            getGoods(app)
+            getGoods()
         }
 
         const slide = Slide.create(document.getElementById('slide'), {
@@ -105,20 +88,21 @@
             app, {
             marginTop: 20
         })
-        waterfall.reset()
 
         const lazyLoad = new LazyLoad({
             loading: 'https://img01.sogoucdn.com/v2/thumb/resize/w/125/h/75/t/2/zi/on/crop/w/125/h/75/xy/center/retype/ext/auto/q/90/?appid=200789&url=http%3A%2F%2Fimg02.sogoucdn.com%2Fapp%2Fa%2F200789%2Ffacc73d036ba758a0648a61b66c9ce74',
             eventListener: ['scroll', 'click']
         })
+
         slide.onchange(() => {
             lazyLoad.update()
         })
+        setTimeout(() => waterfall.reset(),10)
 
-        function getGoods(el) {
+        function getGoods() {
             const xhr = new XMLHttpRequest()
             xhr.open('get', `https://api.vvhan.com/api/acgimg?type=json`)
-            xhr.setRequestHeader('Access-Control-Allow-Origin', '*')
+            // xhr.setRequestHeader('Access-Control-Allow-Origin', '*')
             xhr.send()
             xhr.onreadystatechange = function () {
                 if (this.status === 200 && this.readyState === 4) {
@@ -128,7 +112,7 @@
                     const img = new Image()
                     img.height = 375 * .48 * (height / width);
                     img.setAttribute('data-src', res.imgurl)
-                    el.children[0].appendChild(img)
+                    app.children[0].appendChild(img)
                     img.onclick = function () {
                         img.parentNode?.removeChild(img)
                         waterfall.reset(1000)
@@ -140,25 +124,16 @@
             }
         }
 
-        //轮播图插入操作
-        const getIdx = document.getElementById('show-index')
-        const idx = document.getElementById('index')
-        const input = document.getElementById('input')
-        const set = document.getElementById('set')
-
-        getIdx.onclick = function () {
-            idx.textContent = `0 ~ ${slide.options.children.length}`
+        let timer = null
+        document.getElementById('create').onclick = function () {
+            timer = setInterval(() => {
+                requestAnimationFrame(getGoods)
+            }, 2500)
         }
-        set.onclick = function () {
-            const idx = parseInt(input.value)
-            if (idx < 0 || idx >= slide.options.children.length) return
-
-            getGoods(slide.options.box)
+        document.getElementById('stop').onclick = function () {
+            clearInterval(timer)
         }
 
-
-    </script>
-    <script>
     </script>
 </body>
 
