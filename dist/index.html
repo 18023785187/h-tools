@@ -46,7 +46,7 @@
 </head>
 
 <body>
-    <h2>该测试用例用于测试h-tools-js<span style="color: red;">(安装 npm i h-tools-js)</span>的各项功能，用例中包括轮播图、瀑布流和懒加载组件。点击get按钮生成图片
+    <h2>该测试用例用于测试h-tools-js<span style="color: red;">(安装 npm i h-tools-js)</span>的各项功能，用例中包括轮播图、瀑布流和懒加载组件。点击get按钮生成图片，点击图片进行销毁
     </h2>
     <div>
         <button id="create">点击自动生成图片</button>
@@ -115,7 +115,7 @@
                     app.children[0].appendChild(img)
                     img.onclick = function () {
                         img.parentNode.removeChild(img)
-                        waterfall.reset(1000)
+                        waterfall.reset(300)
                     }
 
                     lazyLoad.update()
