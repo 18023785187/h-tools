@@ -1,0 +1,26 @@
+{
+    "include": [
+        "./src/**/*",
+    ],
+    "files": [
+        "./src/index.ts"
+    ],
+    "compilerOptions": {
+        "paths": {
+            "src/*": [
+                "./src/*"
+            ],
+            "utils": [
+                "./src/utils/index.ts"
+            ]
+        },
+        "target": "es6",
+        "outDir": "./dist",
+        "allowJs": true,
+        "alwaysStrict": true,
+        "strict": true,
+        "module": "es2020",
+        "moduleResolution": "node",
+        "suppressImplicitAnyIndexErrors": true,
+    }
+}

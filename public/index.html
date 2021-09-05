@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #app {
+            width: 100vw;
+            border: 2px solid;
+            box-sizing: border-box;
+        }
+        #app > .box > * {
+            width: 48%;
+        }
+        #app > .box > img {
+            border: 2px solid pink;
+            box-sizing: border-box;
+        }
+        #slide > .box > img {
+            width: 100%;
+        }
+        #slide{
+            border: 5px solid transparent;
+            box-sizing: border-box;
+        }
+        #get{
+            border: 2px solid;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="box">
+            <div id="slide">
+                <div class="box">
+                    <img data-src="https://img01.sogoucdn.com/v2/thumb/resize/w/125/h/75/t/2/zi/on/crop/w/125/h/75/xy/center/retype/ext/auto/q/90/?appid=200789&url=http%3A%2F%2Fimg04.sogoucdn.com%2Fapp%2Fa%2F200789%2Fd0b718fd02e2a1d93a0a0a853488291b"
+                        alt="">
+                    <img data-src="https://img01.sogoucdn.com/v2/thumb/resize/w/125/h/75/t/2/zi/on/crop/w/125/h/75/xy/center/retype/ext/auto/q/90/?appid=200789&url=http%3A%2F%2Fimg01.sogoucdn.com%2Fapp%2Fa%2F200789%2F63455e9b5b936f458c82679241287976"
+                        alt="">
+                    <img data-src="https://img01.sogoucdn.com/v2/thumb/resize/w/125/h/75/t/2/zi/on/crop/w/125/h/75/xy/center/retype/ext/auto/q/90/?appid=200789&url=http%3A%2F%2Fimg02.sogoucdn.com%2Fapp%2Fa%2F200789%2Ffacc73d036ba758a0648a61b66c9ce74"
+                        alt="">
+                </div>
+            </div>
+            <div id="get">get</div>
+        </div>
+    </div>
+</body>
+
+</html>
