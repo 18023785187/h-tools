@@ -5,7 +5,7 @@ module.exports = {
     entry: './src/index.ts',
     output: {
         path: resolve(__dirname, 'dist'),
-        filename: 'h-tools.min.js',
+        filename: 'h-tools.js',
         library: 'h',
         libraryTarget: 'umd'
     },
