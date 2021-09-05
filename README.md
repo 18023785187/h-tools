@@ -1,5 +1,10 @@
 - 一个组件库，包含轮播图、瀑布流、懒加载等
 
+# 源码地址
+    https://github.com/18023785187/h-tools
+# demo
+    https://18023785187.github.io/h-tools/
+
 # 安装
 ## npm install h-tools-js
 
@@ -11,6 +16,14 @@
         LazyLoad,
         EventManager
     } from 'h-tools-js'
+
+    import h from 'h-tools-js'
+    const {
+        Slide,
+        Waterfall,
+        LazyLoad,
+        EventManager
+    } = h
 
 # 使用
 
