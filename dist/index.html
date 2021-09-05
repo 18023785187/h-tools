@@ -46,8 +46,13 @@
 </head>
 
 <body>
-    <h2>该测试用例用于测试h-tools-js<span style="color: red;">(安装 npm i h-tools-js)</span>的各项功能，用例中包括轮播图、瀑布流和懒加载组件。点击get按钮生成图片，点击图片进行销毁
+    <h2>该测试用例用于测试h-tools-js<span style="color: red;">(安装 npm i
+            h-tools-js)</span>的各项功能，用例中包括轮播图、瀑布流和懒加载组件。点击get按钮生成图片，点击图片进行销毁
     </h2>
+
+    <div style="color: red;">
+        <strong>FPS:<span id="fps"></span> (fps在60以上表示性能优良)</strong>
+    </div>
     <div>
         <button id="create">点击自动生成图片</button>
         <button id="stop">停止自动生成</button>
@@ -133,6 +138,31 @@
         document.getElementById('stop').onclick = function () {
             clearInterval(timer)
         }
+
+            //fps
+
+            ; (() => {
+                const fpsEl = document.getElementById('fps')
+                let fps = 0,
+                    last = Date.now(),
+                    offset = 0
+                step()
+
+                function step() {
+                    offset = Date.now() - last
+
+                    ++fps
+                    if (offset >= 1000) {
+                        last += offset
+                        appendFps()
+                        fps = 0
+                    }
+                    requestAnimationFrame(step)
+                }
+                function appendFps() {
+                    fpsEl.textContent = fps
+                }
+            })()
 
     </script>
 </body>
