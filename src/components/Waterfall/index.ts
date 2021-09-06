@@ -37,6 +37,7 @@ class Waterfall {
     private heightArr?: number[]
     private pos: number
 
+    // 处理options参数
     private handlerOptions(): void {
         const width: number = this.el.clientWidth,
             childWidth: number = (this.children![0] as HTMLElement).offsetWidth;
@@ -61,6 +62,7 @@ class Waterfall {
 
         this.heightArr = new Array(listNumber).fill(0)
     }
+    // 获取最新的el下面的子元素
     private updateChild(): void {
         if (!this.el.firstElementChild) {
             throw new Error(`el need a child element`)
@@ -69,6 +71,7 @@ class Waterfall {
         this.box.style.position = 'relative'
         this.children = this.box.children
     }
+    // 瀑布流式布局核心方法
     private layout(transition: number = 0): void {
         const {
             box,

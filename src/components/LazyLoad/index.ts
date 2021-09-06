@@ -28,6 +28,8 @@ class LazyLoad {
     private h: number
     public eventManager: EventManager
     public render: LazyLoad['_render']
+
+    // 处理options参数
     private handlerOptions(options?: IOptions): IOptions {
         if (!options) return {
             preload: 1,
@@ -60,6 +62,7 @@ class LazyLoad {
             eventListener
         }
     }
+    // 执行懒加载操作
     private _render(): void {
         this.listeners.forEach((listener: ImageListener) => {
             listener.load() && this.listeners.remove(listener)

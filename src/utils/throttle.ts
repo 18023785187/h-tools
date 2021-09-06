@@ -1,5 +1,5 @@
 /**
- * 
+ * 防抖 +节流函数
  * @param {function} fn 
  * @param {number} timer 
  * @returns {function}

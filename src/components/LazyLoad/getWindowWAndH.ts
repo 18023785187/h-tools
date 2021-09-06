@@ -1,4 +1,8 @@
 
+/**
+ * 获取视口宽度和高度并返回
+ * @returns {[w,h]}
+ */
 
 function getWindowWAndH(): [number, number] {
     const w: number = window.innerWidth ||

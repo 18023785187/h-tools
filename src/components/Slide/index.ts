@@ -22,6 +22,7 @@ const Slide = {
 
         return slide
     },
+    // 处理options参数
     [handlerOptions](el: HTMLElement, options?: options): config {
         let transverse: boolean = true,
             createNav: boolean = true,

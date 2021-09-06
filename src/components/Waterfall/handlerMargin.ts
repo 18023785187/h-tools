@@ -4,6 +4,14 @@ type l = {
     margin: number
 }
 
+/**
+ * 
+ * @param rootWidth 
+ * @param childWidth 
+ * @param minMargin 
+ * @returns {l}
+ */
+
 function handlerMargin(
     rootWidth: number,
     childWidth: number,

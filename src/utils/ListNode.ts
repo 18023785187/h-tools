@@ -49,7 +49,7 @@ export default class ListNode {
         }
         --this.length
     }
-    public isEmpty() {
+    public isEmpty(): boolean {
         return this.length === 0
     }
     public forEach(callback: Function): void {

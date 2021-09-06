@@ -1,5 +1,10 @@
 
-
+/**
+ * 设置目标元素的 translate3d、transition属性
+ * @param el 
+ * @param translate3d 
+ * @param transition 
+ */
 function transform(
     el: HTMLElement,
     translate3d: [number, number] = [0, 0],
