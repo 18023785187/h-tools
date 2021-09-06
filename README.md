@@ -6,24 +6,26 @@ https://github.com/18023785187/h-tools
 https://18023785187.github.io/h-tools/
 
 ## 安装
+```javascript
 npm install h-tools-js
+```
 
 ## 引入
 ```javascript
-    import {
-        Slide,
-        Waterfall,
-        LazyLoad,
-        EventManager
-    } from 'h-tools-js'
+import {
+    Slide,
+    Waterfall,
+    LazyLoad,
+    EventManager
+} from 'h-tools-js'
 
-    import h from 'h-tools-js'
-    const {
-        Slide,
-        Waterfall,
-        LazyLoad,
-        EventManager
-    } = h
+import h from 'h-tools-js'
+const {
+    Slide,
+    Waterfall,
+    LazyLoad,
+    EventManager
+} = h
 ```
 
 # Slide轮播图
@@ -37,38 +39,35 @@ npm install h-tools-js
     
 ## 使用
 ```javascript
-    style
-        .slide{
-            width: 100%;
-        }
+/* css */
+.slide{
+     width: 100%;
+}
 
-    html
-        <div class='slide'>
-            <div class='box'>
-                <item />
-                <item />
-                <item />
-                ...
-            </div>
-        </div>
+/* html */
+<div class='slide'>
+    <div class='box'>
+        <item />
+        <item />
+        <item />
+        ...
+    </div>
+</div>
 
-    js
-        const slide = Slide.create(el)
+/* js */
+const slide = Slide.create(el)
 ```
 
 ## 参数
 ```javascript
-    Slide.create(el:HTMLElement,options:{...})
-
-    el: 目标元素,
-    options: {
-        transverse: boolean, /* 指定轮播图应为横向轮播还是纵向轮播，默认为true横向 */
-        createNav: boolean, /* 是否创建导航点，默认为true */
-        transition: number, /* 指定轮播图的动画持续时间，默认为 200ms */
-        triggerTime: number, /* 指定轮播图的触发时间间隔，默认为 3000ms */
-        triggerPos: 0-100, /* 指定轮播图移动多少距离触发轮播，默认为 10% */
-        bindEvent: boolean, /* 指定是否开启移动端触摸事件，仅限于横向轮播和移动端，默认为true */
-    }
+Slide.create(el:HTMLElement,options:{
+    transverse: boolean, /* 指定轮播图应为横向轮播还是纵向轮播，默认为true横向 */
+    createNav: boolean, /* 是否创建导航点，默认为true */
+    transition: number, /* 指定轮播图的动画持续时间，默认为 200ms */
+    triggerTime: number, /* 指定轮播图的触发时间间隔，默认为 3000ms */
+    triggerPos: 0-100, /* 指定轮播图移动多少距离触发轮播，默认为 10% */
+    bindEvent: boolean, /* 指定是否开启移动端触摸事件，仅限于横向轮播和移动端，默认为true */
+})
 ```
 ## api
 
@@ -98,35 +97,35 @@ npm install h-tools-js
 
 ## 参数
 ```javascript
-    (element: HTMLElement, {
-        marginTop: number /* 可选值，上边距 */,
-        minMargin: number /* 可选值，左右下最小边距，边距只能大于或等于这个值 */,
-        throttle: number /* 可选值，节流防抖的时间间隔，默认为200ms，在pc端生效 */
-    })
+(element: HTMLElement, {
+    marginTop: number /* 可选值，上边距 */,
+    minMargin: number /* 可选值，左右下最小边距，边距只能大于或等于这个值 */,
+    throttle: number /* 可选值，节流防抖的时间间隔，默认为200ms，在pc端生效 */
+})
 ```
 ## 使用
 ```javascript
-    style
-        .waterfall{
-            width: 100%;
-        }
-        item{
-            width: 48%; /* 需要提前指定子元素宽度 */
-        }
+/* css */
+.waterfall{
+    width: 100%;
+}
+item{
+    width: 48%; /* 需要提前指定子元素宽度 */
+}
 
-    html
-        <div class='waterfall'>
-            <div class='box'>
-                <item />
-                <item />
-                <item />
-                ...
-            </div>
-        </div>
+/* html */
+<div class='waterfall'>
+    <div class='box'>
+        <item />
+        <item />
+        <item />
+        ...
+    </div>
+</div>
 
-    js
-        const waterfall = new Waterfall(el)
-        waterfall.reset() // 在实例化后待内容区生成后需要调用一次reset来确认布局
+/* js */
+const waterfall = new Waterfall(el)
+waterfall.reset() // 在实例化后待内容区生成后需要调用一次reset来确认布局
 ```
 
 ## api
@@ -160,11 +159,11 @@ npm install h-tools-js
 ```
 ## 使用
 ```javascript
-    /* html */
-        <img data-src='xxx.com' src='' />
+/* html */
+<img data-src='xxx.com' src='' />
 
-    /* js */
-        const lazyLoad = new LazyLoad({/* 配置参数，也可以不传使用默认参数 */})
+/* js */
+const lazyLoad = new LazyLoad({/* 配置参数，也可以不传使用默认参数 */})
 ```
 
 # API
@@ -198,7 +197,7 @@ Set -> 存储事件方法
 
 ## 使用
 ```javascript
-    const eventManager = new EventManager()
+const eventManager = new EventManager()
 ```
 
 ## API
