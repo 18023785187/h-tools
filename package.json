@@ -1,20 +1,22 @@
 {
   "name": "h-tools-js",
-  "version": "1.1.5",
+  "version": "1.1.7",
   "description": "一个js组件库，包含功能轮播图、瀑布流、懒加载等",
   "keywords": [
+    "h",
+    "h-tools",
     "h-tools-js",
     "components",
     "slide",
     "slider",
-    "lazy-load",
+    "lazy",
+    "lazyload",
     "waterfall"
   ],
   "main": "./dist/h-tools.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
-    "dev-build": "cross-env NODE_ENV=development webpack --config webpack.config.common.js",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.dev.js"
   },
   "author": "Mmmmm",

@@ -21,4 +21,5 @@ module.exports = merge(commonConfig, {
         // 合并模块
         concatenateModules: true
     },
+    devtool: 'eval-source-map'
 })

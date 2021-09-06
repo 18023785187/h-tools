@@ -5,7 +5,7 @@ module.exports = {
     entry: './src/index.ts',
     output: {
         path: resolve(__dirname, 'dist'),
-        filename: 'h-tools.js',
+        filename: 'h-tools.min.js',
         library: 'h',
         libraryTarget: 'umd'
     },
@@ -48,5 +48,4 @@ module.exports = {
         },
         extensions: ['.ts', '.js', '.json'],
     },
-    devtool: 'eval-source-map'
 }

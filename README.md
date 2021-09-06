@@ -25,9 +25,6 @@
         EventManager
     } = h
 
-# 使用
-
-
 # Slide轮播图
 
     一个同时支持pc端和移动端的轮播图。
@@ -40,6 +37,11 @@
 - 提供change事件，在每次触发轮播时触发。
     
 # 使用
+
+    style
+        .slide{
+            width: 100%;
+        }
 
     html
         <div class='slide'>
@@ -112,6 +114,14 @@
     }
 
 # 使用
+
+    style
+        .waterfall{
+            width: 100%;
+        }
+        item{
+            width: 48%; /* 需要提前指定子元素宽度 */
+        }
 
     html
         <div class='waterfall'>
