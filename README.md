@@ -92,6 +92,19 @@ Slide.create(el:HTMLElement,options:{
 <br>>更新轮播图视图，在轮播图有子节点需要更新时使用。
 <br>>updateChildCallback: (box: HTMLElement) => void ：传入一个回调函数，该回调函数用于写入添加、插入、删除子节点的操作，提供box参数，box为子节点的父元素，可使用box进行修改操作。
 
+## 杂项
+<ol>
+    <li>
+        Slide对于移动端交互事件已有默认设置，只需简单的调用Slide.create(el)即可。
+    </li>
+    <li>
+        Slide只有默认导航点样式，不支持设置导航点样式。如果需要更改导航点样式，需要在options中设置createNav:false取消导航点，然后用户自行实现导航点，在slide.onchange(callback)中进行导航点切换操作。
+    </li>
+    <li>
+        对于pc端的交互事件，由于没有左右轮播切换按钮，所以需要用户自己定义按钮并绑定click事件，在click事件中调用slide.moveChange('left'|'right')即可。注意，slide.moveChange内部实现没有使用节流函数，如需节流需要用户自行实现节流。
+    </li>
+</ol>
+
 # Waterfall(瀑布流式布局)
 
 ## 参数
@@ -135,6 +148,22 @@ waterfall.reset() // 在实例化后待内容区生成后需要调用一次reset
 **`waterfall.update()`**
 <br>>更新布局，在往后添加元素后使用
 
+## 注意
+<ol>
+    <li>     
+        在内容区的子元素宽度应一致。
+    </li>
+    <li>
+        请为带有图片等延迟加载资源的子元素设置高度，例如
+        <子元素>
+            <img src='xxx' height='xxx' />
+        </子元素>
+    </li>
+    <li>
+        Waterfall实例化后请在内容区取得第一个子元素时调用waterfall.reset()，因为在实例化时Waterfall并没有对布局情况进行记录，需要通过waterfall.reset()进行记录，才可以使用waterfall.update()。
+    </li>
+</ol>
+
 # LazyLoad（懒加载插件）
 具有针对图片进行懒加载的功能
 
@@ -174,7 +203,14 @@ const lazyLoad = new LazyLoad({/* 配置参数，也可以不传使用默认参�
 <br>>在插件内部会在监听事件的时候自动调用，也可以手动调用该方法
 
 **`lazyLoad.eventManager`**
-<br>>获取事件管理器，可以调用事件管理器的方法来添加监听和移除一些不必要的监听
+<br>>获取事件管理器，可以调用事件管理器的方法来添加监听和移除一些不必要的监听，一般不会使用这个属性
+
+## 注意
+<ol>
+    <li>     
+        在每次更新视图时（如增加了带有data-src属性的图片），请调用lazyLoad.update()，以便使lazyLoad获取这些图片进行懒加载管理。
+    </li>
+</ol>
 
 # EventManager（事件集中管理器）
 用于对需要多重事件绑定的元素，能有效地管理元素下所绑定的事件
