@@ -123,17 +123,18 @@
                         waterfall.reset(300)
                     }
 
-                    lazyLoad.update()
                     waterfall.update()
+                    lazyLoad.update()
                 }
             }
         }
 
         let timer = null
         document.getElementById('create').onclick = function () {
+            clearInterval(timer)
             timer = setInterval(() => {
                 requestAnimationFrame(getGoods)
-            }, 2500)
+            }, 1500)
         }
         document.getElementById('stop').onclick = function () {
             clearInterval(timer)
