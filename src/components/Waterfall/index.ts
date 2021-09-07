@@ -83,26 +83,30 @@ class Waterfall {
         } = this;
         const childWidth: number = (children![0] as HTMLElement).offsetWidth
         forEach(pos, children!.length, (i: number) => {
-            window.requestAnimationFrame(handler.bind(this, i))
+            handler(i)
         })
         this.pos = children!.length
 
         function handler(i: number): void {
-            ; (children![i] as HTMLElement)
-                .style
-                .position = 'absolute';
+            window.requestAnimationFrame(() => {
+                ; (children![i] as HTMLElement)
+                    .style
+                    .cssText += `
+                    position: absolute;
+                `;
 
-            const tarIdx: number = getMinOfArrayLine(<number[]>heightArr);
-            (children![i] as HTMLElement).style.cssText += `
-                transition: all ${transition}ms;
-                transform: translate3d(${<number>margin * (tarIdx + 1) + childWidth * tarIdx}px,${<number>marginTop + heightArr![tarIdx]}px,0);
-            `
+                const tarIdx: number = getMinOfArrayLine(<number[]>heightArr);
+                (children![i] as HTMLElement).style.cssText += `
+                    transition: all ${transition}ms;
+                    transform: translate3d(${<number>margin * (tarIdx + 1) + childWidth * tarIdx}px,${<number>marginTop + heightArr![tarIdx]}px,0);
+                `
 
-            heightArr![tarIdx] += <number>marginTop + (children![i] as HTMLElement).offsetHeight;
-            box!.style.cssText += `
-                height: ${Math.max(...<number[]>heightArr) + <number>margin}px;
-                transition: all ${transition}ms;
-            `
+                heightArr![tarIdx] += <number>marginTop + (children![i] as HTMLElement).offsetHeight;
+                box!.style.cssText += `
+                    height: ${Math.max(...<number[]>heightArr) + <number>margin}px;
+                    transition: all ${transition}ms;
+                `
+            })
         }
     }
     public reset(transition: number = 0): void {

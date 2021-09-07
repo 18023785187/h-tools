@@ -64,8 +64,10 @@ class LazyLoad {
     }
     // 执行懒加载操作
     private _render(): void {
-        this.listeners.forEach((listener: ImageListener) => {
-            listener.load() && this.listeners.remove(listener)
+        window.requestAnimationFrame(() => {
+            this.listeners.forEach((listener: ImageListener) => {
+                listener.load() && this.listeners.remove(listener)
+            })
         })
     }
     public update(): void {

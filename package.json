@@ -1,6 +1,6 @@
 {
   "name": "h-tools-js",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "一个js组件库，包含功能轮播图、瀑布流、懒加载等",
   "keywords": [
     "h",
