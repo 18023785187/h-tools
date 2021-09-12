@@ -21,7 +21,7 @@ type config = {
     bindEvent?: boolean
 }
 
-export {
+export type {
     options,
     config
 }

@@ -1,0 +1,17 @@
+interface IOptions {
+    preload?: number;
+    loading?: string;
+    error?: string;
+    attempt?: number;
+    throttle?: number;
+    eventListener?: Array<string>;
+}
+interface IImageOptions {
+    preload: number;
+    loading: string;
+    error: string;
+    attempt: number;
+    w: number;
+    h: number;
+}
+export { IOptions, IImageOptions };

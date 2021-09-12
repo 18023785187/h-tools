@@ -11,7 +11,7 @@
                 "./src/*"
             ],
             "utils": [
-                "./src/utils/index.ts"
+                "./src/utils"
             ]
         },
         "target": "es6",
@@ -22,5 +22,16 @@
         "module": "es2020",
         "moduleResolution": "node",
         "suppressImplicitAnyIndexErrors": true,
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "es2016"
+        ],
+        "declaration": true,
+        "declarationDir": "dist",
+        "typeRoots": [
+            "./types",
+            "./node_modules/@types"
+        ]
     }
 }

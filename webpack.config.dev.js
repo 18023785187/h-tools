@@ -59,6 +59,6 @@ module.exports = merge(commonConfig, {
         host: getNetworkIp(),
         open: true,
         hot: true,
-        https: true
+        // https: true
     }
 })

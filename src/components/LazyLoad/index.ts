@@ -3,7 +3,7 @@ import {
     ListNode,
     checkType,
     throttle,
-} from 'utils'
+} from '../../utils'
 import EventManager from '../EventManager'
 import ImageListener from './ImageListener'
 import getWindowWAndH from './getWindowWAndH'
@@ -72,8 +72,9 @@ class LazyLoad {
     }
     public update(): void {
         const options: IOptions = this.options
-        const oImg: NodeListOf<Element> = document.querySelectorAll('[data-src]')
-        for (const img of oImg) {
+        const oImg: NodeListOf<HTMLElement> = document.querySelectorAll('[data-src]')
+
+        oImg.forEach(img => {
             if (img.tagName === 'IMG') {
                 (img as HTMLImageElement).src = <string>this.options.loading;
                 const el: HTMLImageElement = <HTMLImageElement>img,
@@ -96,7 +97,7 @@ class LazyLoad {
                     this.eventManager.bindEvent(parent, event, this.render)
                 })
             }
-        }
+        })
         this.render()
     }
 }
