@@ -23,8 +23,7 @@ export default class ImageListener {
     }
     private checkIsInView(): boolean {
         const {
-            w,
-            h,
+            viewport,
             preload
         } = this.options
         const {
@@ -33,6 +32,7 @@ export default class ImageListener {
             bottom,
             left,
         } = this.getDOMRect(this.el)
+        const { w, h } = viewport
         return ((top < h * preload && bottom > 0)
             &&
             (left < w * preload && right > 0))

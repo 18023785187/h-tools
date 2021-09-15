@@ -2,6 +2,7 @@
 
 # 更新
 在@1.4.0版本以上新增了.d.ts声明文件，用户可以在ts开发环境中使用h-tools-js库了！
+修复lazyload不动态获取视口宽度和高度的bug
 
 # 源码地址
 https://github.com/18023785187/h-tools

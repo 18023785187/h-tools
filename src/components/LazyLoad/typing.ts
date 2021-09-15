@@ -14,6 +14,10 @@ interface IImageOptions {
     loading: string,
     error: string,
     attempt: number,
+    viewport: viewport
+}
+
+type viewport = {
     w: number,
     h: number
 }
@@ -21,4 +25,8 @@ interface IImageOptions {
 export {
     IOptions,
     IImageOptions
+}
+
+export type {
+    viewport
 }

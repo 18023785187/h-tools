@@ -11,7 +11,11 @@ interface IImageOptions {
     loading: string;
     error: string;
     attempt: number;
+    viewport: viewport;
+}
+declare type viewport = {
     w: number;
     h: number;
-}
+};
 export { IOptions, IImageOptions };
+export type { viewport };

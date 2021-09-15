@@ -8,24 +8,26 @@ import EventManager from '../EventManager'
 import ImageListener from './ImageListener'
 import getWindowWAndH from './getWindowWAndH'
 import searchParent from './searchParent'
-import { IOptions } from './typing'
+import { IOptions, viewport } from './typing'
 
 class LazyLoad {
     constructor(options?: IOptions) {
-        const w_h: [number, number] = getWindowWAndH()
-        this.w = w_h[0]
-        this.h = w_h[1]
+        this.viewport = getWindowWAndH()
         this.listeners = new ListNode()
         this.eventManager = new EventManager()
         this.options = this.handlerOptions(options)
         this.render = throttle(this._render.bind(this), this.options.throttle)
         this.update()
         !this.listeners.isEmpty() && this.render()
+        window.addEventListener('resize', throttle(() => {
+            const { w, h } = getWindowWAndH()
+            this.viewport.w = w
+            this.viewport.h = h
+        }, this.options.throttle))
     }
     private options: IOptions
     private listeners: ListNode
-    private w: number
-    private h: number
+    private viewport: viewport
     public eventManager: EventManager
     public render: LazyLoad['_render']
 
@@ -88,8 +90,7 @@ class LazyLoad {
                         loading: <string>options.loading,
                         error: <string>options.error,
                         attempt: <number>options.attempt,
-                        w: this.w,
-                        h: this.h
+                        viewport: this.viewport
                     }
                 ));
                 (options.eventListener as string[]).forEach(event => {
