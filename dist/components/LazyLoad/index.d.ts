@@ -10,5 +10,6 @@ declare class LazyLoad {
     private handlerOptions;
     private _render;
     update(): void;
+    monitor(): void;
 }
 export default LazyLoad;

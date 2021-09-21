@@ -209,6 +209,9 @@ const lazyLoad = new LazyLoad({/* 配置参数，也可以不传使用默认参�
 **`lazyLoad.eventManager`**
 <br>>获取事件管理器，可以调用事件管理器的方法来添加监听和移除一些不必要的监听，一般不会使用这个属性
 
+**`lazyLoad.monitor`**
+<br>>持续监听5个节流时间
+
 ## 注意
 <ol>
     <li>     

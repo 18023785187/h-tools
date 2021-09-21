@@ -101,6 +101,18 @@ class LazyLoad {
         })
         this.render()
     }
+    // 持续监听5个节流时间
+    public monitor(): void {
+        const self = this
+        let count: number = 0
+
+            ; (function timerOut() {
+                window.setTimeout(() => {
+                    self.render()
+                    if (count < 5) timerOut()
+                }, self.options.throttle)
+            })()
+    }
 }
 
 export default LazyLoad
