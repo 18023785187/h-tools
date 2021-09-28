@@ -7,7 +7,7 @@
 # 源码地址
 https://github.com/18023785187/h-tools
 # demo
-https://h-tools-eight.vercel.app
+https://18023785187.github.io/h-tools/
 
 ## 安装
 ```javascript
