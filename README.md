@@ -1,8 +1,10 @@
-一个组件库，包含轮播图、瀑布流、懒加载等
+# h-tools-js
+<a href="https://www.npmjs.com/package/h-tools-js"><img src="https://img.shields.io/npm/v/h-tools-js.svg" alt="Version"></a>
+<a href="https://npmcharts.com/compare/h-tools-js?minimal=true"><img src="https://img.shields.io/npm/dm/h-tools-js.svg" alt="Downloads"></a>
+<a href="https://github.com/18023785187/h-tools/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/h-tools-js.svg" alt="License"></a>
+<a href="https://github.com/18023785187/h-tools/search?l=javascript"><img src="https://img.shields.io/github/languages/top/18023785187/h-tools.svg" alt="TopLang"></a>
 
-# 更新
-在@1.4.0版本以上新增了.d.ts声明文件，用户可以在ts开发环境中使用h-tools-js库了！
-修复lazyload不动态获取视口宽度和高度的bug
+### 🚀 一个组件库，包含轮播图、瀑布流、懒加载等
 
 # 源码地址
 https://github.com/18023785187/h-tools

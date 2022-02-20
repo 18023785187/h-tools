@@ -17,8 +17,8 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.dev.js"
+    "build": "cross-env NODE_ENV=production webpack --config ./scripts/build.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./scripts/dev.js"
   },
   "author": "Mmmmm",
   "license": "MIT",

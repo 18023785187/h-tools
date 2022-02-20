@@ -1,7 +1,7 @@
 
 const { resolve } = require('path')
 const { merge } = require('webpack-merge');
-const commonConfig = require('./webpack.config.common');
+const commonConfig = require('./common');
 const getNetworkIp = require('./getNetworkIp');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
