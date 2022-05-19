@@ -1,9 +1,9 @@
 
 
-// export { EventListener } from "./components/EventListener"
-// export { LazyLoad } from "./components/LazyLoad"
-// export { Waterfall } from './components/Waterfall'
-// export { Slide } from './components/Slide'
+export { Listener, On, EventListener } from "./components/EventListener"
+export { LazyLoad, Options as LazyLoadOptions } from "./components/LazyLoad"
+export { Waterfall, Options as WaterfallOptions } from './components/Waterfall'
+export { Slide } from './components/Slide'
 
 import { LazyLoad } from "./components/LazyLoad"
 import { Waterfall } from './components/Waterfall'
@@ -28,9 +28,9 @@ const waterfall = new Waterfall(<HTMLElement>app, {
 const lazyLoad = new LazyLoad({
   eventListener: ['scroll', 'click']
 })
-slide.onchange(() => {
-  lazyLoad.update()
-})
+// slide.onchange(() => {
+//   lazyLoad.update()
+// })
 
 function getGoods(page: number) {
   fetch(`http://152.136.185.210:8000/api/w6/home/data?type=new&page=${page}`).then(res => {

@@ -1,6 +1,6 @@
 
 
-type Listener<T> = (ev: T) => void
+export type Listener<T> = (ev: T) => void
 type ListenerHandler = Listener<any> | Array<Listener<any>>
 
 /**
@@ -15,7 +15,7 @@ type ListenerHandler = Listener<any> | Array<Listener<any>>
 export type On = {
   [N in keyof HTMLElementEventMap]?: // HTMLElementEventMap 事件名类型
   | Listener<HTMLElementEventMap[N]>
-  | Array<Listener<HTMLElementEventMap>>
+  | Array<Listener<HTMLElementEventMap[N]>>
 } & {
   [event: string]: ListenerHandler
 }
@@ -24,6 +24,10 @@ type ListenerMap = {
   [N in keyof HTMLElementEventMap]?: Listener<HTMLElementEventMap[N]>
 } & { [event: string]: Listener<any> }
 
+type SomeListener<N extends keyof HTMLElementEventMap> = // 事件处理器单项
+  | Listener<HTMLElementEventMap[N]>
+  | Listener<any>
+
 /**
  * 创建事件侦听器代理函数 handle ，handle 函数调用时会触发所有 handler
  * @param {ListenerHandler} handler 代理池
@@ -31,12 +35,20 @@ type ListenerMap = {
  */
 function createListener(handler: ListenerHandler) {
   return function handle(this: Element, event: Event) {
-    if (typeof handler === 'function') {
-      handler.call(this, event)
-    } else {
-      for (let i = 0; i < handler.length; ++i) {
-        handler[i].call(this, event)
-      }
+    invokeHandler.call(this, handler, event)
+  }
+}
+
+function invokeHandler<N extends keyof HTMLElementEventMap>(
+  this: Element,
+  handler: SomeListener<N> | Array<SomeListener<N>>,
+  event?: Event
+): void {
+  if (typeof handler === 'function') { // 如果包装事件是函数，则调用该事件
+    handler.call(this, event)
+  } else if (typeof handler === 'object') { // 如果是数组，则调用每项事件
+    for (let i = 0; i < handler.length; ++i) {
+      invokeHandler.call(this, handler[i], event)
     }
   }
 }
@@ -59,29 +71,30 @@ function createListener(handler: ListenerHandler) {
       }
     )
 
-    eventListener.on.dblclick = function() {} // 绑定了双击事件
+    eventListener.on.dblclick = function() {} // 绑定了双击事件，也可以赋值一个方法数组
 
-    delete eventListener.on.dblclick // 解除了双击事件
+    delete eventListener.on.dblclick // 解除了双击事件，也可以移除某个双击事件，只需要在数组中删除目标方法即可
 
     eventListener.reflect({ // 重置 on 对象
       click: [() => console.log(555)]
     })
  */
 export class EventListener {
-  public el: Element // 目标元素
   public on: On // 事件代理池
+  private _el: Element // 目标元素
   private _listenerMap: ListenerMap
+  get el() { return this._el }
 
   constructor(el: Element, on?: On) {
-    this.el = el
     this.on = new Proxy<On>(on ?? {}, this._handle)
+    this._el = el
     this._listenerMap = {}
 
     this.add()
   }
 
   /**
-   * 为 on 对象重新赋值，并移除所有侦听器
+   * 为 on 对象重新赋值，并移除所有侦听器，绑定新的侦听器
    * @param {On} on 
    */
   public reflect(on: On) {
@@ -116,10 +129,8 @@ export class EventListener {
    * @param {?string} event 事件名，不传则添加全部
    */
   private add(event?: string) {
-    const self = this
-
     if (event) {
-      const listener = createListener(self.on[event])
+      const listener = createListener(this.on[event])
 
       this.el.addEventListener(event, listener, false)
       this._listenerMap[event] = listener
@@ -127,7 +138,7 @@ export class EventListener {
       const eventPool = Object.keys(this.on)
       for (let i = 0; i < eventPool.length; ++i) {
         const event = eventPool[i]
-        const listener = createListener(self.on[event])
+        const listener = createListener(this.on[event])
 
         this.el.addEventListener(event, listener, false)
         this._listenerMap[event] = listener

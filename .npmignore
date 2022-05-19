@@ -1,8 +1,1 @@
 .gitignore
-getNetworkIp.js
-webpack.config.dev.js
-webpack.config.common.js
-webpack.config.prod.js
-public
-src
-tsconfig.json

@@ -1,44 +1,44 @@
 
-const HIGH_COLOR = 'rgba(255,255,255,.8)',
-    COLOR = 'rgba(0,0,0,.3)'
+const HIGH_COLOR = 'rgba(255,255,255,.8)'
+const COLOR = 'rgba(0,0,0,.3)'
 
 class Nav {
-    constructor(el: HTMLElement, childLen: number) {
-        const content: HTMLElement = document.createElement('div')
-        content.className += `slide-nav-box`
-        content.style.cssText += `position: relative;`
-        el.appendChild(content)
+  constructor(el: HTMLElement, childLen: number) {
+    const content: HTMLElement = document.createElement('div')
+    content.className += `slide-nav-box`
+    content.style.cssText += `position: relative;`
+    el.appendChild(content)
 
-        this.el = content;
-        this.childLen = childLen
-        this.createNav()
-        this.update(0)
+    this.el = content;
+    this.childLen = childLen
+    this.createNav()
+    this.update(0)
+  }
+  private el: HTMLElement
+  private childLen: number
+  private nav?: HTMLDivElement
+  private createNav(): void {
+    const { el, childLen } = this;
+    const nav: HTMLDivElement = document.createElement('div'),
+      point: HTMLDivElement = document.createElement('div')
+
+    el.appendChild(nav)
+    layoutNavStyle()
+    layoutPointStyle()
+    createPoint()
+
+    this.nav = nav
+
+    function createPoint(): void {
+      for (let i = 0; i < childLen; ++i) {
+        nav.appendChild(point.cloneNode(true))
+      }
     }
-    private el: HTMLElement
-    private childLen: number
-    private nav?: HTMLDivElement
-    private createNav(): void {
-        const { el, childLen } = this;
-        const nav: HTMLDivElement = document.createElement('div'),
-            point: HTMLDivElement = document.createElement('div')
+    function layoutNavStyle(): void {
+      const len: number = nav.clientWidth * 0.02
 
-        el.appendChild(nav)
-        layoutNavStyle()
-        layoutPointStyle()
-        createPoint()
-
-        this.nav = nav
-
-        function createPoint(): void {
-            for (let i = 0; i < childLen; ++i) {
-                nav.appendChild(point.cloneNode(true))
-            }
-        }
-        function layoutNavStyle(): void {
-            const len: number = nav.clientWidth * 0.02
-
-            nav.className += 'slide-nav'
-            nav.style.cssText += `
+      nav.className += 'slide-nav'
+      nav.style.cssText += `
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -48,33 +48,33 @@ class Nav {
                 bottom: ${len}px;
                 z-index: 2;
             `
-        }
-        function layoutPointStyle(): void {
-            const len: number = nav.clientWidth * 0.02
+    }
+    function layoutPointStyle(): void {
+      const len: number = nav.clientWidth * 0.02
 
-            point.className += 'slide-nav-item'
-            point.style.cssText += `
+      point.className += 'slide-nav-item'
+      point.style.cssText += `
                 width: ${len}px;
                 height: ${len}px;
                 margin: 0 ${len}px;
                 background-color: ${COLOR};
                 border-radius: 50%;
             `
-        }
     }
-    public update = (pos: number): void => {
-        const children: HTMLCollection = this.nav!.children;
-        for (let i = 0; i < this.childLen; ++i) {
-            (children[i] as HTMLElement).style.backgroundColor = COLOR;
-        }
-        (children[pos] as HTMLElement).style.backgroundColor = HIGH_COLOR;
+  }
+  public update = (pos: number): void => {
+    const children: HTMLCollection = this.nav!.children;
+    for (let i = 0; i < this.childLen; ++i) {
+      (children[i] as HTMLElement).style.backgroundColor = COLOR;
     }
-    public layout(childLen: number): void {
-        this.el.removeChild(<HTMLDivElement>this.nav)
-        this.childLen = childLen
-        this.createNav()
-        this.update(0)
-    }
+    (children[pos] as HTMLElement).style.backgroundColor = HIGH_COLOR;
+  }
+  public layout(childLen: number): void {
+    this.el.removeChild(<HTMLDivElement>this.nav)
+    this.childLen = childLen
+    this.createNav()
+    this.update(0)
+  }
 }
 
 export default Nav

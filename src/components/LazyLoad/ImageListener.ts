@@ -7,6 +7,9 @@ interface Options {
   viewport: { w: number, h: number },
 }
 
+/**
+ * 劫持图片元素，可检测其是否处于视口再加载图片
+ */
 export default class ImageListener {
   private el: HTMLImageElement
   private src: string
