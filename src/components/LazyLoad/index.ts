@@ -140,7 +140,7 @@ export class LazyLoad {
 
         // 如果当前元素的祖父元素可以滑动，那么添加渲染事件
         options.eventListener!.forEach(event => {
-          const parent = searchParent(img.parentNode as (HTMLElement | null), 'overflow', 'srcoll')
+          const parent = searchParent(img.parentNode as (HTMLElement | null), 'overflow', 'scroll')
 
           parent.addEventListener(event, this.render) // addEventListener 对于相同函数只绑定一次
         })
