@@ -1,37 +1,14 @@
 {
-    "include": [
-        "./src/**/*",
-    ],
-    "files": [
-        "./src/index.ts"
-    ],
-    "compilerOptions": {
-        "paths": {
-            "src/*": [
-                "./src/*"
-            ],
-            "utils": [
-                "./src/utils"
-            ]
-        },
-        "target": "es6",
-        "outDir": "./dist",
-        "allowJs": true,
-        "alwaysStrict": true,
-        "strict": true,
-        "module": "es2020",
-        "moduleResolution": "node",
-        "suppressImplicitAnyIndexErrors": true,
-        "lib": [
-            "dom",
-            "dom.iterable",
-            "es2016"
-        ],
-        "declaration": true,
-        "declarationDir": "dist",
-        "typeRoots": [
-            "./types",
-            "./node_modules/@types"
-        ]
-    }
+  "extends": "./tsconfig.path.json",
+  "compilerOptions": {
+    "removeComments": false,
+    "sourceMap": true,
+    "declaration": true,
+    "strict": true,
+    "strictFunctionTypes": false,
+    "moduleResolution": "node",
+    "target": "es6",
+    "outDir": "build"
+  },
+  "include": ["./src/**/*.ts"]
 }

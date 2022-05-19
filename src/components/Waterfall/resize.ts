@@ -1,7 +1,5 @@
 
-import {
-    isMobile
-} from 'utils'
+import { isMobile } from 'utils'
 
 /**
  * @param callback 
@@ -9,8 +7,8 @@ import {
  */
 
 function resize(callback: any): void {
-    if (isMobile()) return
-    window.addEventListener('resize', callback)
+  if (isMobile()) return
+  window.addEventListener('resize', callback)
 }
 
 export default resize

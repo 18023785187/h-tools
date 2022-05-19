@@ -1,51 +1,46 @@
-const { resolve } = require('path')
-const WebpackBar = require('webpackbar');
+const path = require('path')
 
 module.exports = {
-    entry: './src/index.ts',
-    output: {
-        path: resolve(__dirname, 'dist'),
-        filename: 'h-tools.min.js',
-        library: 'h',
-        libraryTarget: 'umd'
-    },
-    module: {
-        rules: [
-            {
-                //ts文件使用了babel，ts-loader
-                test: /\.ts$/,
-                use: [
-                    {
-                        loader: 'babel-loader',
-                        options: {
-                            presets: [
-                                [
-                                    '@babel/preset-env',
-                                    {
-                                        targets: {
-                                            "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
-                                        },
-                                        'corejs': '3',
-                                        'useBuiltIns': 'usage'
-                                    }
-                                ]
-                            ]
-                        }
+  output: {
+    path: path.resolve('./', 'build'),
+    filename: '[name].js',
+    library: 'h',
+    libraryTarget: 'umd',
+  },
+  module: {
+    rules: [
+      {
+        //ts文件使用了babel，ts-loader
+        test: /\.ts$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                [
+                  '@babel/preset-env',
+                  {
+                    targets: {
+                      "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
                     },
-                    'ts-loader',
-                ],
-                exclude: /node_modules/
+                    'corejs': '3',
+                    'useBuiltIns': 'usage'
+                  }
+                ]
+              ]
             }
-        ]
+          },
+          'ts-loader',
+        ],
+        exclude: /node_modules/
+      }
+    ]
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve('./', 'src'),
+      "utils": "@/utils",
     },
-    plugins: [
-        new WebpackBar()
-    ],
-    resolve: {
-        alias: {
-            '@': resolve(__dirname, 'src'),
-            'utils': '@/utils'
-        },
-        extensions: ['.ts', '.js', '.json'],
-    },
+    extensions: ['.ts', '.js', '.json'],
+  },
 }
