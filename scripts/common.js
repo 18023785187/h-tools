@@ -16,18 +16,10 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              presets: [
-                [
-                  '@babel/preset-env',
-                  {
-                    targets: {
-                      "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
-                    },
-                    'corejs': '3',
-                    'useBuiltIns': 'usage'
-                  }
-                ]
-              ]
+              presets: [['@babel/preset-env', {
+                debug: true
+                // 我们不能使用module的配置关键字，因为如果此处传入了这一参数内容webpack在打包编译的时候将会错误。
+              }]]
             }
           },
           'ts-loader',
