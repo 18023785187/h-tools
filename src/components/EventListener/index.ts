@@ -28,17 +28,6 @@ type SomeListener<N extends keyof HTMLElementEventMap> = // 事件处理器单�
   | Listener<HTMLElementEventMap[N]>
   | Listener<any>
 
-/**
- * 创建事件侦听器代理函数 handle ，handle 函数调用时会触发所有 handler
- * @param {ListenerHandler} handler 代理池
- * @returns {(event: Event) => void}
- */
-function createListener(handler: ListenerHandler) {
-  return function handle(this: Element, event: Event) {
-    invokeHandler.call(this, handler, event)
-  }
-}
-
 function invokeHandler<N extends keyof HTMLElementEventMap>(
   this: Element,
   handler: SomeListener<N> | Array<SomeListener<N>>,
@@ -90,17 +79,7 @@ export class EventListener {
     this._el = el
     this._listenerMap = {}
 
-    this.add()
-  }
-
-  /**
-   * 为 on 对象重新赋值，并移除所有侦听器，绑定新的侦听器
-   * @param {On} on 
-   */
-  public reflect(on: On) {
-    this.delete()
-    this.on = new Proxy<On>(on, this._handle)
-    this.add()
+    this._add()
   }
 
   /**
@@ -111,16 +90,28 @@ export class EventListener {
       const isAdd = !Reflect.has(on, event)
       Reflect.set(on, event, listenerHandler)
       if (isAdd) {
-        this.add(event)
+        this._add(event)
       }
       return true
     },
     deleteProperty: (on: On, event: string) => {
       const isDel = Reflect.has(on, event)
       if (isDel) {
-        this.delete(event)
+        this._delete(event)
       }
       return Reflect.deleteProperty(on, event)
+    }
+  }
+
+  /**
+   * 创建事件侦听器代理函数 handle ，handle 函数调用时会触发所有 this.on[eventTag]
+   * @param {string} eventTag 事件名称
+   * @returns {(event: Event) => void}
+   */
+  private _createListener(eventTag: string): (event: Event) => void {
+    const self = this
+    return function handle(this: Element, event: Event) {
+      invokeHandler.call(this, self.on[eventTag], event)
     }
   }
 
@@ -128,9 +119,9 @@ export class EventListener {
    * 以 on 对象中的键为 _listenerMap 添加侦听器
    * @param {?string} event 事件名，不传则添加全部
    */
-  private add(event?: string) {
+  private _add(event?: string) {
     if (event) {
-      const listener = createListener(this.on[event])
+      const listener = this._createListener(event)
 
       this.el.addEventListener(event, listener, false)
       this._listenerMap[event] = listener
@@ -138,7 +129,7 @@ export class EventListener {
       const eventPool = Object.keys(this.on)
       for (let i = 0; i < eventPool.length; ++i) {
         const event = eventPool[i]
-        const listener = createListener(this.on[event])
+        const listener = this._createListener(event)
 
         this.el.addEventListener(event, listener, false)
         this._listenerMap[event] = listener
@@ -150,7 +141,7 @@ export class EventListener {
    * 以 on 对象中的键删除 _listenerMap 中的侦听器
    * @param {?string} event 事件名，不传则删除全部
    */
-  private delete(event?: string) {
+  private _delete(event?: string) {
     if (event) {
       this.el.removeEventListener(event, this._listenerMap[event], false)
       delete this._listenerMap[event]
@@ -163,5 +154,15 @@ export class EventListener {
         delete this._listenerMap[event]
       }
     }
+  }
+
+  /**
+   * 为 on 对象重新赋值，并移除所有侦听器，绑定新的侦听器
+   * @param {On} on 
+   */
+  public reflect(on: On) {
+    this._delete()
+    this.on = new Proxy<On>(on, this._handle)
+    this._add()
   }
 }

@@ -6,14 +6,22 @@ import { checkType, throttle } from 'utils'
 /**
  * 找有指定属性并且指定属性有指定值的父亲
  * @param {HTMLElement | null} parent 父元素
- * @param {keyof CSSStyleDeclaration} prop 属性 
+ * @param {string[]} props 属性链
  * @param {string} value 属性值 
  * @returns {(Window & typeof globalThis) | HTMLElement} 如果有指定父元素，那么返回父元素，否则返回 window
  */
-function searchParent(parent: HTMLElement | null, prop: keyof CSSStyleDeclaration, value: string): (Window & typeof globalThis) | HTMLElement {
+function searchParent(parent: HTMLElement | null, props: string[], value: string): (Window & typeof globalThis) | HTMLElement {
   while (parent) {
     try {
-      if (getComputedStyle(parent)[prop] === value) break
+      let flag = false
+      for (let i = 0; i < props.length; ++i) {
+        const prop = props[i]
+        if ((getComputedStyle(parent) as any)[prop] === value) {
+          flag = true
+          break
+        }
+      }
+      if(flag) break
     } catch (e) {
       parent = parent.parentNode as HTMLElement | null
       break
@@ -36,16 +44,16 @@ export interface Options {
  * 把属性中带有 data-src 的图片元素添加到监听链表中，当元素进入视口时将渲染该图片
  */
 export class LazyLoad {
-  private options: Options
-  private listNode: ListNode<ImageListener>
-  private viewport: { w: number, h: number }
+  private _options: Options
+  private _listNode: ListNode<ImageListener>
+  private _viewport: { w: number, h: number }
   public render: LazyLoad['_render']
 
   constructor(options?: Options) {
-    this.options = this.handleOptions(options)
-    this.viewport = { w: window.innerWidth, h: window.innerHeight }
-    this.listNode = new ListNode()
-    this.render = throttle(this._render.bind(this), this.options.throttle)
+    this._options = this._handleOptions(options)
+    this._listNode = new ListNode()
+    this._viewport = { w: window.innerWidth, h: window.innerHeight }
+    this.render = throttle(this._render.bind(this), this._options.throttle)
     this.update()
     this.render()
 
@@ -54,15 +62,15 @@ export class LazyLoad {
       'resize',
       throttle(
         () => {
-          this.viewport = { w: window.innerWidth, h: window.innerHeight }
+          this._viewport = { w: window.innerWidth, h: window.innerHeight }
         },
-        this.options.throttle
+        this._options.throttle
       )
     )
   }
 
   // 处理options参数
-  private handleOptions(options?: Options): Options {
+  private _handleOptions(options?: Options): Options {
     if (!options) return {
       preload: 1,
       loading: '',
@@ -103,8 +111,8 @@ export class LazyLoad {
    */
   private _render(): void {
     window.requestAnimationFrame(() => {
-      this.listNode.forEach((listener) => {
-        listener.load() && this.listNode.remove(listener)
+      this._listNode.forEach((listener) => {
+        listener.load() && this._listNode.remove(listener)
       })
     })
   }
@@ -113,18 +121,18 @@ export class LazyLoad {
    * 更新 ImageListener 并进行一次渲染
    */
   public update(): void {
-    const options = this.options
+    const options = this._options
     const oImg: NodeListOf<HTMLImageElement> = document.querySelectorAll('[data-src]')
 
     oImg.forEach(img => {
       if (img.tagName === 'IMG') {
-        img.src = this.options.loading!
+        img.src = this._options.loading!
         const el = img
         const src = img.getAttribute('data-src')
 
         img.removeAttribute('data-src')
 
-        this.listNode.add(
+        this._listNode.add(
           new ImageListener( // 劫持该元素
             el,
             src,
@@ -133,16 +141,18 @@ export class LazyLoad {
               loading: options.loading!,
               error: options.error!,
               attempt: options.attempt!,
-              viewport: this.viewport,
+              viewport: this._viewport,
             }
           )
         )
 
         // 如果当前元素的祖父元素可以滑动，那么添加渲染事件
         options.eventListener!.forEach(event => {
-          const parent = searchParent(img.parentNode as (HTMLElement | null), 'overflow', 'scroll')
-
-          parent.addEventListener(event, this.render) // addEventListener 对于相同函数只绑定一次
+          searchParent(
+            img.parentNode as (HTMLElement | null),
+            ['overflow', 'overflow-x', 'overflow-y'],
+            'scroll'
+          ).addEventListener(event, this.render) // addEventListener 对于相同函数只绑定一次
         })
       }
     })

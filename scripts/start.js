@@ -52,7 +52,7 @@ module.exports = merge(commonConfig, {
   devServer: {
     compress: true,
     port: 8001,
-    host: 'localhost',
+    host: '172.16.1.37',
     open: true,
     hot: true,
     // https: true

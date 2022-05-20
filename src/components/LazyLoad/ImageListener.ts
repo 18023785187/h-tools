@@ -25,7 +25,7 @@ export default class ImageListener {
     this.options = options
   }
 
-  private getDOMRect(el: HTMLImageElement): DOMRect {
+  private _getDOMRect(el: HTMLImageElement): DOMRect {
     return el.getBoundingClientRect()
   }
 
@@ -33,16 +33,16 @@ export default class ImageListener {
    * 检查元素是否在视口中
    * @returns {boolean}
    */
-  private checkInView(): boolean {
+  private _checkInView(): boolean {
     const { viewport, preload } = this.options
-    const { top, right, bottom, left } = this.getDOMRect(this.el)
+    const { top, right, bottom, left } = this._getDOMRect(this.el)
     const { w, h } = viewport
 
     return (top < h * preload && bottom > 0) && (left < w * preload && right > 0)
   }
 
-  private loadImg(resolve: () => void, reject: any ): boolean {
-    if (this.checkInView()) {
+  private _loadImg(resolve: () => void, reject: any): boolean {
+    if (this._checkInView()) {
       const img = new Image()
       img.src = this.src
       img.onload = resolve
@@ -64,8 +64,8 @@ export default class ImageListener {
         this.el.src = this.options.error
         return
       }
-      this.loadImg(resolve, reject.bind(this, e, ++count))
+      this._loadImg(resolve, reject.bind(this, e, ++count))
     }
-    return this.loadImg(resolve, reject)
+    return this._loadImg(resolve, reject)
   }
 }
