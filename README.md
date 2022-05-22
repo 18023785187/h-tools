@@ -35,14 +35,15 @@ const { Slide, Waterfall, LazyLoad, EventListener } = h
 
 ### 组件
 
-###### Slide
+##### Slide
 
-支持 pc 端和移动端的轮播图。
+强大的、支持 pc 端和移动端的轮播图。
 
 - 功能特性：
-  - 横向轮播和纵向轮播。
+  - 支持横向轮播和纵向轮播。
   - 能够订阅轮播触发事件。
-  - 自带移动端事件，pc 端可以调用 api 进行轮播。
+  - 具有可更新操作。
+  - 可自定义导航点样式。
     
 - 使用
 
@@ -68,76 +69,90 @@ const { Slide, Waterfall, LazyLoad, EventListener } = h
 ```javascript
 /* js */
 const el = document.getElementById('slide')
-const slide = Slide.create(el)
+const slide = new Slide(el)
 ```
 
 - 配置参数类型
 
 ```typescript
 type Options = {
-    transverse?: boolean, /* 指定轮播图应为横向轮播还是纵向轮播，默认为 true 横向 */
-    createNav?: boolean, /* 是否创建导航点，默认为 true */
-    transition?: number, /* 指定轮播图的动画持续时间，默认为 200ms */
-    triggerTime?: number, /* 指定轮播图的触发时间间隔，默认为 3000ms */
-    triggerPos?: number, /* 指定轮播图移动多少距离触发轮播，范围是 0 ~ 100，默认为 10 */
-    bindEvent?: boolean, /* 指定是否开启移动端触摸事件，仅限于横向轮播和移动端，默认为 true */
+  mode: boolean // 轮播模式，true 为横向，false 为纵向
+  transition: number // 轮播动画过渡时间，单位秒
+  delay: number // 轮播延时，单位 ms
+  range: number // 触发范围，范围 0 ~ 100
+  nav: boolean // 是否开启导航栏
+  navOptions: NavOptions // 导航配置
+  bindEvent: boolean // 是否绑定事件
+  control: boolean // 是否显示控件
+}
+
+enum Position {
+  top = 'Top',
+  right = 'Right',
+  bottom = 'Bottom',
+  left = 'Left',
+}
+
+type NavOptions = {
+  style: string, // 导航点样式
+  highStyle: string, // 导航点高亮样式
+  position: Position, // 放置位置
+  range: number, // 放置位置的方位，范围 0 ~ 1
 }
 ```
 - API
 
 ```typescript
-const slide = Slide.create(el: HTMLElement, options: Options)
+const slide = new Slide(el: HTMLElement, options?: Options)
 ```
 
 创建轮播图。
 
 ```typescript
-slide.onchange(callback: (pos?: number) => void)
+slide.subscribe(callback: (index?: number) => void)
 ```
 
 绑定轮播图的触发事件，在每次触发轮播时触发。
 
-callback: (pos?: number) => void  传入一个回调函数，回调函数的参数是当前第几个内容。
+callback: (index?: number) => void 传入一个回调函数，回调函数的参数是当前第几个内容。
 
 ```typescript
-slide.moveChange(movePos: 'left' | 'right')
+slide.unsubscribe(callback: (index?: number) => void)
 ```
 
-手动触发一次轮播事件，在 pc 端的切换时可以派上用场。
-
-需要 'left' 或 'right' 作为参数，如果是 'left'，则往左轮播，反之往右轮播。
+取消目标事件的订阅。
 
 ```typescript
-slide.setTimer()
+slide.move(direction?: boolean)
+```
+
+手动触发一次轮播事件，true 向左移动，false 向右移动。
+
+```typescript
+slide.openTimer()
 ```
 
 开启轮播定时器。
 
 ```typescript
-slide.clearTimer()
+slide.closeTimer()
 ```
 
 关闭轮播定时器。
 
 ```typescript
 slide.update(
-  updateChildCallback: (box?: HTMLElement) => void
+  updateChildren: (elChild: HTMLElement) => void
 )
 ```
 
 更新轮播图视图，在轮播图有子节点需要更新时使用。
 
-updateChildCallback: (box?: HTMLElement) => void 传入一个回调函数，该回调函数用于写入添加、插入、删除子节点的操作，提供 box 参数，box 为子节点的父元素，可使用 box 进行修改操作。
-
-- 杂项
-
-  1. Slide 对于移动端交互事件已有默认设置，只需简单的调用 Slide.create(el) 即可。
-  2. Slide 只有默认导航点样式，不支持设置导航点样式。如果需要更改导航点样式，需要在 options 中设置 createNav:false 取消导航点，然后用户自行实现导航点，在 slide.onchange(callback) 中进行导航点切换操作。
-  3. 对于 pc 端的交互事件，由于没有左右轮播切换按钮，所以需要用户自己定义按钮并绑定 click 事件，在 click 事件中调用 slide.moveChange('left' | 'right') 即可。注意，slide.moveChange 内部实现没有使用节流函数，如需节流需要用户自行实现节流。
+updateChildren: (elChild: HTMLElement) => void 传入一个回调函数，该回调函数用于写入添加、插入、删除子节点的操作，提供 elChild elChild 为子节点的父元素，可使用 elChild 进行修改操作。
 
 ---
 
-##### Waterfall
+#### Waterfall
 
 瀑布流式布局。
 
@@ -211,7 +226,7 @@ typescriptwaterfall.update()
 
 ---
 
-##### LazyLoad
+#### LazyLoad
 
 具有针对图片进行懒加载的功能。
 
@@ -267,7 +282,7 @@ lazyLoad.render()
 
 ---
 
-##### EventListener
+#### EventListener
 
 事件代理池，为目标元素劫持事件，方便管理该元素的事件，该类适用于一些需要绑定多个或多种事件的元素。
 

@@ -70,11 +70,11 @@ function invokeHandler<N extends keyof HTMLElementEventMap>(
  */
 export class EventListener {
   public on: On // 事件代理池
-  private _el: Element // 目标元素
+  private _el: HTMLElement // 目标元素
   private _listenerMap: ListenerMap
   get el() { return this._el }
 
-  constructor(el: Element, on?: On) {
+  constructor(el: HTMLElement, on?: On) {
     this.on = new Proxy<On>(on ?? {}, this._handle)
     this._el = el
     this._listenerMap = {}
