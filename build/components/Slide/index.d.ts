@@ -74,6 +74,11 @@ export declare class Slide {
      */
     move(direction?: boolean): void;
     /**
+     * 跳转到指定索引位置
+     * @param {number} index
+     */
+    change(index: number): void;
+    /**
      * 更新子元素时刷新轮播图
      * @param {(elChild: HTMLElement) => void} updateChildren 需要在该函数内对子节点增删改查
      */

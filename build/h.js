@@ -1554,18 +1554,22 @@ var Navigation = /*#__PURE__*/function () {
 
     this._el = el;
     this._options = options;
-    var width = this._el.clientWidth;
-    var navItemSize = width * 0.02; // 设定导航点尺寸为内容宽度的 0.02 倍
-
     var navList = document.createElement('div');
     navList.className = 'slide-navList';
 
-    for (var i = 0; i < this._options.length; ++i) {
+    var _loop = function _loop(i) {
       var navItem = document.createElement('div');
       navItem.className = 'slide-navItem';
-      navItem.style.cssText += "width: ".concat(navItemSize, "px; height: ").concat(navItemSize, "px;");
-      navItem.style.cssText += i ? this._options.style : this._options.highStyle;
+      navItem.addEventListener('mousemove', function () {
+        _this.change(i);
+
+        _this._moveHook(i);
+      }, false);
       navList.appendChild(navItem);
+    };
+
+    for (var i = 0; i < this._options.length; ++i) {
+      _loop(i);
     }
 
     this._el.appendChild(navList);
@@ -1597,7 +1601,8 @@ var Navigation = /*#__PURE__*/function () {
       var navItems = this._navList.children;
 
       for (var i = 0; i < this._options.length; ++i) {
-        navItems[i].style.cssText += "width: ".concat(navItemSize, "px; height: ").concat(navItemSize, "px;");
+        navItems[i].style.cssText += "width: ".concat(navItemSize, "px; height: ").concat(navItemSize, "px; cursor: pointer;");
+        navItems[i].style.cssText += i ? this._options.style : this._options.highStyle;
       }
 
       if (position === Position.top) {
@@ -1635,6 +1640,8 @@ var Navigation = /*#__PURE__*/function () {
   }, {
     key: "setLength",
     value: function setLength(length) {
+      var _this2 = this;
+
       this.change(0);
 
       if (this._options.length > length) {
@@ -1645,19 +1652,41 @@ var Navigation = /*#__PURE__*/function () {
         var width = this._el.clientWidth;
         var navItemSize = width * 0.02;
 
-        for (var _i = 0; _i < length - this._options.length; ++_i) {
+        var _loop2 = function _loop2(_i) {
           var navItem = document.createElement('div');
           navItem.className = 'slide-navItem';
-          navItem.style.cssText += "width: ".concat(navItemSize, "px; height: ").concat(navItemSize, "px;");
-          navItem.style.cssText += this._options.style;
+          navItem.style.cssText += "width: ".concat(navItemSize, "px; height: ").concat(navItemSize, "px; cursor: pointer;");
+          navItem.style.cssText += _this2._options.style;
+          var _length = _this2._options.length;
+          navItem.addEventListener('mousemove', function () {
+            console.log(_length + _i);
 
-          this._navList.appendChild(navItem);
+            _this2.change(_length + _i);
+
+            _this2._moveHook(_length + _i);
+          }, false);
+
+          _this2._navList.appendChild(navItem);
+        };
+
+        for (var _i = 0; _i < length - this._options.length; ++_i) {
+          _loop2(_i);
         }
       }
 
       this._options.length = length;
 
       this._layout();
+    }
+    /**
+     * 为导航点绑定 move 事件
+     * @param {moveHook} callback
+     */
+
+  }, {
+    key: "bindEvent",
+    value: function bindEvent(callback) {
+      this._moveHook = callback;
     }
   }]);
 
@@ -1764,6 +1793,16 @@ var Slide = /*#__PURE__*/function () {
       this._navigation = new Navigation(this._el, this._options.navOptions);
       this.subscribe(function (i) {
         return _this._navigation.change(i);
+      });
+
+      this._navigation.bindEvent(function (i) {
+        _this.closeTimer();
+
+        _this._index = i;
+
+        _this._change();
+
+        _this.openTimer();
       });
     }
 
@@ -2060,6 +2099,18 @@ var Slide = /*#__PURE__*/function () {
       this.closeTimer();
       this.openTimer();
       direction ? --this._index : ++this._index;
+
+      this._change();
+    }
+    /**
+     * 跳转到指定索引位置
+     * @param {number} index
+     */
+
+  }, {
+    key: "change",
+    value: function change(index) {
+      this._index = index;
 
       this._change();
     }

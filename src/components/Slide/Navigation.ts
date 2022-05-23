@@ -38,6 +38,8 @@ export const amendmentNavOptions = function (options: { [key: string]: any }): O
   return newOptions
 }
 
+type moveHook = (index: number) => void
+
 /**
  * 轮播图导航栏
  */
@@ -46,13 +48,11 @@ export class Navigation {
   private _options: Options
   private _navList: HTMLElement // 导航栏元素
   private _prevIndex: number // 上一次高亮导航点，用于恢复样式
+  private _moveHook!: moveHook // 鼠标移入导航点 hook
 
   constructor(el: HTMLElement, options: Options) {
     this._el = el
     this._options = options
-
-    const width = this._el.clientWidth
-    const navItemSize = width * 0.02 // 设定导航点尺寸为内容宽度的 0.02 倍
 
     const navList = document.createElement('div')
     navList.className = 'slide-navList'
@@ -60,8 +60,11 @@ export class Navigation {
     for (let i = 0; i < this._options.length; ++i) {
       const navItem = document.createElement('div')
       navItem.className = 'slide-navItem'
-      navItem.style.cssText += `width: ${navItemSize}px; height: ${navItemSize}px;`
-      navItem.style.cssText += i ? this._options.style : this._options.highStyle
+
+      navItem.addEventListener('mousemove', () => {
+        this.change(i)
+        this._moveHook(i)
+      }, false)
 
       navList.appendChild(navItem)
     }
@@ -90,7 +93,8 @@ export class Navigation {
     const navItemSize = width * 0.02
     const navItems = this._navList.children
     for (let i = 0; i < this._options.length; ++i) {
-      (navItems[i] as HTMLElement).style.cssText += `width: ${navItemSize}px; height: ${navItemSize}px;`
+      (navItems[i] as HTMLElement).style.cssText += `width: ${navItemSize}px; height: ${navItemSize}px; cursor: pointer;`;
+      (navItems[i] as HTMLElement).style.cssText += i ? this._options.style : this._options.highStyle;
     }
 
     if (position === Position.top) {
@@ -154,8 +158,15 @@ export class Navigation {
       for (let i = 0; i < length - this._options.length; ++i) {
         const navItem = document.createElement('div')
         navItem.className = 'slide-navItem'
-        navItem.style.cssText += `width: ${navItemSize}px; height: ${navItemSize}px;`
+        navItem.style.cssText += `width: ${navItemSize}px; height: ${navItemSize}px; cursor: pointer;`
         navItem.style.cssText += this._options.style
+
+        const _length = this._options.length
+        navItem.addEventListener('mousemove', () => {
+          console.log(_length + i)
+          this.change(_length + i)
+          this._moveHook(_length + i)
+        }, false)
 
         this._navList.appendChild(navItem)
       }
@@ -163,5 +174,13 @@ export class Navigation {
 
     this._options.length = length
     this._layout()
+  }
+
+  /**
+   * 为导航点绑定 move 事件
+   * @param {moveHook} callback 
+   */
+  public bindEvent(callback: moveHook) {
+    this._moveHook = callback
   }
 }

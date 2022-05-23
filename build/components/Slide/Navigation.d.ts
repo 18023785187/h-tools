@@ -14,6 +14,7 @@ export declare type Options = {
 export declare const amendmentNavOptions: (options: {
     [key: string]: any;
 }) => Options;
+declare type moveHook = (index: number) => void;
 /**
  * 轮播图导航栏
  */
@@ -22,6 +23,7 @@ export declare class Navigation {
     private _options;
     private _navList;
     private _prevIndex;
+    private _moveHook;
     constructor(el: HTMLElement, options: Options);
     /**
      * 对导航栏布局
@@ -37,4 +39,10 @@ export declare class Navigation {
      * @param {number} length
      */
     setLength(length: number): void;
+    /**
+     * 为导航点绑定 move 事件
+     * @param {moveHook} callback
+     */
+    bindEvent(callback: moveHook): void;
 }
+export {};

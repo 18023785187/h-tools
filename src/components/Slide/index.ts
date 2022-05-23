@@ -83,6 +83,12 @@ export class Slide {
     if (this._options.nav) {
       this._navigation = new Navigation(this._el, this._options.navOptions)
       this.subscribe((i: number) => this._navigation!.change(i))
+      this._navigation.bindEvent((i: number) => {
+        this.closeTimer()
+        this._index = i
+        this._change()
+        this.openTimer()
+      })
     }
     if (this._options.bindEvent) {
       this._bindEvent()
@@ -316,6 +322,15 @@ export class Slide {
     this.closeTimer()
     this.openTimer()
     direction ? --this._index : ++this._index
+    this._change()
+  }
+
+  /**
+   * 跳转到指定索引位置
+   * @param {number} index 
+   */
+  public change(index: number) {
+    this._index = index
     this._change()
   }
 
