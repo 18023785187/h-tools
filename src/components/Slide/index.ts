@@ -252,11 +252,11 @@ export class Slide {
     const leftIcon = document.createElement('i')
     const rightIcon = document.createElement('i')
 
-    left.style.cssText += `position: absolute; top: 50%; left: 0; width: 5%; height: 20%; display: flex; justify-content: center; align-items: center; transform: translate3d(0, -50%, 0); color: #ddd; background-color: rgba(0, 0, 0, 0.25); cursor: pointer;` 
+    left.style.cssText += `position: absolute; top: 50%; left: 0; width: 8%; height: 20%; display: flex; justify-content: center; align-items: center; transform: translate3d(0, -50%, 0); color: #ddd; background-color: rgba(0, 0, 0, 0.25); cursor: pointer;` 
     leftIcon.className = 'h-iconfont'
     leftIcon.innerHTML = '&#xe687;'
     left.appendChild(leftIcon)
-    right.style.cssText += `position: absolute; top: 50%; right: 0; width: 5%; height: 20%; display: flex; justify-content: center; align-items: center; transform: translate3d(0, -50%, 0); color: #ddd; background-color: rgba(0, 0, 0, 0.25); cursor: pointer;`
+    right.style.cssText += `position: absolute; top: 50%; right: 0; width: 8%; height: 20%; display: flex; justify-content: center; align-items: center; transform: translate3d(0, -50%, 0); color: #ddd; background-color: rgba(0, 0, 0, 0.25); cursor: pointer;`
     rightIcon.className = 'h-iconfont'
     rightIcon.innerHTML = '&#xe686;'
     right.appendChild(rightIcon)

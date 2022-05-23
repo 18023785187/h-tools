@@ -32,7 +32,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\n  font-family: 'h-iconfont';\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") format('truetype');\n}\n\n.h-iconfont {\n  font-family: \"h-iconfont\" !important;\n  font-size: 3vw;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n", "",{"version":3,"sources":["webpack://./src/assets/css/base.css"],"names":[],"mappings":"AAAA;EACE,yBAAyB;EACzB,+DAAmD;AACrD;;AAEA;EACE,oCAAoC;EACpC,cAAc;EACd,kBAAkB;EAClB,mCAAmC;EACnC,kCAAkC;AACpC","sourcesContent":["@font-face {\n  font-family: 'h-iconfont';\n  src: url('../font/iconfont.ttf') format('truetype');\n}\n\n.h-iconfont {\n  font-family: \"h-iconfont\" !important;\n  font-size: 3vw;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\n  font-family: 'h-iconfont';\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") format('truetype');\n}\n\n.h-iconfont {\n  font-family: \"h-iconfont\" !important;\n  font-size: 3vmax;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n", "",{"version":3,"sources":["webpack://./src/assets/css/base.css"],"names":[],"mappings":"AAAA;EACE,yBAAyB;EACzB,+DAAmD;AACrD;;AAEA;EACE,oCAAoC;EACpC,gBAAgB;EAChB,kBAAkB;EAClB,mCAAmC;EACnC,kCAAkC;AACpC","sourcesContent":["@font-face {\n  font-family: 'h-iconfont';\n  src: url('../font/iconfont.ttf') format('truetype');\n}\n\n.h-iconfont {\n  font-family: \"h-iconfont\" !important;\n  font-size: 3vmax;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1499,8 +1499,12 @@ var Waterfall = /*#__PURE__*/function () {
  */
 var slideNavStyle = {
   "default": {
-    style: 'margin: 1.5vw; background-color: rgba(255, 255, 255, 0.5); border-radius: 50%;',
-    highStyle: 'margin: 1.5vw; background-color: #fff; border-radius: 50%;'
+    style: 'margin: 1.5vmax; background-color: rgba(255, 255, 255, 0.5); border-radius: 50%;',
+    highStyle: 'margin: 1.5vmax; background-color: #fff; border-radius: 50%;'
+  },
+  ellipse: {
+    style: 'margin: 1vmax; width: 1vmax; height: 1vmax; background-color: rgba(0, 0, 0, 0.3); border-radius: 1vmax; outline: .1vmin solid rgba(255, 255, 255, 0.6);',
+    highStyle: 'margin: 1vmax; width: 2vmax; height: 1vmax; background-color: red; border-radius: 1vmax; outline: .1vmin solid rgba(255, 255, 255, 0.6);'
   }
 };
 ;// CONCATENATED MODULE: ./src/components/Slide/Navigation.ts
@@ -1526,6 +1530,7 @@ var defaultOptions = {
   highStyle: slideNavStyle.default.highStyle,
   position: Position.bottom,
   range: 0.5,
+  transition: 0,
   length: 0
 };
 var amendmentNavOptions = function amendmentNavOptions(options) {
@@ -1533,12 +1538,14 @@ var amendmentNavOptions = function amendmentNavOptions(options) {
       highStyle = options.highStyle,
       position = options.position,
       range = options.range,
+      transition = options.transition,
       length = options.length;
   var newOptions = {};
   newOptions.style = checkType(style, 'string') ? style : defaultOptions.style;
   newOptions.highStyle = checkType(highStyle, 'string') ? highStyle : defaultOptions.highStyle;
   newOptions.position = ['Top', 'Right', 'Bottom', 'Left'].includes(position) ? position : defaultOptions.position;
   newOptions.range = checkType(range, 'number') ? range : defaultOptions.range;
+  newOptions.transition = checkType(transition, 'number') ? transition : defaultOptions.transition;
   newOptions.length = length;
   return newOptions;
 };
@@ -1618,6 +1625,12 @@ var Navigation = /*#__PURE__*/function () {
         this._navList.style.cssText += "\n        position: absolute;\n        left: 0;\n        z-index: 999;\n      ";
         this._navList.style.cssText += "top: ".concat((this._el.clientHeight - this._navList.clientHeight) * range, "px;");
       }
+
+      if (this._options.transition) {
+        for (var _i = 0; _i < this._options.length; ++_i) {
+          navItems[_i].style.cssText += "transition: all ".concat(this._options.transition, "ms;");
+        }
+      }
     }
     /**
      * 高亮指定索引导航点
@@ -1652,25 +1665,25 @@ var Navigation = /*#__PURE__*/function () {
         var width = this._el.clientWidth;
         var navItemSize = width * 0.02;
 
-        var _loop2 = function _loop2(_i) {
+        var _loop2 = function _loop2(_i2) {
           var navItem = document.createElement('div');
           navItem.className = 'slide-navItem';
           navItem.style.cssText += "width: ".concat(navItemSize, "px; height: ").concat(navItemSize, "px; cursor: pointer;");
           navItem.style.cssText += _this2._options.style;
           var _length = _this2._options.length;
           navItem.addEventListener('mousemove', function () {
-            console.log(_length + _i);
+            console.log(_length + _i2);
 
-            _this2.change(_length + _i);
+            _this2.change(_length + _i2);
 
-            _this2._moveHook(_length + _i);
+            _this2._moveHook(_length + _i2);
           }, false);
 
           _this2._navList.appendChild(navItem);
         };
 
-        for (var _i = 0; _i < length - this._options.length; ++_i) {
-          _loop2(_i);
+        for (var _i2 = 0; _i2 < length - this._options.length; ++_i2) {
+          _loop2(_i2);
         }
       }
 
@@ -1994,11 +2007,11 @@ var Slide = /*#__PURE__*/function () {
       var right = document.createElement('div');
       var leftIcon = document.createElement('i');
       var rightIcon = document.createElement('i');
-      left.style.cssText += "position: absolute; top: 50%; left: 0; width: 5%; height: 20%; display: flex; justify-content: center; align-items: center; transform: translate3d(0, -50%, 0); color: #ddd; background-color: rgba(0, 0, 0, 0.25); cursor: pointer;";
+      left.style.cssText += "position: absolute; top: 50%; left: 0; width: 8%; height: 20%; display: flex; justify-content: center; align-items: center; transform: translate3d(0, -50%, 0); color: #ddd; background-color: rgba(0, 0, 0, 0.25); cursor: pointer;";
       leftIcon.className = 'h-iconfont';
       leftIcon.innerHTML = '&#xe687;';
       left.appendChild(leftIcon);
-      right.style.cssText += "position: absolute; top: 50%; right: 0; width: 5%; height: 20%; display: flex; justify-content: center; align-items: center; transform: translate3d(0, -50%, 0); color: #ddd; background-color: rgba(0, 0, 0, 0.25); cursor: pointer;";
+      right.style.cssText += "position: absolute; top: 50%; right: 0; width: 8%; height: 20%; display: flex; justify-content: center; align-items: center; transform: translate3d(0, -50%, 0); color: #ddd; background-color: rgba(0, 0, 0, 0.25); cursor: pointer;";
       rightIcon.className = 'h-iconfont';
       rightIcon.innerHTML = '&#xe686;';
       right.appendChild(rightIcon);

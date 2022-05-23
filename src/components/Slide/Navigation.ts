@@ -14,6 +14,7 @@ export type Options = {
   highStyle: string, // 导航点高亮样式
   position: Position, // 放置位置
   range: number, // 放置位置的方位，范围 0 ~ 1
+  transition: number, // 导航点动画过渡时间，单位 ms
   length: number, // 导航点的数量
 }
 
@@ -22,17 +23,19 @@ const defaultOptions: Options = {
   highStyle: slideNavStyle.default.highStyle,
   position: Position.bottom,
   range: 0.5,
+  transition: 0,
   length: 0,
 }
 
 export const amendmentNavOptions = function (options: { [key: string]: any }): Options {
-  const { style, highStyle, position, range, length } = options
+  const { style, highStyle, position, range, transition, length } = options
   const newOptions = {} as Options
 
   newOptions.style = checkType(style, 'string') ? style : defaultOptions.style
   newOptions.highStyle = checkType(highStyle, 'string') ? highStyle : defaultOptions.highStyle
   newOptions.position = ['Top', 'Right', 'Bottom', 'Left'].includes(position) ? position : defaultOptions.position
   newOptions.range = checkType(range, 'number') ? range : defaultOptions.range
+  newOptions.transition = checkType(transition, 'number') ? transition : defaultOptions.transition
   newOptions.length = length
 
   return newOptions
@@ -127,6 +130,12 @@ export class Navigation {
         z-index: 999;
       `
       this._navList.style.cssText += `top: ${(this._el.clientHeight - this._navList.clientHeight) * range}px;`
+    }
+
+    if(this._options.transition) {
+      for (let i = 0; i < this._options.length; ++i) {
+        (navItems[i] as HTMLElement).style.cssText += `transition: all ${this._options.transition}ms;`
+      }
     }
   }
 

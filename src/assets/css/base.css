@@ -5,7 +5,7 @@
 
 .h-iconfont {
   font-family: "h-iconfont" !important;
-  font-size: 3vw;
+  font-size: 3vmax;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

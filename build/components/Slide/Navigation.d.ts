@@ -9,6 +9,7 @@ export declare type Options = {
     highStyle: string;
     position: Position;
     range: number;
+    transition: number;
     length: number;
 };
 export declare const amendmentNavOptions: (options: {

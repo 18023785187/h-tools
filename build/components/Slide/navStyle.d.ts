@@ -6,4 +6,8 @@ export declare const slideNavStyle: {
         style: string;
         highStyle: string;
     };
+    ellipse: {
+        style: string;
+        highStyle: string;
+    };
 };
