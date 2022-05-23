@@ -1,7 +1,7 @@
 
 import ImageListener from './ImageListener'
 import ListNode from './ListNode'
-import { checkType, throttle } from 'utils'
+import { checkType, throttleDebounce } from 'utils'
 
 /**
  * 找有指定属性并且指定属性有指定值的父亲
@@ -53,14 +53,14 @@ export class LazyLoad {
     this._options = this._handleOptions(options)
     this._listNode = new ListNode()
     this._viewport = { w: window.innerWidth, h: window.innerHeight }
-    this.render = throttle(this._render.bind(this), this._options.throttle)
+    this.render = throttleDebounce(this._render.bind(this), this._options.throttle)
     this.update()
     this.render()
 
     // 视口尺寸改变时需要更新视口范围的判断依据
     window.addEventListener(
       'resize',
-      throttle(
+      throttleDebounce(
         () => {
           this._viewport = { w: window.innerWidth, h: window.innerHeight }
         },

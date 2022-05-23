@@ -10,10 +10,543 @@
 })(self, function() {
 return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
-/******/ 	// The require scope
-/******/ 	var __webpack_require__ = {};
+/******/ 	var __webpack_modules__ = ({
+
+/***/ 683:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(537);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(645);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(667);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
+// Imports
+
+
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(506), __webpack_require__.b);
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\n  font-family: 'h-iconfont';\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") format('truetype');\n}\n\n.h-iconfont {\n  font-family: \"h-iconfont\" !important;\n  font-size: 3vw;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n", "",{"version":3,"sources":["webpack://./src/assets/css/base.css"],"names":[],"mappings":"AAAA;EACE,yBAAyB;EACzB,+DAAmD;AACrD;;AAEA;EACE,oCAAoC;EACpC,cAAc;EACd,kBAAkB;EAClB,mCAAmC;EACnC,kCAAkC;AACpC","sourcesContent":["@font-face {\n  font-family: 'h-iconfont';\n  src: url('../font/iconfont.ttf') format('truetype');\n}\n\n.h-iconfont {\n  font-family: \"h-iconfont\" !important;\n  font-size: 3vw;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ 645:
+/***/ ((module) => {
+
+
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+*/
+module.exports = function (cssWithMappingToString) {
+  var list = []; // return the list of modules as css string
+
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = "";
+      var needLayer = typeof item[5] !== "undefined";
+
+      if (item[4]) {
+        content += "@supports (".concat(item[4], ") {");
+      }
+
+      if (item[2]) {
+        content += "@media ".concat(item[2], " {");
+      }
+
+      if (needLayer) {
+        content += "@layer".concat(item[5].length > 0 ? " ".concat(item[5]) : "", " {");
+      }
+
+      content += cssWithMappingToString(item);
+
+      if (needLayer) {
+        content += "}";
+      }
+
+      if (item[2]) {
+        content += "}";
+      }
+
+      if (item[4]) {
+        content += "}";
+      }
+
+      return content;
+    }).join("");
+  }; // import a list of modules into the list
+
+
+  list.i = function i(modules, media, dedupe, supports, layer) {
+    if (typeof modules === "string") {
+      modules = [[null, modules, undefined]];
+    }
+
+    var alreadyImportedModules = {};
+
+    if (dedupe) {
+      for (var k = 0; k < this.length; k++) {
+        var id = this[k][0];
+
+        if (id != null) {
+          alreadyImportedModules[id] = true;
+        }
+      }
+    }
+
+    for (var _k = 0; _k < modules.length; _k++) {
+      var item = [].concat(modules[_k]);
+
+      if (dedupe && alreadyImportedModules[item[0]]) {
+        continue;
+      }
+
+      if (typeof layer !== "undefined") {
+        if (typeof item[5] === "undefined") {
+          item[5] = layer;
+        } else {
+          item[1] = "@layer".concat(item[5].length > 0 ? " ".concat(item[5]) : "", " {").concat(item[1], "}");
+          item[5] = layer;
+        }
+      }
+
+      if (media) {
+        if (!item[2]) {
+          item[2] = media;
+        } else {
+          item[1] = "@media ".concat(item[2], " {").concat(item[1], "}");
+          item[2] = media;
+        }
+      }
+
+      if (supports) {
+        if (!item[4]) {
+          item[4] = "".concat(supports);
+        } else {
+          item[1] = "@supports (".concat(item[4], ") {").concat(item[1], "}");
+          item[4] = supports;
+        }
+      }
+
+      list.push(item);
+    }
+  };
+
+  return list;
+};
+
+/***/ }),
+
+/***/ 667:
+/***/ ((module) => {
+
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    options = {};
+  }
+
+  if (!url) {
+    return url;
+  }
+
+  url = String(url.__esModule ? url.default : url); // If url is already wrapped in quotes, remove them
+
+  if (/^['"].*['"]$/.test(url)) {
+    url = url.slice(1, -1);
+  }
+
+  if (options.hash) {
+    url += options.hash;
+  } // Should url be wrapped?
+  // See https://drafts.csswg.org/css-values-3/#urls
+
+
+  if (/["'() \t\n]|(%20)/.test(url) || options.needQuotes) {
+    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
+  }
+
+  return url;
+};
+
+/***/ }),
+
+/***/ 537:
+/***/ ((module) => {
+
+
+
+module.exports = function (item) {
+  var content = item[1];
+  var cssMapping = item[3];
+
+  if (!cssMapping) {
+    return content;
+  }
+
+  if (typeof btoa === "function") {
+    var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(cssMapping))));
+    var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
+    var sourceMapping = "/*# ".concat(data, " */");
+    var sourceURLs = cssMapping.sources.map(function (source) {
+      return "/*# sourceURL=".concat(cssMapping.sourceRoot || "").concat(source, " */");
+    });
+    return [content].concat(sourceURLs).concat([sourceMapping]).join("\n");
+  }
+
+  return [content].join("\n");
+};
+
+/***/ }),
+
+/***/ 379:
+/***/ ((module) => {
+
+
+
+var stylesInDOM = [];
+
+function getIndexByIdentifier(identifier) {
+  var result = -1;
+
+  for (var i = 0; i < stylesInDOM.length; i++) {
+    if (stylesInDOM[i].identifier === identifier) {
+      result = i;
+      break;
+    }
+  }
+
+  return result;
+}
+
+function modulesToDom(list, options) {
+  var idCountMap = {};
+  var identifiers = [];
+
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i];
+    var id = options.base ? item[0] + options.base : item[0];
+    var count = idCountMap[id] || 0;
+    var identifier = "".concat(id, " ").concat(count);
+    idCountMap[id] = count + 1;
+    var indexByIdentifier = getIndexByIdentifier(identifier);
+    var obj = {
+      css: item[1],
+      media: item[2],
+      sourceMap: item[3],
+      supports: item[4],
+      layer: item[5]
+    };
+
+    if (indexByIdentifier !== -1) {
+      stylesInDOM[indexByIdentifier].references++;
+      stylesInDOM[indexByIdentifier].updater(obj);
+    } else {
+      var updater = addElementStyle(obj, options);
+      options.byIndex = i;
+      stylesInDOM.splice(i, 0, {
+        identifier: identifier,
+        updater: updater,
+        references: 1
+      });
+    }
+
+    identifiers.push(identifier);
+  }
+
+  return identifiers;
+}
+
+function addElementStyle(obj, options) {
+  var api = options.domAPI(options);
+  api.update(obj);
+
+  var updater = function updater(newObj) {
+    if (newObj) {
+      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap && newObj.supports === obj.supports && newObj.layer === obj.layer) {
+        return;
+      }
+
+      api.update(obj = newObj);
+    } else {
+      api.remove();
+    }
+  };
+
+  return updater;
+}
+
+module.exports = function (list, options) {
+  options = options || {};
+  list = list || [];
+  var lastIdentifiers = modulesToDom(list, options);
+  return function update(newList) {
+    newList = newList || [];
+
+    for (var i = 0; i < lastIdentifiers.length; i++) {
+      var identifier = lastIdentifiers[i];
+      var index = getIndexByIdentifier(identifier);
+      stylesInDOM[index].references--;
+    }
+
+    var newLastIdentifiers = modulesToDom(newList, options);
+
+    for (var _i = 0; _i < lastIdentifiers.length; _i++) {
+      var _identifier = lastIdentifiers[_i];
+
+      var _index = getIndexByIdentifier(_identifier);
+
+      if (stylesInDOM[_index].references === 0) {
+        stylesInDOM[_index].updater();
+
+        stylesInDOM.splice(_index, 1);
+      }
+    }
+
+    lastIdentifiers = newLastIdentifiers;
+  };
+};
+
+/***/ }),
+
+/***/ 569:
+/***/ ((module) => {
+
+
+
+var memo = {};
+/* istanbul ignore next  */
+
+function getTarget(target) {
+  if (typeof memo[target] === "undefined") {
+    var styleTarget = document.querySelector(target); // Special case to return head of iframe instead of iframe itself
+
+    if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
+      try {
+        // This will throw an exception if access to iframe is blocked
+        // due to cross-origin restrictions
+        styleTarget = styleTarget.contentDocument.head;
+      } catch (e) {
+        // istanbul ignore next
+        styleTarget = null;
+      }
+    }
+
+    memo[target] = styleTarget;
+  }
+
+  return memo[target];
+}
+/* istanbul ignore next  */
+
+
+function insertBySelector(insert, style) {
+  var target = getTarget(insert);
+
+  if (!target) {
+    throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
+  }
+
+  target.appendChild(style);
+}
+
+module.exports = insertBySelector;
+
+/***/ }),
+
+/***/ 216:
+/***/ ((module) => {
+
+
+
+/* istanbul ignore next  */
+function insertStyleElement(options) {
+  var element = document.createElement("style");
+  options.setAttributes(element, options.attributes);
+  options.insert(element, options.options);
+  return element;
+}
+
+module.exports = insertStyleElement;
+
+/***/ }),
+
+/***/ 565:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+
+
+/* istanbul ignore next  */
+function setAttributesWithoutAttributes(styleElement) {
+  var nonce =  true ? __webpack_require__.nc : 0;
+
+  if (nonce) {
+    styleElement.setAttribute("nonce", nonce);
+  }
+}
+
+module.exports = setAttributesWithoutAttributes;
+
+/***/ }),
+
+/***/ 795:
+/***/ ((module) => {
+
+
+
+/* istanbul ignore next  */
+function apply(styleElement, options, obj) {
+  var css = "";
+
+  if (obj.supports) {
+    css += "@supports (".concat(obj.supports, ") {");
+  }
+
+  if (obj.media) {
+    css += "@media ".concat(obj.media, " {");
+  }
+
+  var needLayer = typeof obj.layer !== "undefined";
+
+  if (needLayer) {
+    css += "@layer".concat(obj.layer.length > 0 ? " ".concat(obj.layer) : "", " {");
+  }
+
+  css += obj.css;
+
+  if (needLayer) {
+    css += "}";
+  }
+
+  if (obj.media) {
+    css += "}";
+  }
+
+  if (obj.supports) {
+    css += "}";
+  }
+
+  var sourceMap = obj.sourceMap;
+
+  if (sourceMap && typeof btoa !== "undefined") {
+    css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
+  } // For old IE
+
+  /* istanbul ignore if  */
+
+
+  options.styleTagTransform(css, styleElement, options.options);
+}
+
+function removeStyleElement(styleElement) {
+  // istanbul ignore if
+  if (styleElement.parentNode === null) {
+    return false;
+  }
+
+  styleElement.parentNode.removeChild(styleElement);
+}
+/* istanbul ignore next  */
+
+
+function domAPI(options) {
+  var styleElement = options.insertStyleElement(options);
+  return {
+    update: function update(obj) {
+      apply(styleElement, options, obj);
+    },
+    remove: function remove() {
+      removeStyleElement(styleElement);
+    }
+  };
+}
+
+module.exports = domAPI;
+
+/***/ }),
+
+/***/ 589:
+/***/ ((module) => {
+
+
+
+/* istanbul ignore next  */
+function styleTagTransform(css, styleElement) {
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = css;
+  } else {
+    while (styleElement.firstChild) {
+      styleElement.removeChild(styleElement.firstChild);
+    }
+
+    styleElement.appendChild(document.createTextNode(css));
+  }
+}
+
+module.exports = styleTagTransform;
+
+/***/ }),
+
+/***/ 506:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "font/iconfont.ttf";
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			id: moduleId,
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -24,6 +557,18 @@ return /******/ (() => { // webpackBootstrap
 /******/ 				}
 /******/ 			}
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
@@ -42,8 +587,57 @@ return /******/ (() => { // webpackBootstrap
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		__webpack_require__.b = document.baseURI || self.location.href;
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			204: 0,
+/******/ 			539: 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		// no on chunks loaded
+/******/ 		
+/******/ 		// no jsonp function
+/******/ 	})();
+/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
@@ -52,8 +646,59 @@ __webpack_require__.d(__webpack_exports__, {
   "EventListener": () => (/* reexport */ EventListener),
   "LazyLoad": () => (/* reexport */ LazyLoad),
   "Slide": () => (/* reexport */ Slide),
-  "Waterfall": () => (/* reexport */ Waterfall)
+  "Waterfall": () => (/* reexport */ Waterfall),
+  "slideNavPosition": () => (/* reexport */ Position),
+  "slideNavStyle": () => (/* reexport */ slideNavStyle)
 });
+
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
+var injectStylesIntoStyleTag = __webpack_require__(379);
+var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/styleDomAPI.js
+var styleDomAPI = __webpack_require__(795);
+var styleDomAPI_default = /*#__PURE__*/__webpack_require__.n(styleDomAPI);
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/insertBySelector.js
+var insertBySelector = __webpack_require__(569);
+var insertBySelector_default = /*#__PURE__*/__webpack_require__.n(insertBySelector);
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js
+var setAttributesWithoutAttributes = __webpack_require__(565);
+var setAttributesWithoutAttributes_default = /*#__PURE__*/__webpack_require__.n(setAttributesWithoutAttributes);
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/insertStyleElement.js
+var insertStyleElement = __webpack_require__(216);
+var insertStyleElement_default = /*#__PURE__*/__webpack_require__.n(insertStyleElement);
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/styleTagTransform.js
+var styleTagTransform = __webpack_require__(589);
+var styleTagTransform_default = /*#__PURE__*/__webpack_require__.n(styleTagTransform);
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./src/assets/css/base.css
+var base = __webpack_require__(683);
+;// CONCATENATED MODULE: ./src/assets/css/base.css
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (styleTagTransform_default());
+options.setAttributes = (setAttributesWithoutAttributes_default());
+
+      options.insert = insertBySelector_default().bind(null, "head");
+    
+options.domAPI = (styleDomAPI_default());
+options.insertStyleElement = (insertStyleElement_default());
+
+var update = injectStylesIntoStyleTag_default()(base/* default */.Z, options);
+
+
+
+
+       /* harmony default export */ const css_base = (base/* default */.Z && base/* default.locals */.Z.locals ? base/* default.locals */.Z.locals : undefined);
 
 ;// CONCATENATED MODULE: ./src/components/EventListener/index.ts
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -458,14 +1103,14 @@ function isMobile() {
   }
 }
 /**
- * 防抖 +节流函数
- * @param {function} fn
- * @param {number} time
- * @returns {function}
+ * 防抖 + 节流函数
+ * @param {(...rest: any[]) => void} func
+ * @param {number} delay
+ * @returns {(this: any, ...rest: any[]) => void}
  */
 
-function throttle(func) {
-  var time = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+function throttleDebounce(func) {
+  var delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
   var flag = true;
   var timer = null;
   return function () {
@@ -482,11 +1127,37 @@ function throttle(func) {
       func.apply(this, [].concat(rest));
       window.setTimeout(function () {
         flag = true;
-      }, time);
+      }, delay);
     } else {
       timer = window.setTimeout(function () {
         func.apply(_this, [].concat(rest));
-      }, time);
+      }, delay);
+    }
+  };
+}
+/**
+ * 节流函数
+ * @param {(...rest: any[]) => T} func
+ * @param {number} delay
+ * @returns {(...rest: any[]) => T | undefined}
+ */
+
+function throttle(func, delay) {
+  var flag = true;
+  return function () {
+    if (flag) {
+      flag = false;
+      window.setTimeout(function () {
+        flag = true;
+      }, delay);
+
+      for (var _len2 = arguments.length, rest = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+        rest[_key2] = arguments[_key2];
+      }
+
+      return func.apply(this, [].concat(rest));
+    } else {
+      return undefined;
     }
   };
 }
@@ -550,11 +1221,11 @@ var LazyLoad = /*#__PURE__*/function () {
       w: window.innerWidth,
       h: window.innerHeight
     };
-    this.render = throttle(this._render.bind(this), this._options.throttle);
+    this.render = throttleDebounce(this._render.bind(this), this._options.throttle);
     this.update();
     this.render(); // 视口尺寸改变时需要更新视口范围的判断依据
 
-    window.addEventListener('resize', throttle(function () {
+    window.addEventListener('resize', throttleDebounce(function () {
       _this._viewport = {
         w: window.innerWidth,
         h: window.innerHeight
@@ -725,7 +1396,7 @@ var Waterfall = /*#__PURE__*/function () {
 
     if (!isMobile()) {
       // 如果不是移动端，需要添加视口尺寸改变事件重置瀑布流布局
-      window.addEventListener('resize', throttle(this.reset.bind(this, 200), (_a = options === null || options === void 0 ? void 0 : options.throttle) !== null && _a !== void 0 ? _a : 200));
+      window.addEventListener('resize', throttleDebounce(this.reset.bind(this, 200), (_a = options === null || options === void 0 ? void 0 : options.throttle) !== null && _a !== void 0 ? _a : 200));
     }
   } // 处理options参数
 
@@ -822,491 +1493,610 @@ var Waterfall = /*#__PURE__*/function () {
 
   return Waterfall;
 }();
-;// CONCATENATED MODULE: ./src/components/Slide/insertHeadAndTail.ts
+;// CONCATENATED MODULE: ./src/components/Slide/navStyle.ts
 /**
- * 往目标元素前后插入其子元素后前的克隆
- * @param parent
- * @param htmlElementArr
- * @returns {HTMLElement[]}
+ * 导航点样式
  */
-function insertHeadAndTail(parent, htmlElementArr) {
-  var tail = htmlElementArr[0].cloneNode(true),
-      head = htmlElementArr[htmlElementArr.length - 1].cloneNode(true);
-  parent.insertBefore(head, parent.firstElementChild);
-  parent.appendChild(tail);
-  return Array.from(parent.children);
-}
-
-/* harmony default export */ const Slide_insertHeadAndTail = (insertHeadAndTail);
-;// CONCATENATED MODULE: ./src/components/Slide/transform.ts
-/**
- * 设置目标元素的 translate3d、transition属性
- * @param el
- * @param translate3d
- * @param transition
- */
-function transform(el) {
-  var translate3d = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [0, 0];
-  var transition = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
-  el.style.cssText += "\n        transition: all ".concat(transition, "ms;\n        transform: translate3d(").concat(translate3d[0], "%,").concat(translate3d[1], "%,0)\n    ");
-}
-
-/* harmony default export */ const Slide_transform = (transform);
-;// CONCATENATED MODULE: ./src/components/Slide/Cross/index.ts
-function Cross_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function Cross_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function Cross_createClass(Constructor, protoProps, staticProps) { if (protoProps) Cross_defineProperties(Constructor.prototype, protoProps); if (staticProps) Cross_defineProperties(Constructor, staticProps); return Constructor; }
-
-
-
-
-var Cross = /*#__PURE__*/function () {
-  function Cross(el, options) {
-    Cross_classCallCheck(this, Cross);
-
-    this.el = el;
-    this.options = options;
-    this.children = [];
-    this.pos = -100;
-    this.point = 0;
-    this.changeEvent = [];
-    this.layout();
-    this.setTimer();
-    options.bindEvent && this.bindTouchEvent();
+var slideNavStyle = {
+  "default": {
+    style: 'margin: 1.5vw; background-color: rgba(255, 255, 255, 0.5); border-radius: 50%;',
+    highStyle: 'margin: 1.5vw; background-color: #fff; border-radius: 50%;'
   }
+};
+;// CONCATENATED MODULE: ./src/components/Slide/Navigation.ts
+function Navigation_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-  Cross_createClass(Cross, [{
-    key: "layout",
-    value: function layout() {
-      var el = this.el;
-      var _this$options = this.options,
-          box = _this$options.box,
-          children = _this$options.children;
-      el.style.display = 'none';
-      this.children = Slide_insertHeadAndTail(box, children);
-      el.style.cssText += "\n            overflow: hidden;\n        ";
-      box.style.cssText += "\n            display: flex;\n            transform: translate3d(".concat(this.pos, "%,0,0)\n        ");
-      this.children.forEach(function (child) {
-        child.style.cssText += "\n                flex: 1 0 auto;\n                display: block;\n                width: 100%;\n            ";
-      });
-      el.style.display = '';
+function Navigation_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function Navigation_createClass(Constructor, protoProps, staticProps) { if (protoProps) Navigation_defineProperties(Constructor.prototype, protoProps); if (staticProps) Navigation_defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var Position;
+
+(function (Position) {
+  Position["top"] = "Top";
+  Position["right"] = "Right";
+  Position["bottom"] = "Bottom";
+  Position["left"] = "Left";
+})(Position || (Position = {}));
+
+var defaultOptions = {
+  style: slideNavStyle.default.style,
+  highStyle: slideNavStyle.default.highStyle,
+  position: Position.bottom,
+  range: 0.5,
+  length: 0
+};
+var amendmentNavOptions = function amendmentNavOptions(options) {
+  var style = options.style,
+      highStyle = options.highStyle,
+      position = options.position,
+      range = options.range,
+      length = options.length;
+  var newOptions = {};
+  newOptions.style = checkType(style, 'string') ? style : defaultOptions.style;
+  newOptions.highStyle = checkType(highStyle, 'string') ? highStyle : defaultOptions.highStyle;
+  newOptions.position = ['Top', 'Right', 'Bottom', 'Left'].includes(position) ? position : defaultOptions.position;
+  newOptions.range = checkType(range, 'number') ? range : defaultOptions.range;
+  newOptions.length = length;
+  return newOptions;
+};
+/**
+ * 轮播图导航栏
+ */
+
+var Navigation = /*#__PURE__*/function () {
+  function Navigation(el, options) {
+    var _this = this;
+
+    Navigation_classCallCheck(this, Navigation);
+
+    this._el = el;
+    this._options = options;
+    var width = this._el.clientWidth;
+    var navItemSize = width * 0.02; // 设定导航点尺寸为内容宽度的 0.02 倍
+
+    var navList = document.createElement('div');
+    navList.className = 'slide-navList';
+
+    for (var i = 0; i < this._options.length; ++i) {
+      var navItem = document.createElement('div');
+      navItem.className = 'slide-navItem';
+      navItem.style.cssText += "width: ".concat(navItemSize, "px; height: ").concat(navItemSize, "px;");
+      navItem.style.cssText += i ? this._options.style : this._options.highStyle;
+      navList.appendChild(navItem);
     }
+
+    this._el.appendChild(navList);
+
+    this._navList = navList;
+    this._prevIndex = 0;
+
+    this._layout();
+
+    var layout = throttleDebounce(this._layout, 200);
+    window.addEventListener('resize', function () {
+      layout.call(_this);
+    });
+  }
+  /**
+   * 对导航栏布局
+   */
+
+
+  Navigation_createClass(Navigation, [{
+    key: "_layout",
+    value: function _layout() {
+      var _this$_options = this._options,
+          position = _this$_options.position,
+          range = _this$_options.range;
+      this._el.style.cssText += 'position: relative;';
+      var width = this._el.clientWidth;
+      var navItemSize = width * 0.02;
+      var navItems = this._navList.children;
+
+      for (var i = 0; i < this._options.length; ++i) {
+        navItems[i].style.cssText += "width: ".concat(navItemSize, "px; height: ").concat(navItemSize, "px;");
+      }
+
+      if (position === Position.top) {
+        this._navList.style.cssText += "\n        display: flex;\n        position: absolute;\n        top: 0;\n        z-index: 999;\n      ";
+        this._navList.style.cssText += "left: ".concat((this._el.clientWidth - this._navList.clientWidth) * range, "px;");
+      } else if (position === Position.right) {
+        this._navList.style.cssText += "\n        position: absolute;\n        right: 0;\n        z-index: 999;\n      ";
+        this._navList.style.cssText += "top: ".concat((this._el.clientHeight - this._navList.clientHeight) * range, "px;");
+      } else if (position === Position.bottom) {
+        this._navList.style.cssText += "\n        display: flex;\n        position: absolute;\n        bottom: 0;\n        z-index: 999;\n      ";
+        this._navList.style.cssText += "left: ".concat((this._el.clientWidth - this._navList.clientWidth) * range, "px;");
+      } else if (position === Position.left) {
+        this._navList.style.cssText += "\n        position: absolute;\n        left: 0;\n        z-index: 999;\n      ";
+        this._navList.style.cssText += "top: ".concat((this._el.clientHeight - this._navList.clientHeight) * range, "px;");
+      }
+    }
+    /**
+     * 高亮指定索引导航点
+     * @param {number} index
+     */
+
   }, {
     key: "change",
-    value: function change() {
-      var _this = this;
+    value: function change(index) {
+      var navItems = this._navList.children;
+      navItems[this._prevIndex].style.cssText += this._options.style;
+      navItems[index].style.cssText += this._options.highStyle;
+      this._prevIndex = index;
+    }
+    /**
+     * 设置导航点长度
+     * @param {number} length
+     */
 
-      window.requestAnimationFrame(function () {
-        var _this$options2 = _this.options,
-            box = _this$options2.box,
-            transition = _this$options2.transition,
-            children = _this$options2.children,
-            changeEvent = _this.changeEvent;
-        _this.pos = -100 * _this.point - 100;
-        Slide_transform(box, [_this.pos, 0], transition);
+  }, {
+    key: "setLength",
+    value: function setLength(length) {
+      this.change(0);
 
-        if (_this.point >= children.length) {
-          _this.point = 0;
-          _this.pos = -100 * _this.point - 100;
-          changeEvent.forEach(function (callback) {
-            return callback(_this.point);
-          });
-          window.setTimeout(function () {
-            Slide_transform(box, [_this.pos, 0], 0);
-          }, transition);
-          return;
-        } else if (_this.point < 0) {
-          _this.point = children.length - 1;
-          _this.pos = -100 * _this.point - 100;
-          changeEvent.forEach(function (callback) {
-            return callback(_this.point);
-          });
-          window.setTimeout(function () {
-            Slide_transform(box, [_this.pos, 0], 0);
-          }, transition);
-          return;
+      if (this._options.length > length) {
+        for (var i = 0; i < this._options.length - length; ++i) {
+          this._navList.removeChild(this._navList.children[this._navList.children.length - 1]);
         }
+      } else if (this._options.length < length) {
+        var width = this._el.clientWidth;
+        var navItemSize = width * 0.02;
 
-        changeEvent.forEach(function (callback) {
-          return callback(_this.point);
-        });
+        for (var _i = 0; _i < length - this._options.length; ++_i) {
+          var navItem = document.createElement('div');
+          navItem.className = 'slide-navItem';
+          navItem.style.cssText += "width: ".concat(navItemSize, "px; height: ").concat(navItemSize, "px;");
+          navItem.style.cssText += this._options.style;
+
+          this._navList.appendChild(navItem);
+        }
+      }
+
+      this._options.length = length;
+
+      this._layout();
+    }
+  }]);
+
+  return Navigation;
+}();
+;// CONCATENATED MODULE: ./src/components/Slide/index.ts
+function Slide_toConsumableArray(arr) { return Slide_arrayWithoutHoles(arr) || Slide_iterableToArray(arr) || Slide_unsupportedIterableToArray(arr) || Slide_nonIterableSpread(); }
+
+function Slide_nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function Slide_unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return Slide_arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return Slide_arrayLikeToArray(o, minLen); }
+
+function Slide_iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function Slide_arrayWithoutHoles(arr) { if (Array.isArray(arr)) return Slide_arrayLikeToArray(arr); }
+
+function Slide_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function Slide_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Slide_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function Slide_createClass(Constructor, protoProps, staticProps) { if (protoProps) Slide_defineProperties(Constructor.prototype, protoProps); if (staticProps) Slide_defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+
+
+var Slide_defaultOptions = {
+  mode: true,
+  transition: 200,
+  delay: 3000,
+  range: 10,
+  nav: true,
+  navOptions: {},
+  bindEvent: true,
+  control: false
+};
+/**
+ * 轮播图，支持横向和纵向，支持移动端和 pc 端
+ */
+
+var Slide = /*#__PURE__*/function () {
+  function Slide(el, options) {
+    var _this = this;
+
+    Slide_classCallCheck(this, Slide);
+
+    // 初始化节点
+    this._el = el;
+
+    if (!el.firstElementChild) {
+      throw new Error("el need a child element");
+    }
+
+    this._elChild = el.firstElementChild;
+    this._children = Slide_toConsumableArray(this._elChild.children);
+
+    if (!this._children.length) {
+      throw new Error("no content");
+    } // 初始化配置项
+
+
+    if (!checkType(options, 'object')) {
+      this._options = Object.assign(Object.assign({}, Slide_defaultOptions), {
+        navOptions: amendmentNavOptions({
+          length: this._children.length
+        })
+      });
+    } else {
+      var mode = options.mode,
+          transition = options.transition,
+          delay = options.delay,
+          range = options.range,
+          nav = options.nav,
+          navOptions = options.navOptions,
+          bindEvent = options.bindEvent,
+          control = options.control;
+      var newOptions = {};
+      newOptions.mode = checkType(mode, 'boolean') ? mode : Slide_defaultOptions.mode;
+      newOptions.transition = checkType(transition, 'number') ? transition : Slide_defaultOptions.transition;
+      newOptions.delay = checkType(delay, 'number') ? delay : Slide_defaultOptions.delay;
+      newOptions.range = checkType(range, 'number') ? range : Slide_defaultOptions.range;
+      newOptions.nav = checkType(nav, 'boolean') ? nav : Slide_defaultOptions.nav;
+      newOptions.navOptions = checkType(navOptions, 'object') ? amendmentNavOptions(Object.assign({
+        length: this._children.length
+      }, navOptions)) : amendmentNavOptions({
+        length: this._children.length
+      });
+      newOptions.bindEvent = checkType(bindEvent, 'boolean') ? bindEvent : Slide_defaultOptions.bindEvent;
+      newOptions.control = checkType(control, 'boolean') ? control : Slide_defaultOptions.control;
+      this._options = newOptions;
+    }
+
+    this._pos = -100;
+    this._index = 0;
+    this._changeHook = [];
+
+    this._layout();
+
+    this.openTimer();
+
+    if (this._options.nav) {
+      this._navigation = new Navigation(this._el, this._options.navOptions);
+      this.subscribe(function (i) {
+        return _this._navigation.change(i);
       });
     }
+
+    if (this._options.bindEvent) {
+      this._bindEvent();
+    }
+
+    if (this._options.control) {
+      this._createControl();
+    }
+  }
+  /**
+   * 布局
+   */
+
+
+  Slide_createClass(Slide, [{
+    key: "_layout",
+    value: function _layout() {
+      var height = this._el.clientHeight;
+      this._el.style.display = 'none';
+      this._el.style.cssText += 'position: relative;'; // 新增头部和尾部子元素 start
+
+      var childrenLen = this._children.length;
+
+      var childHead = this._children[0].cloneNode(true);
+
+      var childTail = this._children[childrenLen - 1].cloneNode(true);
+
+      this._elChild.insertBefore(childTail, this._elChild.firstElementChild);
+
+      this._elChild.appendChild(childHead);
+
+      this._children = Slide_toConsumableArray(this._elChild.children);
+      childrenLen += 2; // 新增头部和尾部子元素 end
+      // 初始化盒子的位置
+
+      if (this._options.mode) {
+        this._el.style.cssText += 'overflow: hidden;';
+        this._elChild.style.cssText += "display: flex; transform: translate3d(".concat(this._pos, "%, 0, 0);");
+
+        for (var i = 0; i < childrenLen; ++i) {
+          // 遍历子元素，设置子元素的宽度恰好撑满 el
+          var child = this._children[i];
+          child.style.cssText += "flex: 1 0 auto; display: block; width: 100%;";
+        }
+      } else {
+        this._el.style.cssText += 'overflow: hidden;';
+        this._elChild.style.cssText += "transform: translate3d(0, ".concat(this._pos, "%, 0); height: ").concat(height, "px;");
+
+        for (var _i = 0; _i < childrenLen; ++_i) {
+          // 遍历子元素，设置子元素的高度与 el 一致
+          var _child = this._children[_i];
+          _child.style.cssText += "display: block; height: ".concat(height, "px;");
+        }
+      }
+
+      this._el.style.display = '';
+    }
+    /**
+     * 轮播过渡动画
+     * @param {boolean} flag 是否启用过渡时间
+     */
+
   }, {
-    key: "bindTouchEvent",
-    value: function bindTouchEvent() {
+    key: "_transition",
+    value: function _transition(flag) {
+      var pos = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this._pos;
+      var _this$_options = this._options,
+          mode = _this$_options.mode,
+          transition = _this$_options.transition;
+
+      if (mode) {
+        this._elChild.style.cssText += "transition: all ".concat(flag ? transition : 0, "ms; transform: translate3d(").concat(pos, "%, 0, 0);");
+      } else {
+        this._elChild.style.cssText += "transition: all ".concat(flag ? transition : 0, "ms; transform: translate3d(0, ").concat(pos, "%, 0);");
+      }
+    }
+    /**
+     * 轮播发生方法
+     */
+
+  }, {
+    key: "_change",
+    value: function _change() {
+      var _this2 = this;
+
+      var transition = this._options.transition;
+      this._pos = -100 * this._index - 100;
+
+      this._transition(true);
+
+      var childrenLen = this._children.length - 2; // 减去新增的首尾节点
+
+      if (this._index >= childrenLen) {
+        // 当位置超出范围时，重置位置
+        this._index = 0;
+        this._pos = -100 * this._index - 100;
+        window.setTimeout(function () {
+          return _this2._transition();
+        }, transition);
+      } else if (this._index < 0) {
+        this._index = childrenLen - 1;
+        this._pos = -100 * this._index - 100;
+        window.setTimeout(function () {
+          return _this2._transition();
+        }, transition);
+      } // 调用 change hook
+
+
+      for (var i = 0, hookLen = this._changeHook.length; i < hookLen; ++i) {
+        var hook = this._changeHook[i];
+        hook(this._index);
+      }
+    }
+    /**
+     * 绑定手指滑动事件
+     */
+
+  }, {
+    key: "_bindEvent",
+    value: function _bindEvent() {
       var self = this;
-      var el = this.el,
-          _this$options3 = this.options,
-          box = _this$options3.box,
-          triggerPos = _this$options3.triggerPos;
-      el.addEventListener('touchstart', touchstart);
-      el.addEventListener('touchmove', touchmove);
-      el.addEventListener('touchend', touchend);
-      var css = window.getComputedStyle(el);
-      var elWidth = el.clientWidth;
-      var elOffsetLeft = el.getClientRects()[0].left;
-      var borderLeft = parseFloat(css.borderLeftWidth.substring(0, css.borderLeftWidth.length - 2));
-      var startPos = 0,
-          movePos = 0;
+      var _this$_options2 = this._options,
+          mode = _this$_options2.mode,
+          range = _this$_options2.range;
+
+      this._el.addEventListener('touchstart', touchstart);
+
+      this._el.addEventListener('touchmove', touchmove);
+
+      this._el.addEventListener('touchend', touchend); // 计算的位置需要去除多个因素，以下因素都会影响手指滑动的位置
+
+
+      var elCss = window.getComputedStyle(this._el);
+      var elSize = mode ? this._el.clientWidth : this._el.clientHeight;
+      var elOffsetSize = mode ? this._el.getClientRects()[0].left : this._el.getClientRects()[0].top;
+      var elBorderSize = mode ? parseFloat(elCss.borderLeftWidth.substring(0, elCss.borderLeftWidth.length - 2)) : parseFloat(elCss.borderTopWidth.substring(0, elCss.borderTopWidth.length - 2));
+      var startPos = 0;
+      var movePos = 0;
 
       function touchstart(e) {
         e.preventDefault();
-        self.clearTimer();
-        startPos = countPos(e.touches[0].pageX);
+        self.closeTimer();
+        startPos = computePos(mode ? e.touches[0].pageX : e.touches[0].pageY);
       }
 
       function touchmove(e) {
-        movePos = countPos(e.touches[0].pageX) - startPos;
-        Slide_transform(box, [movePos + self.pos, 0]);
+        movePos = computePos(mode ? e.touches[0].pageX : e.touches[0].pageY) - startPos;
+
+        self._transition(false, movePos + self._pos);
       }
 
       function touchend() {
-        self.setTimer();
+        self.openTimer();
 
-        if (movePos >= triggerPos) {
-          --self.point;
-        } else if (movePos <= -triggerPos) {
-          ++self.point;
+        if (movePos >= range) {
+          self._index -= 1;
+        } else if (movePos <= -range) {
+          self._index += 1;
         }
 
-        self.change();
-        startPos = 0, movePos = 0;
+        self._change();
+
+        startPos = 0;
+        movePos = 0;
       }
+      /**
+       * 计算当前位置的百分比
+       * @param {number} pos 当前手指位置
+       * @returns {number}
+       */
 
-      function countPos(pos) {
-        return Math.ceil((pos - elOffsetLeft - borderLeft) / elWidth * 100);
+
+      function computePos(pos) {
+        return Math.ceil((pos - elOffsetSize - elBorderSize) / elSize * 100);
       }
     }
-  }, {
-    key: "onchange",
-    value: function onchange(callback) {
-      this.changeEvent.push(callback);
-    }
-  }, {
-    key: "moveChange",
-    value: function moveChange(movePos) {
-      movePos === 'left' ? --this.point : ++this.point;
-      this.change();
-    }
-  }, {
-    key: "setTimer",
-    value: function setTimer() {
-      var _this2 = this;
+    /**
+     * 创建控件
+     */
 
-      var triggerTime = this.options.triggerTime;
-      this.timer = window.setInterval(function () {
-        ++_this2.point;
-
-        _this2.change();
-      }, triggerTime);
-    }
   }, {
-    key: "clearTimer",
-    value: function clearTimer() {
-      window.clearInterval(this.timer);
+    key: "_createControl",
+    value: function _createControl() {
+      var _this3 = this;
+
+      var left = document.createElement('div');
+      var right = document.createElement('div');
+      var leftIcon = document.createElement('i');
+      var rightIcon = document.createElement('i');
+      left.style.cssText += "position: absolute; top: 50%; left: 0; width: 5%; height: 20%; display: flex; justify-content: center; align-items: center; transform: translate3d(0, -50%, 0); color: #ddd; background-color: rgba(0, 0, 0, 0.25); cursor: pointer;";
+      leftIcon.className = 'h-iconfont';
+      leftIcon.innerHTML = '&#xe687;';
+      left.appendChild(leftIcon);
+      right.style.cssText += "position: absolute; top: 50%; right: 0; width: 5%; height: 20%; display: flex; justify-content: center; align-items: center; transform: translate3d(0, -50%, 0); color: #ddd; background-color: rgba(0, 0, 0, 0.25); cursor: pointer;";
+      rightIcon.className = 'h-iconfont';
+      rightIcon.innerHTML = '&#xe686;';
+      right.appendChild(rightIcon);
+      var moveLeft = throttle(function (e) {
+        e.stopPropagation();
+
+        _this3.move(true);
+      }, this._options.transition);
+      var moveRight = throttle(function (e) {
+        e.stopPropagation();
+
+        _this3.move(false);
+      }, this._options.transition);
+      left.addEventListener('click', function (e) {
+        return moveLeft(e);
+      }, false);
+      left.addEventListener('touchstart', function (e) {
+        return moveLeft(e);
+      }, false);
+      left.addEventListener('touchend', function (e) {
+        return e.stopPropagation();
+      }, false);
+      right.addEventListener('click', function (e) {
+        return moveRight(e);
+      }, false);
+      right.addEventListener('touchstart', function (e) {
+        return moveRight(e);
+      }, false);
+      right.addEventListener('touchend', function (e) {
+        return e.stopPropagation();
+      }, false);
+
+      this._el.appendChild(left);
+
+      this._el.appendChild(right);
     }
+    /**
+     * 启动轮播图定时器
+     */
+
+  }, {
+    key: "openTimer",
+    value: function openTimer() {
+      var _this4 = this;
+
+      this._timer = window.setInterval(function () {
+        _this4._index += 1;
+
+        _this4._change();
+      }, this._options.delay);
+    }
+    /**
+     * 关闭轮播图定时器
+     */
+
+  }, {
+    key: "closeTimer",
+    value: function closeTimer() {
+      window.clearInterval(this._timer);
+    }
+    /**
+     * 订阅 change 事件
+     * @param {changeHook} callback
+     */
+
+  }, {
+    key: "subscribe",
+    value: function subscribe(callback) {
+      this._changeHook.push(callback);
+    }
+    /**
+     * 取消订阅 change 事件
+     * @param {changeHook} callback
+     * @returns {boolean}
+     */
+
+  }, {
+    key: "unsubscribe",
+    value: function unsubscribe(callback) {
+      var i = this._changeHook.indexOf(callback);
+
+      if (i !== -1) {
+        this._changeHook.splice(i, 1);
+
+        return true;
+      } else {
+        return false;
+      }
+    }
+    /**
+     * 向左或向右进行轮播一次
+     * @param {boolean} direction 方向，true 为左，false 为右
+     */
+
+  }, {
+    key: "move",
+    value: function move(direction) {
+      this.closeTimer();
+      this.openTimer();
+      direction ? --this._index : ++this._index;
+
+      this._change();
+    }
+    /**
+     * 更新子元素时刷新轮播图
+     * @param {(elChild: HTMLElement) => void} updateChildren 需要在该函数内对子节点增删改查
+     */
+
   }, {
     key: "update",
-    value: function update(updateChildCallback) {
-      var _this$options4 = this.options,
-          box = _this$options4.box,
-          nav = _this$options4.nav;
-      var options = this.options,
-          children = this.children;
-      box.removeChild(children[0]);
-      box.removeChild(children[children.length - 1]);
-      updateChildCallback(box);
-      options.children = Array.from(box.children);
+    value: function update(updateChildren) {
+      this._elChild.removeChild(this._children[0]);
 
-      if (nav) {
-        nav.layout(options.children.length);
+      this._elChild.removeChild(this._children[this._children.length - 1]);
+
+      updateChildren(this._elChild);
+      this._children = Slide_toConsumableArray(this._elChild.children);
+
+      if (this._options.nav) {
+        this._navigation.setLength(this._children.length);
       }
 
-      this.layout();
-      this.change();
+      this._layout();
+
+      this._change();
     }
   }]);
 
-  return Cross;
+  return Slide;
 }();
-
-/* harmony default export */ const Slide_Cross = (Cross);
-;// CONCATENATED MODULE: ./src/components/Slide/Vertical/index.ts
-function Vertical_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function Vertical_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function Vertical_createClass(Constructor, protoProps, staticProps) { if (protoProps) Vertical_defineProperties(Constructor.prototype, protoProps); if (staticProps) Vertical_defineProperties(Constructor, staticProps); return Constructor; }
-
-
-
-
-var Vertical = /*#__PURE__*/function () {
-  function Vertical(el, options) {
-    Vertical_classCallCheck(this, Vertical);
-
-    this.el = el;
-    this.options = options;
-    this.children = [];
-    this.pos = 0;
-    this.point = 0;
-    this.changeEvent = [];
-    this.layout();
-    this.setTimer();
-  }
-
-  Vertical_createClass(Vertical, [{
-    key: "layout",
-    value: function layout() {
-      var el = this.el;
-      var _this$options = this.options,
-          box = _this$options.box,
-          children = _this$options.children;
-      var height = el.clientHeight;
-      el.style.display = 'none';
-      this.children = Slide_insertHeadAndTail(box, children);
-      this.pos = -100;
-      el.style.cssText += "\n            position: relative;\n            overflow: hidden;\n        ";
-      box.style.cssText += "\n            transform: translate3d(0,".concat(this.pos, "%,0);\n            height: ").concat(height, "px;\n        ");
-      this.children.forEach(function (child) {
-        child.style.cssText += "\n                display: block;\n                height: ".concat(height, "px;\n            ");
-      });
-      el.style.display = '';
-    }
-  }, {
-    key: "setTimer",
-    value: function setTimer() {
-      var _this = this;
-
-      var triggerTime = this.options.triggerTime;
-      this.timer = window.setInterval(function () {
-        ++_this.point;
-
-        _this.change();
-      }, triggerTime);
-    }
-  }, {
-    key: "change",
-    value: function change() {
-      var _this2 = this;
-
-      window.requestAnimationFrame(function () {
-        var _this2$options = _this2.options,
-            box = _this2$options.box,
-            transition = _this2$options.transition,
-            children = _this2$options.children;
-        var changeEvent = _this2.changeEvent;
-        _this2.pos = -100 * _this2.point - 100;
-        Slide_transform(box, [0, _this2.pos], transition);
-
-        if (_this2.point >= children.length) {
-          _this2.point = 0;
-          _this2.pos = -100 * _this2.point - 100;
-          changeEvent.forEach(function (callback) {
-            return callback(_this2.point);
-          });
-          window.setTimeout(function () {
-            Slide_transform(box, [0, _this2.pos], 0);
-          }, transition);
-          return;
-        } else if (_this2.point < 0) {
-          _this2.point = children.length - 1;
-          _this2.pos = -100 * _this2.point - 100;
-          changeEvent.forEach(function (callback) {
-            return callback(_this2.point);
-          });
-          window.setTimeout(function () {
-            Slide_transform(box, [0, _this2.pos], 0);
-          }, transition);
-          return;
-        }
-
-        changeEvent.forEach(function (callback) {
-          return callback(_this2.point);
-        });
-      });
-    }
-  }, {
-    key: "onchange",
-    value: function onchange(callback) {
-      this.changeEvent.push(callback);
-    }
-  }, {
-    key: "moveChange",
-    value: function moveChange(movePos) {
-      movePos === 'left' ? --this.point : ++this.point;
-      this.change();
-    }
-  }, {
-    key: "clearTimer",
-    value: function clearTimer() {
-      window.clearInterval(this.timer);
-    }
-  }, {
-    key: "update",
-    value: function update(updateChildCallback) {
-      var _this$options2 = this.options,
-          prevChildren = _this$options2.children,
-          box = _this$options2.box,
-          nav = _this$options2.nav;
-      var options = this.options;
-      var fragmenet = document.createDocumentFragment();
-      prevChildren.forEach(function (child) {
-        return fragmenet.appendChild(child);
-      });
-      box.innerHTML = '';
-      box.appendChild(fragmenet);
-      updateChildCallback(box);
-      options.children = Array.from(box.children);
-
-      if (nav) {
-        nav.layout(options.children.length);
-      }
-
-      this.layout();
-      this.change();
-    }
-  }]);
-
-  return Vertical;
-}();
-
-/* harmony default export */ const Slide_Vertical = (Vertical);
-;// CONCATENATED MODULE: ./src/components/Slide/Nav/index.ts
-function Nav_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function Nav_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function Nav_createClass(Constructor, protoProps, staticProps) { if (protoProps) Nav_defineProperties(Constructor.prototype, protoProps); if (staticProps) Nav_defineProperties(Constructor, staticProps); return Constructor; }
-
-var HIGH_COLOR = 'rgba(255,255,255,.8)';
-var COLOR = 'rgba(0,0,0,.3)';
-
-var Nav = /*#__PURE__*/function () {
-  function Nav(el, childLen) {
-    var _this = this;
-
-    Nav_classCallCheck(this, Nav);
-
-    this.update = function (pos) {
-      var children = _this.nav.children;
-
-      for (var i = 0; i < _this.childLen; ++i) {
-        children[i].style.backgroundColor = COLOR;
-      }
-
-      children[pos].style.backgroundColor = HIGH_COLOR;
-    };
-
-    var content = document.createElement('div');
-    content.className += "slide-nav-box";
-    content.style.cssText += "position: relative;";
-    el.appendChild(content);
-    this.el = content;
-    this.childLen = childLen;
-    this.createNav();
-    this.update(0);
-  }
-
-  Nav_createClass(Nav, [{
-    key: "createNav",
-    value: function createNav() {
-      var el = this.el,
-          childLen = this.childLen;
-      var nav = document.createElement('div'),
-          point = document.createElement('div');
-      el.appendChild(nav);
-      layoutNavStyle();
-      layoutPointStyle();
-      createPoint();
-      this.nav = nav;
-
-      function createPoint() {
-        for (var i = 0; i < childLen; ++i) {
-          nav.appendChild(point.cloneNode(true));
-        }
-      }
-
-      function layoutNavStyle() {
-        var len = nav.clientWidth * 0.02;
-        nav.className += 'slide-nav';
-        nav.style.cssText += "\n                display: flex;\n                justify-content: center;\n                align-items: center;\n                position: absolute;\n                left: 0;\n                right: 0;\n                bottom: ".concat(len, "px;\n                z-index: 2;\n            ");
-      }
-
-      function layoutPointStyle() {
-        var len = nav.clientWidth * 0.02;
-        point.className += 'slide-nav-item';
-        point.style.cssText += "\n                width: ".concat(len, "px;\n                height: ").concat(len, "px;\n                margin: 0 ").concat(len, "px;\n                background-color: ").concat(COLOR, ";\n                border-radius: 50%;\n            ");
-      }
-    }
-  }, {
-    key: "layout",
-    value: function layout(childLen) {
-      this.el.removeChild(this.nav);
-      this.childLen = childLen;
-      this.createNav();
-      this.update(0);
-    }
-  }]);
-
-  return Nav;
-}();
-
-/* harmony default export */ const Slide_Nav = (Nav);
-;// CONCATENATED MODULE: ./src/components/Slide/index.ts
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-
-
-var handlerOptions = Symbol('handlerOptions');
-var Slide = _defineProperty({
-  create: function create(el, options) {
-    options = this[handlerOptions](el, options);
-    var slide = options.transverse ? new Slide_Cross(el, options) : new Slide_Vertical(el, options);
-    options.nav && slide.onchange(options.nav.update);
-    return slide;
-  }
-}, handlerOptions, function (el, options) {
-  var transverse = true,
-      createNav = true,
-      transition = 200,
-      triggerTime = 3000,
-      triggerPos = 10,
-      bindEvent = true;
-  checkType(options === null || options === void 0 ? void 0 : options.transverse, 'boolean') && (transverse = options.transverse);
-  checkType(options === null || options === void 0 ? void 0 : options.createNav, 'boolean') && (createNav = options.createNav);
-  checkType(options === null || options === void 0 ? void 0 : options.transition, 'number') && (transition = options.transition);
-  checkType(options === null || options === void 0 ? void 0 : options.triggerTime, 'number') && (triggerTime = options.triggerTime);
-  checkType(options === null || options === void 0 ? void 0 : options.triggerPos, 'number') && (triggerPos = options.triggerPos);
-  checkType(options === null || options === void 0 ? void 0 : options.bindEvent, 'boolean') && (bindEvent = options.bindEvent);
-
-  if (!el.firstElementChild) {
-    throw new Error("el need a child element");
-  }
-
-  var box = el.firstElementChild,
-      children = Array.from(box.children);
-  var nav = createNav ? new Slide_Nav(el, children.length) : undefined;
-  return {
-    nav: nav,
-    box: box,
-    children: children,
-    transverse: transverse,
-    transition: transition,
-    triggerTime: triggerTime,
-    triggerPos: triggerPos,
-    bindEvent: bindEvent
-  };
-});
 ;// CONCATENATED MODULE: ./src/index.ts
 
 
 
+
+
+})();
 
 /******/ 	return __webpack_exports__;
 /******/ })()

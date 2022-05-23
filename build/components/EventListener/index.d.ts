@@ -44,8 +44,8 @@ export declare class EventListener {
     on: On;
     private _el;
     private _listenerMap;
-    get el(): Element;
-    constructor(el: Element, on?: On);
+    get el(): HTMLElement;
+    constructor(el: HTMLElement, on?: On);
     /**
      * on 对象需要代理才能进行简单的添加删除事件操作，这是处理对象
      */

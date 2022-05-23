@@ -1,5 +1,6 @@
 
-import { checkType, throttle } from 'utils'
+import { slideNavStyle } from './navStyle'
+import { checkType, throttleDebounce } from 'utils'
 
 export enum Position {
   top = 'Top',
@@ -17,8 +18,8 @@ export type Options = {
 }
 
 const defaultOptions: Options = {
-  style: 'margin: 1.5vw; background-color: rgba(255, 255, 255, 0.5); border-radius: 50%;',
-  highStyle: 'margin: 1.5vw; background-color: #fff; border-radius: 50%;',
+  style: slideNavStyle.default.style,
+  highStyle: slideNavStyle.default.highStyle,
   position: Position.bottom,
   range: 0.5,
   length: 0,
@@ -30,7 +31,7 @@ export const amendmentNavOptions = function (options: { [key: string]: any }): O
 
   newOptions.style = checkType(style, 'string') ? style : defaultOptions.style
   newOptions.highStyle = checkType(highStyle, 'string') ? highStyle : defaultOptions.highStyle
-  newOptions.position = ['top', 'right', 'bottom', 'left'].includes(position) ? position : defaultOptions.position
+  newOptions.position = ['Top', 'Right', 'Bottom', 'Left'].includes(position) ? position : defaultOptions.position
   newOptions.range = checkType(range, 'number') ? range : defaultOptions.range
   newOptions.length = length
 
@@ -71,7 +72,7 @@ export class Navigation {
 
     this._layout()
 
-    const layout = throttle(this._layout, 200)
+    const layout = throttleDebounce(this._layout, 200)
     window.addEventListener('resize', () => {
       layout.call(this)
     })

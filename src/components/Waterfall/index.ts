@@ -1,5 +1,5 @@
 
-import { throttle, isMobile } from 'utils'
+import { throttleDebounce, isMobile } from 'utils'
 
 export interface Options {
   marginTop?: number, // 每个排列元素的上边距
@@ -61,7 +61,7 @@ export class Waterfall {
     if (!isMobile()) { // 如果不是移动端，需要添加视口尺寸改变事件重置瀑布流布局
       window.addEventListener(
         'resize',
-        throttle(this.reset.bind(this, 200), (options?.throttle ?? 200))
+        throttleDebounce(this.reset.bind(this, 200), (options?.throttle ?? 200))
       )
     }
   }

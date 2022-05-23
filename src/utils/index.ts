@@ -27,12 +27,12 @@ export function isMobile(): boolean {
 }
 
 /**
- * 防抖 +节流函数
- * @param {function} fn 
- * @param {number} time
- * @returns {function}
+ * 防抖 + 节流函数
+ * @param {(...rest: any[]) => void} func 
+ * @param {number} delay
+ * @returns {(this: any, ...rest: any[]) => void}
  */
-export function throttle(func: (...rest: any[]) => void, time = 0) {
+export function throttleDebounce(func: (...rest: any[]) => void, delay: number = 0): (this: any, ...rest: any[]) => void {
   let flag = true
   let timer: number | null = null
 
@@ -45,11 +45,38 @@ export function throttle(func: (...rest: any[]) => void, time = 0) {
 
       window.setTimeout(() => {
         flag = true
-      }, time)
+      }, delay)
     } else {
       timer = window.setTimeout(() => {
         func.apply(this, [...rest])
-      }, time)
+      }, delay)
+    }
+  }
+}
+
+/**
+ * 节流函数
+ * @param {(...rest: any[]) => T} func 
+ * @param {number} delay 
+ * @returns {(...rest: any[]) => T | undefined}
+ */
+export function throttle<T>(
+  func: (...rest: any[]) => T,
+  delay: number
+): (this: any, ...rest: any[]) => T | undefined {
+  let flag: boolean = true
+
+  return function (this: any, ...rest: any[]): T | undefined {
+    if (flag) {
+      flag = false
+
+      window.setTimeout(() => {
+        flag = true
+      }, delay)
+
+      return func.apply(this, [...rest])
+    } else {
+      return undefined
     }
   }
 }

@@ -2,6 +2,9 @@
 import { Navigation, Options as NavOptions, amendmentNavOptions } from './Navigation'
 import { checkType, throttle } from 'utils'
 
+export { Options as NavOptions, Position } from './Navigation'
+export { slideNavStyle } from './navStyle'
+
 export type Options = {
   mode: boolean // 轮播模式，true 为横向，false 为纵向
   transition: number // 轮播动画过渡时间，单位秒
@@ -19,7 +22,7 @@ const defaultOptions: Options = {
   delay: 3000,
   range: 10,
   nav: true,
-  navOptions: {} as NavOptions,
+  navOptions: {} as NavOptions, // 无法提前获知 length 属性，所以 defaultOptions 是一个不可用模版
   bindEvent: true,
   control: false,
 }
@@ -54,7 +57,7 @@ export class Slide {
 
     // 初始化配置项
     if (!checkType(options, 'object')) {
-      this._options = defaultOptions
+      this._options = { ...defaultOptions, navOptions: amendmentNavOptions({ length: this._children.length }) }
     } else {
       const { mode, transition, delay, range, nav, navOptions, bindEvent, control } = options!
       const newOptions = {} as Options
@@ -240,16 +243,26 @@ export class Slide {
   private _createControl() {
     const left = document.createElement('div')
     const right = document.createElement('div')
+    const leftIcon = document.createElement('i')
+    const rightIcon = document.createElement('i')
 
-    left.style.cssText += `position: absolute; top: 50%; left: 0; width: 5%; height: 20%; transform: translate3d(0, -50%, 0); background-color: rgba(0, 0, 0, 0.25); cursor: pointer;`
-    right.style.cssText += `position: absolute; top: 50%; right: 0; width: 5%; height: 20%; transform: translate3d(0, -50%, 0); background-color: rgba(0, 0, 0, 0.25); cursor: pointer;`
+    left.style.cssText += `position: absolute; top: 50%; left: 0; width: 5%; height: 20%; display: flex; justify-content: center; align-items: center; transform: translate3d(0, -50%, 0); color: #ddd; background-color: rgba(0, 0, 0, 0.25); cursor: pointer;` 
+    leftIcon.className = 'h-iconfont'
+    leftIcon.innerHTML = '&#xe687;'
+    left.appendChild(leftIcon)
+    right.style.cssText += `position: absolute; top: 50%; right: 0; width: 5%; height: 20%; display: flex; justify-content: center; align-items: center; transform: translate3d(0, -50%, 0); color: #ddd; background-color: rgba(0, 0, 0, 0.25); cursor: pointer;`
+    rightIcon.className = 'h-iconfont'
+    rightIcon.innerHTML = '&#xe686;'
+    right.appendChild(rightIcon)
 
     const moveLeft = throttle((e: Event) => { e.stopPropagation(); this.move(true) }, this._options.transition)
     const moveRight = throttle((e: Event) => { e.stopPropagation(); this.move(false) }, this._options.transition)
     left.addEventListener('click', (e) => moveLeft(e), false)
     left.addEventListener('touchstart', (e) => moveLeft(e), false)
+    left.addEventListener('touchend', (e) => e.stopPropagation(), false)
     right.addEventListener('click', (e) => moveRight(e), false)
     right.addEventListener('touchstart', (e) => moveRight(e), false)
+    right.addEventListener('touchend', (e) => e.stopPropagation(), false)
 
     this._el.appendChild(left)
     this._el.appendChild(right)
@@ -300,10 +313,10 @@ export class Slide {
    * @param {boolean} direction 方向，true 为左，false 为右
    */
   public move(direction?: boolean) {
-    direction ? --this._index : ++this._index
-    this._change()
     this.closeTimer()
     this.openTimer()
+    direction ? --this._index : ++this._index
+    this._change()
   }
 
   /**

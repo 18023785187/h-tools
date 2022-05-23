@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'h-iconfont';
+  src: url('../font/iconfont.ttf') format('truetype');
+}
+
+.h-iconfont {
+  font-family: "h-iconfont" !important;
+  font-size: 3vw;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
