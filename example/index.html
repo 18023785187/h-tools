@@ -5,168 +5,76 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>demo</title>
+  <title>Slide</title>
   <style>
     * {
       padding: 0;
       margin: 0;
     }
 
-    #app {
+    body {
       width: 100vw;
-      border: 2px solid;
-      box-sizing: border-box;
+      height: 100vh;
+      overflow: hidden;
     }
 
-    #app>.box>* {
-      width: 48%;
+    #app {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
     }
 
-    #app>.box>img {
-      border: 2px solid pink;
-      box-sizing: border-box;
+    .box {
+      width: 100vw;
+      height: 100vh;
     }
 
-    #slide>.box>img {
-      width: 100%;
+    img {
+      width: 100vw;
+      height: 100vh;
     }
 
-    #slide {
-      border: 5px solid transparent;
-      box-sizing: border-box;
-    }
-
-    #get {
-      border: 2px solid;
-      box-sizing: border-box;
-      text-align: center;
+    #description {
+      position: absolute;
+      left: 0;
+      bottom: 0;
     }
   </style>
-  <script src="../build/h.js"></script>
 </head>
 
 <body>
-  <h2>该测试用例用于测试h-tools-js<span style="color: red;">(安装 npm i
-      h-tools-js)</span>的各项功能，用例中包括轮播图、瀑布流和懒加载组件。点击get按钮生成图片，点击图片进行销毁
-  </h2>
-
-  <div style="color: red;">
-    <strong>FPS:<span id="fps"></span></strong>
-  </div>
-  <div>
-    <button id="create">点击自动生成图片</button>
-    <button id="stop">停止自动生成</button>
-  </div>
   <div id="app">
     <div class="box">
-      <div id="slide">
-        <div class="box">
-          <img
-            data-src="https://img01.sogoucdn.com/v2/thumb/resize/w/125/h/75/t/2/zi/on/crop/w/125/h/75/xy/center/retype/ext/auto/q/90/?appid=200789&url=http%3A%2F%2Fimg04.sogoucdn.com%2Fapp%2Fa%2F200789%2Fd0b718fd02e2a1d93a0a0a853488291b"
-            alt="">
-          <img
-            data-src="https://img01.sogoucdn.com/v2/thumb/resize/w/125/h/75/t/2/zi/on/crop/w/125/h/75/xy/center/retype/ext/auto/q/90/?appid=200789&url=http%3A%2F%2Fimg01.sogoucdn.com%2Fapp%2Fa%2F200789%2F63455e9b5b936f458c82679241287976"
-            alt="">
-          <img
-            data-src="https://img01.sogoucdn.com/v2/thumb/resize/w/125/h/75/t/2/zi/on/crop/w/125/h/75/xy/center/retype/ext/auto/q/90/?appid=200789&url=http%3A%2F%2Fimg02.sogoucdn.com%2Fapp%2Fa%2F200789%2Ffacc73d036ba758a0648a61b66c9ce74"
-            alt="">
-        </div>
-      </div>
-      <div id="get">我是get按钮</div>
+      <img src="./test1.jpg" alt="">
+      <img src="./test2.jpg" alt="">
+      <img src="./test3.jpg" alt="">
     </div>
+    <div id="description">当前轮播第1张</div>
   </div>
+  <script src="./h.js"></script>
   <script>
-    const app = document.getElementById('app')
-    const btn = document.getElementById('get')
-    const {
-      Slide,
-      LazyLoad,
-      Waterfall
-    } = h
-    btn.onclick = function () {
-      getGoods()
-    }
+    const { Slide, slideNavPosition, slideNavStyle } = h
+    console.log(Slide, slideNavPosition, slideNavStyle)
 
-    const slide = Slide.create(document.getElementById('slide'), {
-      transition: 200,
-      // transverse: false
-    })
-
-    const waterfall = new Waterfall(
-      app, {
-      marginTop: 20
-    })
-
-    const lazyLoad = new LazyLoad({
-      loading: 'https://img01.sogoucdn.com/v2/thumb/resize/w/125/h/75/t/2/zi/on/crop/w/125/h/75/xy/center/retype/ext/auto/q/90/?appid=200789&url=http%3A%2F%2Fimg02.sogoucdn.com%2Fapp%2Fa%2F200789%2Ffacc73d036ba758a0648a61b66c9ce74',
-      eventListener: ['scroll']
-    })
-
-    slide.onchange(() => {
-      lazyLoad.update()
-    })
-    setTimeout(() => waterfall.reset(), 500)
-
-    function getGoods() {
-      const xhr = new XMLHttpRequest()
-      xhr.open('get', `https://api.vvhan.com/api/acgimg?type=json`)
-      // xhr.setRequestHeader('Access-Control-Allow-Origin', '*')
-      xhr.send()
-      xhr.onreadystatechange = function () {
-        if (this.status === 200 && this.readyState === 4) {
-          const res = JSON.parse(this.responseText)
-          const { height, width } = res.info
-
-          const img = new Image()
-          img.height = 375 * .48 * (height / width);
-          img.setAttribute('data-src', res.imgurl)
-          app.children[0].appendChild(img)
-          img.onclick = function () {
-            img.parentNode.removeChild(img)
-            waterfall.reset(300)
-          }
-
-          waterfall.update();
-          lazyLoad.update()
+    const slide = new Slide(
+      document.getElementById('app'),
+      {
+        mode: false,
+        control: true, // 打开控件
+        navOptions: { // 配置导航栏
+          style: slideNavStyle.ellipse.style,
+          highStyle: slideNavStyle.ellipse.highStyle,
+          transition: 200, // 设置导航点过渡时间
+          position: slideNavPosition.top, // 导航栏放置的位置
+          range: 1, // 导航栏沿 position 方向放置的点
         }
       }
-    }
+    )
 
-    let timer = null
-    document.getElementById('create').onclick = function () {
-      clearInterval(timer)
-      timer = setInterval(() => {
-        requestAnimationFrame(getGoods)
-      }, 1500)
-    }
-    document.getElementById('stop').onclick = function () {
-      clearInterval(timer)
-    }
-
-      //fps
-
-      ; (() => {
-        const fpsEl = document.getElementById('fps')
-        let fps = 0,
-          last = Date.now(),
-          offset = 0
-        step()
-
-        function step() {
-          offset = Date.now() - last
-
-          ++fps
-          if (offset >= 1000) {
-            last += offset
-            appendFps()
-            fps = 0
-          }
-          requestAnimationFrame(step)
-        }
-        function appendFps() {
-          fpsEl.textContent = fps
-        }
-      })() 
+    const description = document.getElementById('description')
+    slide.subscribe((i) => {
+      description.textContent = `当前轮播第${i + 1}张`
+    }) // 订阅轮播触发事件
   </script>
 </body>
 
