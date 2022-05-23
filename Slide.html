@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slide</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    #app {
+      width: 100vw;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="box">
+      <img
+        src="https://img01.sogoucdn.com/v2/thumb/resize/w/125/h/75/t/2/zi/on/crop/w/125/h/75/xy/center/retype/ext/auto/q/90/?appid=200789&url=http%3A%2F%2Fimg01.sogoucdn.com%2Fapp%2Fa%2F200789%2Fec9de33122814e8823fac37427d40715"
+        alt="">
+      <img src="https://dhimg3.sogoucdn.com/2022/05/15/l36olgkj.gif.webp" alt="">
+      <img src="https://img01.sogoucdn.com/v2/thumb/resize/w/125/h/75/t/2/zi/on/crop/w/125/h/75/xy/center/retype/ext/auto/q/90/?appid=200789&url=http%3A%2F%2Fimg04.sogoucdn.com%2Fapp%2Fa%2F200789%2F858bfcb22b13e5fd517c34b219d1cad0" alt="">
+    </div>
+  </div>
+  <script src="../build/h.js"></script>
+  <script>
+    const { Slide, slideNavPosition, slideNavStyle } = h
+    console.log(Slide, slideNavPosition, slideNavStyle)
+    
+    const slide = new h.Slide(document.getElementById('app'))
+  </script>
+</body>
+
+</html>
