@@ -22,6 +22,34 @@ return /******/ (() => { // webpackBootstrap
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(645);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_font_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(83);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_slide_control_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(66);
+// Imports
+
+
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_font_css__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z);
+___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_slide_control_css__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n", "",{"version":3,"sources":[],"names":[],"mappings":"","sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ 83:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(537);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(645);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(667);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
@@ -32,7 +60,29 @@ var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\n  font-family: 'h-iconfont';\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") format('truetype');\n}\n\n.h-iconfont {\n  font-family: \"h-iconfont\" !important;\n  font-size: 3vmax;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n", "",{"version":3,"sources":["webpack://./src/assets/css/base.css"],"names":[],"mappings":"AAAA;EACE,yBAAyB;EACzB,+DAAmD;AACrD;;AAEA;EACE,oCAAoC;EACpC,gBAAgB;EAChB,kBAAkB;EAClB,mCAAmC;EACnC,kCAAkC;AACpC","sourcesContent":["@font-face {\n  font-family: 'h-iconfont';\n  src: url('../font/iconfont.ttf') format('truetype');\n}\n\n.h-iconfont {\n  font-family: \"h-iconfont\" !important;\n  font-size: 3vmax;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n@font-face {\n  font-family: 'h-iconfont';\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") format('truetype');\n}\n\n.h-iconfont {\n  font-family: \"h-iconfont\" !important;\n  font-size: 3vmax;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n", "",{"version":3,"sources":["webpack://./src/assets/css/font.css"],"names":[],"mappings":";AACA;EACE,yBAAyB;EACzB,+DAAmD;AACrD;;AAEA;EACE,oCAAoC;EACpC,gBAAgB;EAChB,kBAAkB;EAClB,mCAAmC;EACnC,kCAAkC;AACpC","sourcesContent":["\n@font-face {\n  font-family: 'h-iconfont';\n  src: url('../font/iconfont.ttf') format('truetype');\n}\n\n.h-iconfont {\n  font-family: \"h-iconfont\" !important;\n  font-size: 3vmax;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ 66:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(537);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(645);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "/* default start */\n.slide-control-default-left {\n  position: absolute;\n  top: 50%;\n  left: 0;\n  width: 5vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  transform: translate3d(0, -50%, 0);\n  color: #ddd;\n  background-color: rgba(0, 0, 0, 0.25);\n  border-top-right-radius: 50%;\n  border-bottom-right-radius: 50%;\n  cursor: pointer;\n}\n\n.slide-control-default-right {\n  position: absolute;\n  top: 50%;\n  right: 0;\n  width: 5vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  transform: translate3d(0, -50%, 0);\n  color: #ddd;\n  background-color: rgba(0, 0, 0, 0.25);\n  border-top-left-radius: 50%;\n  border-bottom-left-radius: 50%;\n  cursor: pointer;\n}\n/* default end */\n\n/* fade start */\n.slide-fade-el-hover:hover .slide-control-fade-left,\n.slide-fade-el-hover:hover .slide-control-fade-right {\n  opacity: 1;\n  transform: translate3d(0, -50%, 0);\n}\n\n.slide-control-fade-left {\n  position: absolute;\n  top: 50%;\n  left: 3%;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  opacity: 0;\n  transition: all 0.3s;\n  transform: translate3d(-100%, -50%, 0);\n  color: #ddd;\n  background-color: rgba(0, 0, 0, 0.25);\n  border-radius: 50%;\n  cursor: pointer;\n}\n\n.slide-control-fade-right {\n  position: absolute;\n  top: 50%;\n  right: 3%;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  opacity: 0;\n  transition: all 0.3s;\n  transform: translate3d(100%, -50%, 0);\n  color: #ddd;\n  background-color: rgba(0, 0, 0, 0.25);\n  border-radius: 50%;\n  cursor: pointer;\n}\n/* fade end */\n", "",{"version":3,"sources":["webpack://./src/assets/css/slide-control.css"],"names":[],"mappings":"AAAA,kBAAkB;AAClB;EACE,kBAAkB;EAClB,QAAQ;EACR,OAAO;EACP,YAAY;EACZ,aAAa;EACb,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,kCAAkC;EAClC,WAAW;EACX,qCAAqC;EACrC,4BAA4B;EAC5B,+BAA+B;EAC/B,eAAe;AACjB;;AAEA;EACE,kBAAkB;EAClB,QAAQ;EACR,QAAQ;EACR,YAAY;EACZ,aAAa;EACb,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,kCAAkC;EAClC,WAAW;EACX,qCAAqC;EACrC,2BAA2B;EAC3B,8BAA8B;EAC9B,eAAe;AACjB;AACA,gBAAgB;;AAEhB,eAAe;AACf;;EAEE,UAAU;EACV,kCAAkC;AACpC;;AAEA;EACE,kBAAkB;EAClB,QAAQ;EACR,QAAQ;EACR,YAAY;EACZ,aAAa;EACb,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,UAAU;EACV,oBAAoB;EACpB,sCAAsC;EACtC,WAAW;EACX,qCAAqC;EACrC,kBAAkB;EAClB,eAAe;AACjB;;AAEA;EACE,kBAAkB;EAClB,QAAQ;EACR,SAAS;EACT,YAAY;EACZ,aAAa;EACb,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,UAAU;EACV,oBAAoB;EACpB,qCAAqC;EACrC,WAAW;EACX,qCAAqC;EACrC,kBAAkB;EAClB,eAAe;AACjB;AACA,aAAa","sourcesContent":["/* default start */\n.slide-control-default-left {\n  position: absolute;\n  top: 50%;\n  left: 0;\n  width: 5vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  transform: translate3d(0, -50%, 0);\n  color: #ddd;\n  background-color: rgba(0, 0, 0, 0.25);\n  border-top-right-radius: 50%;\n  border-bottom-right-radius: 50%;\n  cursor: pointer;\n}\n\n.slide-control-default-right {\n  position: absolute;\n  top: 50%;\n  right: 0;\n  width: 5vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  transform: translate3d(0, -50%, 0);\n  color: #ddd;\n  background-color: rgba(0, 0, 0, 0.25);\n  border-top-left-radius: 50%;\n  border-bottom-left-radius: 50%;\n  cursor: pointer;\n}\n/* default end */\n\n/* fade start */\n.slide-fade-el-hover:hover .slide-control-fade-left,\n.slide-fade-el-hover:hover .slide-control-fade-right {\n  opacity: 1;\n  transform: translate3d(0, -50%, 0);\n}\n\n.slide-control-fade-left {\n  position: absolute;\n  top: 50%;\n  left: 3%;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  opacity: 0;\n  transition: all 0.3s;\n  transform: translate3d(-100%, -50%, 0);\n  color: #ddd;\n  background-color: rgba(0, 0, 0, 0.25);\n  border-radius: 50%;\n  cursor: pointer;\n}\n\n.slide-control-fade-right {\n  position: absolute;\n  top: 50%;\n  right: 3%;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  opacity: 0;\n  transition: all 0.3s;\n  transform: translate3d(100%, -50%, 0);\n  color: #ddd;\n  background-color: rgba(0, 0, 0, 0.25);\n  border-radius: 50%;\n  cursor: pointer;\n}\n/* fade end */\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -647,6 +697,7 @@ __webpack_require__.d(__webpack_exports__, {
   "LazyLoad": () => (/* reexport */ LazyLoad),
   "Slide": () => (/* reexport */ Slide),
   "Waterfall": () => (/* reexport */ Waterfall),
+  "slideControlStyle": () => (/* reexport */ Style),
   "slideNavPosition": () => (/* reexport */ Position),
   "slideNavStyle": () => (/* reexport */ slideNavStyle)
 });
@@ -1705,6 +1756,129 @@ var Navigation = /*#__PURE__*/function () {
 
   return Navigation;
 }();
+;// CONCATENATED MODULE: ./src/components/Slide/Control.ts
+function Control_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Control_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function Control_createClass(Constructor, protoProps, staticProps) { if (protoProps) Control_defineProperties(Constructor.prototype, protoProps); if (staticProps) Control_defineProperties(Constructor, staticProps); return Constructor; }
+
+var Style;
+
+(function (Style) {
+  Style["default"] = "Default";
+  Style["fade"] = "Fade";
+})(Style || (Style = {}));
+/**
+ * 轮播图控件
+ */
+
+
+var Control = /*#__PURE__*/function () {
+  function Control(el, style) {
+    Control_classCallCheck(this, Control);
+
+    this._el = el;
+    this._style = style;
+
+    this._createControl();
+  }
+
+  Control_createClass(Control, [{
+    key: "_createControl",
+    value: function _createControl() {
+      switch (this._style) {
+        case Style["default"]:
+          this._createDefaultControl();
+
+          break;
+
+        case Style.fade:
+          this._createFadeControl();
+
+          break;
+
+        default:
+          this._createDefaultControl();
+
+      }
+    }
+  }, {
+    key: "_createDefaultControl",
+    value: function _createDefaultControl() {
+      var left = document.createElement('div');
+      var right = document.createElement('div');
+      var leftIcon = document.createElement('i');
+      var rightIcon = document.createElement('i');
+      left.className = 'slide-control-default-left';
+      leftIcon.className = 'h-iconfont';
+      leftIcon.innerHTML = '&#xe687;';
+      left.appendChild(leftIcon);
+      right.className = 'slide-control-default-right';
+      rightIcon.className = 'h-iconfont';
+      rightIcon.innerHTML = '&#xe686;';
+      right.appendChild(rightIcon);
+      this._left = left;
+      this._right = right;
+
+      this._el.appendChild(left);
+
+      this._el.appendChild(right);
+    }
+  }, {
+    key: "_createFadeControl",
+    value: function _createFadeControl() {
+      var left = document.createElement('div');
+      var right = document.createElement('div');
+      var leftIcon = document.createElement('i');
+      var rightIcon = document.createElement('i');
+      left.className = 'slide-control-fade-left';
+      leftIcon.className = 'h-iconfont';
+      leftIcon.innerHTML = '&#xe687;';
+      left.appendChild(leftIcon);
+      right.className = 'slide-control-fade-right';
+      rightIcon.className = 'h-iconfont';
+      rightIcon.innerHTML = '&#xe686;';
+      right.appendChild(rightIcon);
+      this._left = left;
+      this._right = right;
+      this._el.className += ' slide-fade-el-hover';
+
+      this._el.appendChild(left);
+
+      this._el.appendChild(right);
+    }
+  }, {
+    key: "bindEvent",
+    value: function bindEvent(moveLeft, moveRight) {
+      this._left.addEventListener('click', function (e) {
+        return moveLeft(e);
+      }, false);
+
+      this._left.addEventListener('touchstart', function (e) {
+        return moveLeft(e);
+      }, false);
+
+      this._left.addEventListener('touchend', function (e) {
+        return e.stopPropagation();
+      }, false);
+
+      this._right.addEventListener('click', function (e) {
+        return moveRight(e);
+      }, false);
+
+      this._right.addEventListener('touchstart', function (e) {
+        return moveRight(e);
+      }, false);
+
+      this._right.addEventListener('touchend', function (e) {
+        return e.stopPropagation();
+      }, false);
+    }
+  }]);
+
+  return Control;
+}();
 ;// CONCATENATED MODULE: ./src/components/Slide/index.ts
 function Slide_toConsumableArray(arr) { return Slide_arrayWithoutHoles(arr) || Slide_iterableToArray(arr) || Slide_unsupportedIterableToArray(arr) || Slide_nonIterableSpread(); }
 
@@ -1728,6 +1902,8 @@ function Slide_createClass(Constructor, protoProps, staticProps) { if (protoProp
 
 
 
+
+
 var Slide_defaultOptions = {
   mode: true,
   transition: 200,
@@ -1736,7 +1912,7 @@ var Slide_defaultOptions = {
   nav: true,
   navOptions: {},
   bindEvent: true,
-  control: false
+  control: undefined
 };
 /**
  * 轮播图，支持横向和纵向，支持移动端和 pc 端
@@ -1790,7 +1966,7 @@ var Slide = /*#__PURE__*/function () {
         length: this._children.length
       });
       newOptions.bindEvent = checkType(bindEvent, 'boolean') ? bindEvent : Slide_defaultOptions.bindEvent;
-      newOptions.control = checkType(control, 'boolean') ? control : Slide_defaultOptions.control;
+      newOptions.control = Object.values(Style).includes(control) ? control : Slide_defaultOptions.control;
       this._options = newOptions;
     }
 
@@ -1824,7 +2000,17 @@ var Slide = /*#__PURE__*/function () {
     }
 
     if (this._options.control) {
-      this._createControl();
+      this._control = new Control(this._el, this._options.control);
+
+      this._control.bindEvent(throttle(function (e) {
+        e.stopPropagation();
+
+        _this.move(true);
+      }, this._options.transition), throttle(function (e) {
+        e.stopPropagation();
+
+        _this.move(false);
+      }, this._options.transition));
     }
   }
   /**
@@ -1995,72 +2181,18 @@ var Slide = /*#__PURE__*/function () {
       }
     }
     /**
-     * 创建控件
-     */
-
-  }, {
-    key: "_createControl",
-    value: function _createControl() {
-      var _this3 = this;
-
-      var left = document.createElement('div');
-      var right = document.createElement('div');
-      var leftIcon = document.createElement('i');
-      var rightIcon = document.createElement('i');
-      left.style.cssText += "position: absolute; top: 50%; left: 0; width: 8%; height: 20%; display: flex; justify-content: center; align-items: center; transform: translate3d(0, -50%, 0); color: #ddd; background-color: rgba(0, 0, 0, 0.25); cursor: pointer;";
-      leftIcon.className = 'h-iconfont';
-      leftIcon.innerHTML = '&#xe687;';
-      left.appendChild(leftIcon);
-      right.style.cssText += "position: absolute; top: 50%; right: 0; width: 8%; height: 20%; display: flex; justify-content: center; align-items: center; transform: translate3d(0, -50%, 0); color: #ddd; background-color: rgba(0, 0, 0, 0.25); cursor: pointer;";
-      rightIcon.className = 'h-iconfont';
-      rightIcon.innerHTML = '&#xe686;';
-      right.appendChild(rightIcon);
-      var moveLeft = throttle(function (e) {
-        e.stopPropagation();
-
-        _this3.move(true);
-      }, this._options.transition);
-      var moveRight = throttle(function (e) {
-        e.stopPropagation();
-
-        _this3.move(false);
-      }, this._options.transition);
-      left.addEventListener('click', function (e) {
-        return moveLeft(e);
-      }, false);
-      left.addEventListener('touchstart', function (e) {
-        return moveLeft(e);
-      }, false);
-      left.addEventListener('touchend', function (e) {
-        return e.stopPropagation();
-      }, false);
-      right.addEventListener('click', function (e) {
-        return moveRight(e);
-      }, false);
-      right.addEventListener('touchstart', function (e) {
-        return moveRight(e);
-      }, false);
-      right.addEventListener('touchend', function (e) {
-        return e.stopPropagation();
-      }, false);
-
-      this._el.appendChild(left);
-
-      this._el.appendChild(right);
-    }
-    /**
      * 启动轮播图定时器
      */
 
   }, {
     key: "openTimer",
     value: function openTimer() {
-      var _this4 = this;
+      var _this3 = this;
 
       this._timer = window.setInterval(function () {
-        _this4._index += 1;
+        _this3._index += 1;
 
-        _this4._change();
+        _this3._change();
       }, this._options.delay);
     }
     /**

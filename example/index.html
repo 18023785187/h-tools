@@ -53,14 +53,14 @@
   </div>
   <script src="./h.js"></script>
   <script>
-    const { Slide, slideNavPosition, slideNavStyle } = h
-    console.log(Slide, slideNavPosition, slideNavStyle)
+    const { Slide, slideNavPosition, slideNavStyle, slideControlStyle } = h
+    console.log(Slide, slideNavPosition, slideNavStyle, slideControlStyle)
 
     const slide = new Slide(
       document.getElementById('app'),
       {
         mode: false,
-        control: true, // 打开控件
+        control: slideControlStyle.fade, // 打开控件
         navOptions: { // 配置导航栏
           style: slideNavStyle.ellipse.style,
           highStyle: slideNavStyle.ellipse.highStyle,

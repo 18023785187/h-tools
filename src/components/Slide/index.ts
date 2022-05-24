@@ -1,9 +1,11 @@
 
-import { Navigation, Options as NavOptions, amendmentNavOptions } from './Navigation'
+import { Navigation, Options as slideNavPosition, amendmentNavOptions } from './Navigation'
+import { Control, Style as slideControlStyle } from './Control'
 import { checkType, throttle } from 'utils'
 
-export { Options as NavOptions, Position } from './Navigation'
+export { Options as NavOptions, Position as slideNavPosition } from './Navigation'
 export { slideNavStyle } from './navStyle'
+export { Style as slideControlStyle } from './Control'
 
 export type Options = {
   mode: boolean // 轮播模式，true 为横向，false 为纵向
@@ -11,9 +13,9 @@ export type Options = {
   delay: number // 轮播延时，单位 ms
   range: number // 触发范围，范围 0 ~ 100
   nav: boolean // 是否开启导航栏
-  navOptions: NavOptions // 导航配置
+  navOptions: slideNavPosition // 导航配置
   bindEvent: boolean // 是否绑定事件
-  control: boolean // 是否显示控件
+  control?: slideControlStyle // 是否显示控件
 }
 
 const defaultOptions: Options = {
@@ -22,9 +24,9 @@ const defaultOptions: Options = {
   delay: 3000,
   range: 10,
   nav: true,
-  navOptions: {} as NavOptions, // 无法提前获知 length 属性，所以 defaultOptions 是一个不可用模版
+  navOptions: {} as slideNavPosition, // 无法提前获知 length 属性，所以 defaultOptions 是一个不可用模版
   bindEvent: true,
-  control: false,
+  control: undefined,
 }
 
 type changeHook = (index?: number) => void
@@ -38,6 +40,7 @@ export class Slide {
   private _children: HTMLElement[]
   private _options: Options
   private _navigation?: Navigation
+  private _control?: Control
   private _pos: number // 位置
   private _index: number // 当前索引
   private _timer?: number // 定时器
@@ -69,7 +72,7 @@ export class Slide {
       newOptions.nav = checkType(nav, 'boolean') ? nav : defaultOptions.nav
       newOptions.navOptions = checkType(navOptions, 'object') ? amendmentNavOptions({ length: this._children.length, ...navOptions }) : amendmentNavOptions({ length: this._children.length })
       newOptions.bindEvent = checkType(bindEvent, 'boolean') ? bindEvent : defaultOptions.bindEvent
-      newOptions.control = checkType(control, 'boolean') ? control : defaultOptions.control
+      newOptions.control = Object.values(slideControlStyle).includes(control) ? control : defaultOptions.control
 
       this._options = newOptions
     }
@@ -94,7 +97,11 @@ export class Slide {
       this._bindEvent()
     }
     if (this._options.control) {
-      this._createControl()
+      this._control = new Control(this._el, this._options.control)
+      this._control.bindEvent(
+        throttle((e: Event) => { e.stopPropagation(); this.move(true) }, this._options.transition),
+        throttle((e: Event) => { e.stopPropagation(); this.move(false) }, this._options.transition)
+      )
     }
   }
 
@@ -241,37 +248,6 @@ export class Slide {
         ((pos - elOffsetSize - elBorderSize) / elSize) * 100
       )
     }
-  }
-
-  /**
-   * 创建控件
-   */
-  private _createControl() {
-    const left = document.createElement('div')
-    const right = document.createElement('div')
-    const leftIcon = document.createElement('i')
-    const rightIcon = document.createElement('i')
-
-    left.style.cssText += `position: absolute; top: 50%; left: 0; width: 8%; height: 20%; display: flex; justify-content: center; align-items: center; transform: translate3d(0, -50%, 0); color: #ddd; background-color: rgba(0, 0, 0, 0.25); cursor: pointer;` 
-    leftIcon.className = 'h-iconfont'
-    leftIcon.innerHTML = '&#xe687;'
-    left.appendChild(leftIcon)
-    right.style.cssText += `position: absolute; top: 50%; right: 0; width: 8%; height: 20%; display: flex; justify-content: center; align-items: center; transform: translate3d(0, -50%, 0); color: #ddd; background-color: rgba(0, 0, 0, 0.25); cursor: pointer;`
-    rightIcon.className = 'h-iconfont'
-    rightIcon.innerHTML = '&#xe686;'
-    right.appendChild(rightIcon)
-
-    const moveLeft = throttle((e: Event) => { e.stopPropagation(); this.move(true) }, this._options.transition)
-    const moveRight = throttle((e: Event) => { e.stopPropagation(); this.move(false) }, this._options.transition)
-    left.addEventListener('click', (e) => moveLeft(e), false)
-    left.addEventListener('touchstart', (e) => moveLeft(e), false)
-    left.addEventListener('touchend', (e) => e.stopPropagation(), false)
-    right.addEventListener('click', (e) => moveRight(e), false)
-    right.addEventListener('touchstart', (e) => moveRight(e), false)
-    right.addEventListener('touchend', (e) => e.stopPropagation(), false)
-
-    this._el.appendChild(left)
-    this._el.appendChild(right)
   }
 
   /**

@@ -1,15 +1,17 @@
-import { Options as NavOptions } from './Navigation';
-export { Options as NavOptions, Position } from './Navigation';
+import { Options as slideNavPosition } from './Navigation';
+import { Style as slideControlStyle } from './Control';
+export { Options as NavOptions, Position as slideNavPosition } from './Navigation';
 export { slideNavStyle } from './navStyle';
+export { Style as slideControlStyle } from './Control';
 export declare type Options = {
     mode: boolean;
     transition: number;
     delay: number;
     range: number;
     nav: boolean;
-    navOptions: NavOptions;
+    navOptions: slideNavPosition;
     bindEvent: boolean;
-    control: boolean;
+    control?: slideControlStyle;
 };
 declare type changeHook = (index?: number) => void;
 /**
@@ -21,6 +23,7 @@ export declare class Slide {
     private _children;
     private _options;
     private _navigation?;
+    private _control?;
     private _pos;
     private _index;
     private _timer?;
@@ -45,10 +48,6 @@ export declare class Slide {
      * 绑定手指滑动事件
      */
     private _bindEvent;
-    /**
-     * 创建控件
-     */
-    private _createControl;
     /**
      * 启动轮播图定时器
      */
