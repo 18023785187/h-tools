@@ -2,7 +2,7 @@
 import { Navigation, Options as NavOptions, amendmentNavOptions } from './Navigation'
 import { checkType, throttle } from 'utils'
 
-export { Options as NavOptions, Position } from './Navigation'
+export { Options as NavOptions, Position as slideNavPosition } from './Navigation'
 export { slideNavStyle } from './navStyle'
 
 export type Options = {
@@ -252,11 +252,11 @@ export class Slide {
     const leftIcon = document.createElement('i')
     const rightIcon = document.createElement('i')
 
-    left.style.cssText += `position: absolute; top: 50%; left: 0; width: 8%; height: 20%; display: flex; justify-content: center; align-items: center; transform: translate3d(0, -50%, 0); color: #ddd; background-color: rgba(0, 0, 0, 0.25); cursor: pointer;` 
+    left.style.cssText += `position: absolute; top: 50%; left: 0; width: 5vmax; height: 7vmax; display: flex; justify-content: center; align-items: center; transform: translate3d(0, -50%, 0); color: #ddd; background-color: rgba(0, 0, 0, 0.25); border-top-right-radius: 50%; border-bottom-right-radius: 50%; cursor: pointer;` 
     leftIcon.className = 'h-iconfont'
     leftIcon.innerHTML = '&#xe687;'
     left.appendChild(leftIcon)
-    right.style.cssText += `position: absolute; top: 50%; right: 0; width: 8%; height: 20%; display: flex; justify-content: center; align-items: center; transform: translate3d(0, -50%, 0); color: #ddd; background-color: rgba(0, 0, 0, 0.25); cursor: pointer;`
+    right.style.cssText += `position: absolute; top: 50%; right: 0; width: 5vmax; height: 7vmax; display: flex; justify-content: center; align-items: center; transform: translate3d(0, -50%, 0); color: #ddd; background-color: rgba(0, 0, 0, 0.25); border-top-left-radius: 50%; border-bottom-left-radius: 50%; cursor: pointer;`
     rightIcon.className = 'h-iconfont'
     rightIcon.innerHTML = '&#xe686;'
     right.appendChild(rightIcon)

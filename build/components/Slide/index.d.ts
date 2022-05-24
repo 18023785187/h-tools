@@ -1,5 +1,5 @@
 import { Options as NavOptions } from './Navigation';
-export { Options as NavOptions, Position } from './Navigation';
+export { Options as NavOptions, Position as slideNavPosition } from './Navigation';
 export { slideNavStyle } from './navStyle';
 export declare type Options = {
     mode: boolean;

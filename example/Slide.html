@@ -22,6 +22,7 @@
       position: relative;
       width: 100vw;
       height: 100vh;
+      transition: all 1s;
     }
 
     .box {
@@ -45,9 +46,9 @@
 <body>
   <div id="app">
     <div class="box">
-      <img src="./test1.jpg" alt="">
-      <img src="./test2.jpg" alt="">
-      <img src="./test3.jpg" alt="">
+      <img src="./fence.png" alt="">
+      <img src="./fence.png" alt="">
+      <img src="./fence.png" alt="">
     </div>
     <div id="description">当前轮播第1张</div>
   </div>
@@ -56,8 +57,10 @@
     const { Slide, slideNavPosition, slideNavStyle } = h
     console.log(Slide, slideNavPosition, slideNavStyle)
 
+    const app = document.getElementById('app')
+
     const slide = new Slide(
-      document.getElementById('app'),
+      app,
       {
         mode: false,
         control: true, // 打开控件
@@ -71,10 +74,13 @@
       }
     )
 
+    const colors = ['red', 'orange', 'blue']
+    app.style.background = colors[0]
     const description = document.getElementById('description')
-    slide.subscribe((i) => {
+    slide.subscribe((i) => { // 订阅轮播触发事件
+      document.body.style.background = colors[i]
       description.textContent = `当前轮播第${i + 1}张`
-    }) // 订阅轮播触发事件
+    })
   </script>
 </body>
 

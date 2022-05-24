@@ -32,7 +32,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\n  font-family: 'h-iconfont';\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") format('truetype');\n}\n\n.h-iconfont {\n  font-family: \"h-iconfont\" !important;\n  font-size: 3vmax;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n", "",{"version":3,"sources":["webpack://./src/assets/css/base.css"],"names":[],"mappings":"AAAA;EACE,yBAAyB;EACzB,+DAAmD;AACrD;;AAEA;EACE,oCAAoC;EACpC,gBAAgB;EAChB,kBAAkB;EAClB,mCAAmC;EACnC,kCAAkC;AACpC","sourcesContent":["@font-face {\n  font-family: 'h-iconfont';\n  src: url('../font/iconfont.ttf') format('truetype');\n}\n\n.h-iconfont {\n  font-family: \"h-iconfont\" !important;\n  font-size: 3vmax;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\r\n  font-family: 'h-iconfont';\r\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") format('truetype');\r\n}\r\n\r\n.h-iconfont {\r\n  font-family: \"h-iconfont\" !important;\r\n  font-size: 3vmax;\r\n  font-style: normal;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/assets/css/base.css"],"names":[],"mappings":"AAAA;EACE,yBAAyB;EACzB,+DAAmD;AACrD;;AAEA;EACE,oCAAoC;EACpC,gBAAgB;EAChB,kBAAkB;EAClB,mCAAmC;EACnC,kCAAkC;AACpC","sourcesContent":["@font-face {\r\n  font-family: 'h-iconfont';\r\n  src: url('../font/iconfont.ttf') format('truetype');\r\n}\r\n\r\n.h-iconfont {\r\n  font-family: \"h-iconfont\" !important;\r\n  font-size: 3vmax;\r\n  font-style: normal;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1503,8 +1503,8 @@ var slideNavStyle = {
     highStyle: 'margin: 1.5vmax; background-color: #fff; border-radius: 50%;'
   },
   ellipse: {
-    style: 'margin: 1vmax; width: 1vmax; height: 1vmax; background-color: rgba(0, 0, 0, 0.3); border-radius: 1vmax; outline: .1vmin solid rgba(255, 255, 255, 0.6);',
-    highStyle: 'margin: 1vmax; width: 2vmax; height: 1vmax; background-color: red; border-radius: 1vmax; outline: .1vmin solid rgba(255, 255, 255, 0.6);'
+    style: 'margin: 1vmax; width: 1vmax; height: 1vmax; background-color: rgba(0, 0, 0, 0.3); border-radius: 1vmax; border: .1vmin solid rgba(255, 255, 255, 0.6);',
+    highStyle: 'margin: 1vmax; width: 2vmax; height: 1vmax; background-color: red; border-radius: 1vmax; border: .1vmin solid rgba(255, 255, 255, 0.6);'
   }
 };
 ;// CONCATENATED MODULE: ./src/components/Slide/Navigation.ts
@@ -2007,11 +2007,11 @@ var Slide = /*#__PURE__*/function () {
       var right = document.createElement('div');
       var leftIcon = document.createElement('i');
       var rightIcon = document.createElement('i');
-      left.style.cssText += "position: absolute; top: 50%; left: 0; width: 8%; height: 20%; display: flex; justify-content: center; align-items: center; transform: translate3d(0, -50%, 0); color: #ddd; background-color: rgba(0, 0, 0, 0.25); cursor: pointer;";
+      left.style.cssText += "position: absolute; top: 50%; left: 0; width: 5vmax; height: 7vmax; display: flex; justify-content: center; align-items: center; transform: translate3d(0, -50%, 0); color: #ddd; background-color: rgba(0, 0, 0, 0.25); border-top-right-radius: 50%; border-bottom-right-radius: 50%; cursor: pointer;";
       leftIcon.className = 'h-iconfont';
       leftIcon.innerHTML = '&#xe687;';
       left.appendChild(leftIcon);
-      right.style.cssText += "position: absolute; top: 50%; right: 0; width: 8%; height: 20%; display: flex; justify-content: center; align-items: center; transform: translate3d(0, -50%, 0); color: #ddd; background-color: rgba(0, 0, 0, 0.25); cursor: pointer;";
+      right.style.cssText += "position: absolute; top: 50%; right: 0; width: 5vmax; height: 7vmax; display: flex; justify-content: center; align-items: center; transform: translate3d(0, -50%, 0); color: #ddd; background-color: rgba(0, 0, 0, 0.25); border-top-left-radius: 50%; border-bottom-left-radius: 50%; cursor: pointer;";
       rightIcon.className = 'h-iconfont';
       rightIcon.innerHTML = '&#xe686;';
       right.appendChild(rightIcon);
