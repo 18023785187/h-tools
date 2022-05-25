@@ -2,9 +2,6 @@ export declare enum Style {
     default = "Default",
     fade = "Fade"
 }
-/**
- * 轮播图控件
- */
 export declare class Control {
     private _el;
     private _style;

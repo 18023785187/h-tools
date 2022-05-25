@@ -72,14 +72,14 @@ module.exports = {
           },
           'ts-loader',
         ],
-        exclude: /node_modules/
+        exclude: /node_modules/,
       }
     ]
   },
   resolve: {
     alias: {
       '@': path.resolve('./', 'src'),
-      "utils": "@/utils",
+      'utils': '@/utils',
     },
     extensions: ['.ts', '.js', '.json'],
   },

@@ -762,42 +762,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 function invokeHandler(handler, event) {
   if (typeof handler === 'function') {
-    // 如果包装事件是函数，则调用该事件
     handler.call(this, event);
   } else if (_typeof(handler) === 'object') {
-    // 如果是数组，则调用每项事件
     for (var i = 0; i < handler.length; ++i) {
       invokeHandler.call(this, handler[i], event);
     }
   }
 }
-/**
- *  传入 el 元素以及事件代理池对象 on ，为 el 元素代理事件池，适用于需要绑定多个事件的元素，
- * 只需关注 on 对象即可。
- *
- *  EventListener 并不是真正绑定 on 对象中的事件，而是为每个事件绑定一个侦听器，由侦听器触发 on 对象中的方法。
- * EventListener 使使用者无需调用 addEventListener 绑定事件，只需简单在传入的 on 对象修改即可。
- *
- * 用法：
- *
- *  const el = document.createElement('div')
- *
- *  const eventListener = new EventListener(
-      el,
-      {
-        click: [(e) => console.log(e), () => console.log('hi')],
-      }
-    )
-
-    eventListener.on.dblclick = function() {} // 绑定了双击事件，也可以赋值一个方法数组
-
-    delete eventListener.on.dblclick // 解除了双击事件，也可以移除某个双击事件，只需要在数组中删除目标方法即可
-
-    eventListener.reflect({ // 重置 on 对象
-      click: [() => console.log(555)]
-    })
- */
-
 
 var EventListener = /*#__PURE__*/function () {
   function EventListener(el, on) {
@@ -805,9 +776,6 @@ var EventListener = /*#__PURE__*/function () {
 
     _classCallCheck(this, EventListener);
 
-    /**
-     * on 对象需要代理才能进行简单的添加删除事件操作，这是处理对象
-     */
     this._handle = {
       set: function set(on, event, listenerHandler) {
         var isAdd = !Reflect.has(on, event);
@@ -841,12 +809,6 @@ var EventListener = /*#__PURE__*/function () {
     get: function get() {
       return this._el;
     }
-    /**
-     * 创建事件侦听器代理函数 handle ，handle 函数调用时会触发所有 this.on[eventTag]
-     * @param {string} eventTag 事件名称
-     * @returns {(event: Event) => void}
-     */
-
   }, {
     key: "_createListener",
     value: function _createListener(eventTag) {
@@ -855,11 +817,6 @@ var EventListener = /*#__PURE__*/function () {
         invokeHandler.call(this, self.on[eventTag], event);
       };
     }
-    /**
-     * 以 on 对象中的键为 _listenerMap 添加侦听器
-     * @param {?string} event 事件名，不传则添加全部
-     */
-
   }, {
     key: "_add",
     value: function _add(event) {
@@ -881,11 +838,6 @@ var EventListener = /*#__PURE__*/function () {
         }
       }
     }
-    /**
-     * 以 on 对象中的键删除 _listenerMap 中的侦听器
-     * @param {?string} event 事件名，不传则删除全部
-     */
-
   }, {
     key: "_delete",
     value: function _delete(event) {
@@ -902,11 +854,6 @@ var EventListener = /*#__PURE__*/function () {
         }
       }
     }
-    /**
-     * 为 on 对象重新赋值，并移除所有侦听器，绑定新的侦听器
-     * @param {On} on
-     */
-
   }, {
     key: "reflect",
     value: function reflect(on) {
@@ -927,9 +874,6 @@ function ImageListener_defineProperties(target, props) { for (var i = 0; i < pro
 
 function ImageListener_createClass(Constructor, protoProps, staticProps) { if (protoProps) ImageListener_defineProperties(Constructor.prototype, protoProps); if (staticProps) ImageListener_defineProperties(Constructor, staticProps); return Constructor; }
 
-/**
- * 劫持图片元素，可检测其是否处于视口再加载图片
- */
 var ImageListener = /*#__PURE__*/function () {
   function ImageListener(el, src, options) {
     ImageListener_classCallCheck(this, ImageListener);
@@ -944,11 +888,6 @@ var ImageListener = /*#__PURE__*/function () {
     value: function _getDOMRect(el) {
       return el.getBoundingClientRect();
     }
-    /**
-     * 检查元素是否在视口中
-     * @returns {boolean}
-     */
-
   }, {
     key: "_checkInView",
     value: function _checkInView() {
@@ -979,11 +918,6 @@ var ImageListener = /*#__PURE__*/function () {
 
       return false;
     }
-    /**
-     * 暴露的接口，用于检测元素是否进入视口，如果进入视口，那么渲染该元素
-     * @returns {boolean}
-     */
-
   }, {
     key: "load",
     value: function load() {
@@ -1021,19 +955,12 @@ function ListNode_createClass(Constructor, protoProps, staticProps) { if (protoP
 
 function ListNode_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-/**
- * 链表节点
- */
 var Node = function Node(value) {
   ListNode_classCallCheck(this, Node);
 
   this.value = value;
   this.next = null;
 };
-/**
- * 链表
- */
-
 
 var ListNode = /*#__PURE__*/function () {
   function ListNode() {
@@ -1043,11 +970,6 @@ var ListNode = /*#__PURE__*/function () {
     this.tail = null;
     this.length = 0;
   }
-  /**
-   * 末尾添加一个值
-   * @param {T} value
-   */
-
 
   ListNode_createClass(ListNode, [{
     key: "add",
@@ -1063,12 +985,6 @@ var ListNode = /*#__PURE__*/function () {
 
       ++this.length;
     }
-    /**
-     * 删除符合值的节点
-     * @param {T} value
-     * @returns
-     */
-
   }, {
     key: "remove",
     value: function remove(value) {
@@ -1092,21 +1008,11 @@ var ListNode = /*#__PURE__*/function () {
 
       --this.length;
     }
-    /**
-     * 判断链表是否为空
-     * @returns {boolean}
-     */
-
   }, {
     key: "isEmpty",
     value: function isEmpty() {
       return this.length === 0;
     }
-    /**
-     * 遍历节点
-     * @param {(value: T, i: number) => void} callback
-     */
-
   }, {
     key: "forEach",
     value: function forEach(callback) {
@@ -1126,12 +1032,6 @@ var ListNode = /*#__PURE__*/function () {
 
 
 ;// CONCATENATED MODULE: ./src/utils/index.ts
-/**
- * 检查类型，符合则返回，不符合会报错
- * @param {any} target
- * @param {string} type
- * @returns {boolean}
- */
 function checkType(value, type) {
   type = type[0].toUpperCase() + type.substring(1);
 
@@ -1141,11 +1041,6 @@ function checkType(value, type) {
 
   return false;
 }
-/**
- * 检查是否为移动端
- * @returns {booean}
- */
-
 function isMobile() {
   if (navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)) {
     return true;
@@ -1153,13 +1048,6 @@ function isMobile() {
     return false;
   }
 }
-/**
- * 防抖 + 节流函数
- * @param {(...rest: any[]) => void} func
- * @param {number} delay
- * @returns {(this: any, ...rest: any[]) => void}
- */
-
 function throttleDebounce(func) {
   var delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
   var flag = true;
@@ -1186,13 +1074,6 @@ function throttleDebounce(func) {
     }
   };
 }
-/**
- * 节流函数
- * @param {(...rest: any[]) => T} func
- * @param {number} delay
- * @returns {(...rest: any[]) => T | undefined}
- */
-
 function throttle(func, delay) {
   var flag = true;
   return function () {
@@ -1222,13 +1103,6 @@ function LazyLoad_createClass(Constructor, protoProps, staticProps) { if (protoP
 
 
 
-/**
- * 找有指定属性并且指定属性有指定值的父亲
- * @param {HTMLElement | null} parent 父元素
- * @param {string[]} props 属性链
- * @param {string} value 属性值
- * @returns {(Window & typeof globalThis) | HTMLElement} 如果有指定父元素，那么返回父元素，否则返回 window
- */
 
 function searchParent(parent, props, value) {
   while (parent) {
@@ -1255,10 +1129,6 @@ function searchParent(parent, props, value) {
 
   return parent === null ? window : parent;
 }
-/**
- * 把属性中带有 data-src 的图片元素添加到监听链表中，当元素进入视口时将渲染该图片
- */
-
 
 var LazyLoad = /*#__PURE__*/function () {
   function LazyLoad(options) {
@@ -1274,16 +1144,14 @@ var LazyLoad = /*#__PURE__*/function () {
     };
     this.render = throttleDebounce(this._render.bind(this), this._options.throttle);
     this.update();
-    this.render(); // 视口尺寸改变时需要更新视口范围的判断依据
-
+    this.render();
     window.addEventListener('resize', throttleDebounce(function () {
       _this._viewport = {
         w: window.innerWidth,
         h: window.innerHeight
       };
     }, this._options.throttle));
-  } // 处理options参数
-
+  }
 
   LazyLoad_createClass(LazyLoad, [{
     key: "_handleOptions",
@@ -1317,10 +1185,6 @@ var LazyLoad = /*#__PURE__*/function () {
         eventListener: eventListener
       };
     }
-    /**
-     * 渲染
-     */
-
   }, {
     key: "_render",
     value: function _render() {
@@ -1332,10 +1196,6 @@ var LazyLoad = /*#__PURE__*/function () {
         });
       });
     }
-    /**
-     * 更新 ImageListener 并进行一次渲染
-     */
-
   }, {
     key: "update",
     value: function update() {
@@ -1350,22 +1210,20 @@ var LazyLoad = /*#__PURE__*/function () {
           var src = img.getAttribute('data-src');
           img.removeAttribute('data-src');
 
-          _this3._listNode.add(new ImageListener( // 劫持该元素
-          el, src, {
+          _this3._listNode.add(new ImageListener(el, src, {
             preload: options.preload,
             loading: options.loading,
             error: options.error,
             attempt: options.attempt,
             viewport: _this3._viewport
-          })); // 如果当前元素的祖父元素可以滑动，那么添加渲染事件
-
+          }));
 
           options.eventListener.forEach(function (event) {
-            searchParent(img.parentNode, ['overflow', 'overflow-x', 'overflow-y'], 'scroll').addEventListener(event, _this3.render); // addEventListener 对于相同函数只绑定一次
+            searchParent(img.parentNode, ['overflow', 'overflow-x', 'overflow-y'], 'scroll').addEventListener(event, _this3.render);
           });
         }
       });
-      this.render(); // 更新后触发一次 render，把处在视口中的元素渲染
+      this.render();
     }
   }]);
 
@@ -1391,34 +1249,22 @@ function Waterfall_defineProperties(target, props) { for (var i = 0; i < props.l
 function Waterfall_createClass(Constructor, protoProps, staticProps) { if (protoProps) Waterfall_defineProperties(Constructor.prototype, protoProps); if (staticProps) Waterfall_defineProperties(Constructor, staticProps); return Constructor; }
 
 
-/**
- * 根据给定条件计算列数和外边距
- * @param {number} rootWidth 总宽度
- * @param {number} innerWidth 内容物宽度
- * @param {number} minMargin 外边距的最小值，最终得出的外边距只能大于或等于这个值
- * @returns {compose}
- */
 
 function handleCompose(rootWidth, innerWidth) {
   var minMargin = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
-  var line = 1; // 定义每列列数
-  // 如果一个内容物 + 两个最小外边距大于或等于容器宽度，那么外边距是 options 的设定值
-
+  var line = 1;
   if (rootWidth <= innerWidth + minMargin * 2) return {
     line: line,
     margin: minMargin
   };
-  line = Math.floor(rootWidth / innerWidth); // 计算列数
-
+  line = Math.floor(rootWidth / innerWidth);
   return function handleMargin(line) {
     if (line < 1) return {
       line: 1,
       margin: minMargin
     };
-    var margin = (rootWidth - innerWidth * line) / (line + 1); // 计算外边距
-
-    if (margin < minMargin) return handleMargin(line - 1); // 如果计算出的外边距小于设定值，则牺牲一行重新计算
-
+    var margin = (rootWidth - innerWidth * line) / (line + 1);
+    if (margin < minMargin) return handleMargin(line - 1);
     return {
       line: line,
       margin: margin
@@ -1434,7 +1280,7 @@ var Waterfall = /*#__PURE__*/function () {
 
     this._options = options;
     this._el = el;
-    this._pos = 0; // 获取最新的 el 下面的第一个子元素作为容器
+    this._pos = 0;
 
     if (!this._el.firstElementChild) {
       throw new Error("el need a child element");
@@ -1446,11 +1292,9 @@ var Waterfall = /*#__PURE__*/function () {
     this._heights = [];
 
     if (!isMobile()) {
-      // 如果不是移动端，需要添加视口尺寸改变事件重置瀑布流布局
       window.addEventListener('resize', throttleDebounce(this.reset.bind(this, 200), (_a = options === null || options === void 0 ? void 0 : options.throttle) !== null && _a !== void 0 ? _a : 200));
     }
-  } // 处理options参数
-
+  }
 
   Waterfall_createClass(Waterfall, [{
     key: "_handleOptions",
@@ -1466,19 +1310,12 @@ var Waterfall = /*#__PURE__*/function () {
 
       var _handleCompose = handleCompose(width, childWidth, minMargin),
           line = _handleCompose.line,
-          margin = _handleCompose.margin; // 得出列数和外边距
-
+          margin = _handleCompose.margin;
 
       this._margin = margin;
-      this._marginTop = marginTop == null ? margin : marginTop; // 如果设定了上外边距，那么使用设定值
-
-      this._heights = new Array(line).fill(0); // 初始化每列高度
+      this._marginTop = marginTop == null ? margin : marginTop;
+      this._heights = new Array(line).fill(0);
     }
-    /**
-     * 从 pos 项开始布局内容物
-     * @param {number} transition 动画时间，在排版时将会看到效果
-     */
-
   }, {
     key: "_layout",
     value: function _layout() {
@@ -1493,48 +1330,29 @@ var Waterfall = /*#__PURE__*/function () {
       for (; this._pos < this._children.length; ++this._pos) {
         handler(this._pos);
       }
-      /**
-       * 布局处理
-       * @param {number} i 当前处理项的索引
-       */
-
 
       function handler(i) {
         window.requestAnimationFrame(function () {
-          _children[i].style.cssText += "position: absolute;"; // 设置绝对定位，使元素统一起点位置
+          _children[i].style.cssText += "position: absolute;";
 
-          var insert = _heights.indexOf(Math.min.apply(Math, _toConsumableArray(_heights))); // 获取当前插入位置
+          var insert = _heights.indexOf(Math.min.apply(Math, _toConsumableArray(_heights)));
 
-
-          _children[i].style.cssText += // 放置内容物到结果位置
-          "\n          transition: all ".concat(transition, "ms;\n          transform: translate3d(").concat(_margin * (insert + 1) + childWidth * insert, "px,").concat(_marginTop + _heights[insert], "px,0);\n        "); // 刷新容器的高度
-
+          _children[i].style.cssText += "\n          transition: all ".concat(transition, "ms;\n          transform: translate3d(").concat(_margin * (insert + 1) + childWidth * insert, "px,").concat(_marginTop + _heights[insert], "px,0);\n        ");
           _heights[insert] += _marginTop + _children[i].offsetHeight;
           _box.style.cssText += "\n          height: ".concat(Math.max.apply(Math, _toConsumableArray(_heights)) + _margin, "px;\n          transition: all ").concat(transition, "ms;\n        ");
         });
       }
     }
-    /**
-     * 重置布局，在刷新、插入、删除的情况下使用
-     * @param {number} transition 动画时间，在排版时将会看到效果
-     */
-
   }, {
     key: "reset",
     value: function reset() {
       var transition = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-      this._pos = 0; // 重置索引
+      this._pos = 0;
 
-      this._handleOptions(); // 重置配置项
+      this._handleOptions();
 
-
-      this._layout(transition); // 布局
-
+      this._layout(transition);
     }
-    /**
-     * 更新，当有新的内容物时需要调用更新方法使新内容物布局，在推入的情况下使用
-     */
-
   }, {
     key: "update",
     value: function update() {
@@ -1545,9 +1363,6 @@ var Waterfall = /*#__PURE__*/function () {
   return Waterfall;
 }();
 ;// CONCATENATED MODULE: ./src/components/Slide/navStyle.ts
-/**
- * 导航点样式
- */
 var slideNavStyle = {
   "default": {
     style: 'margin: 1.5vmax; background-color: rgba(255, 255, 255, 0.5); border-radius: 50%;',
@@ -1600,10 +1415,6 @@ var amendmentNavOptions = function amendmentNavOptions(options) {
   newOptions.length = length;
   return newOptions;
 };
-/**
- * 轮播图导航栏
- */
-
 var Navigation = /*#__PURE__*/function () {
   function Navigation(el, options) {
     var _this = this;
@@ -1642,10 +1453,6 @@ var Navigation = /*#__PURE__*/function () {
       layout.call(_this);
     });
   }
-  /**
-   * 对导航栏布局
-   */
-
 
   Navigation_createClass(Navigation, [{
     key: "_layout",
@@ -1683,11 +1490,6 @@ var Navigation = /*#__PURE__*/function () {
         }
       }
     }
-    /**
-     * 高亮指定索引导航点
-     * @param {number} index
-     */
-
   }, {
     key: "change",
     value: function change(index) {
@@ -1696,11 +1498,6 @@ var Navigation = /*#__PURE__*/function () {
       navItems[index].style.cssText += this._options.highStyle;
       this._prevIndex = index;
     }
-    /**
-     * 设置导航点长度
-     * @param {number} length
-     */
-
   }, {
     key: "setLength",
     value: function setLength(length) {
@@ -1742,11 +1539,6 @@ var Navigation = /*#__PURE__*/function () {
 
       this._layout();
     }
-    /**
-     * 为导航点绑定 move 事件
-     * @param {moveHook} callback
-     */
-
   }, {
     key: "bindEvent",
     value: function bindEvent(callback) {
@@ -1769,10 +1561,6 @@ var Style;
   Style["default"] = "Default";
   Style["fade"] = "Fade";
 })(Style || (Style = {}));
-/**
- * 轮播图控件
- */
-
 
 var Control = /*#__PURE__*/function () {
   function Control(el, style) {
@@ -1914,17 +1702,12 @@ var Slide_defaultOptions = {
   bindEvent: true,
   control: undefined
 };
-/**
- * 轮播图，支持横向和纵向，支持移动端和 pc 端
- */
-
 var Slide = /*#__PURE__*/function () {
   function Slide(el, options) {
     var _this = this;
 
     Slide_classCallCheck(this, Slide);
 
-    // 初始化节点
     this._el = el;
 
     if (!el.firstElementChild) {
@@ -1936,8 +1719,7 @@ var Slide = /*#__PURE__*/function () {
 
     if (!this._children.length) {
       throw new Error("no content");
-    } // 初始化配置项
-
+    }
 
     if (!checkType(options, 'object')) {
       this._options = Object.assign(Object.assign({}, Slide_defaultOptions), {
@@ -2013,18 +1795,13 @@ var Slide = /*#__PURE__*/function () {
       }, this._options.transition));
     }
   }
-  /**
-   * 布局
-   */
-
 
   Slide_createClass(Slide, [{
     key: "_layout",
     value: function _layout() {
       var height = this._el.clientHeight;
       this._el.style.display = 'none';
-      this._el.style.cssText += 'position: relative;'; // 新增头部和尾部子元素 start
-
+      this._el.style.cssText += 'position: relative;';
       var childrenLen = this._children.length;
 
       var childHead = this._children[0].cloneNode(true);
@@ -2036,15 +1813,13 @@ var Slide = /*#__PURE__*/function () {
       this._elChild.appendChild(childHead);
 
       this._children = Slide_toConsumableArray(this._elChild.children);
-      childrenLen += 2; // 新增头部和尾部子元素 end
-      // 初始化盒子的位置
+      childrenLen += 2;
 
       if (this._options.mode) {
         this._el.style.cssText += 'overflow: hidden;';
         this._elChild.style.cssText += "display: flex; transform: translate3d(".concat(this._pos, "%, 0, 0);");
 
         for (var i = 0; i < childrenLen; ++i) {
-          // 遍历子元素，设置子元素的宽度恰好撑满 el
           var child = this._children[i];
           child.style.cssText += "flex: 1 0 auto; display: block; width: 100%;";
         }
@@ -2053,7 +1828,6 @@ var Slide = /*#__PURE__*/function () {
         this._elChild.style.cssText += "transform: translate3d(0, ".concat(this._pos, "%, 0); height: ").concat(height, "px;");
 
         for (var _i = 0; _i < childrenLen; ++_i) {
-          // 遍历子元素，设置子元素的高度与 el 一致
           var _child = this._children[_i];
           _child.style.cssText += "display: block; height: ".concat(height, "px;");
         }
@@ -2061,11 +1835,6 @@ var Slide = /*#__PURE__*/function () {
 
       this._el.style.display = '';
     }
-    /**
-     * 轮播过渡动画
-     * @param {boolean} flag 是否启用过渡时间
-     */
-
   }, {
     key: "_transition",
     value: function _transition(flag) {
@@ -2080,10 +1849,6 @@ var Slide = /*#__PURE__*/function () {
         this._elChild.style.cssText += "transition: all ".concat(flag ? transition : 0, "ms; transform: translate3d(0, ").concat(pos, "%, 0);");
       }
     }
-    /**
-     * 轮播发生方法
-     */
-
   }, {
     key: "_change",
     value: function _change() {
@@ -2094,10 +1859,9 @@ var Slide = /*#__PURE__*/function () {
 
       this._transition(true);
 
-      var childrenLen = this._children.length - 2; // 减去新增的首尾节点
+      var childrenLen = this._children.length - 2;
 
       if (this._index >= childrenLen) {
-        // 当位置超出范围时，重置位置
         this._index = 0;
         this._pos = -100 * this._index - 100;
         window.setTimeout(function () {
@@ -2109,18 +1873,13 @@ var Slide = /*#__PURE__*/function () {
         window.setTimeout(function () {
           return _this2._transition();
         }, transition);
-      } // 调用 change hook
-
+      }
 
       for (var i = 0, hookLen = this._changeHook.length; i < hookLen; ++i) {
         var hook = this._changeHook[i];
         hook(this._index);
       }
     }
-    /**
-     * 绑定手指滑动事件
-     */
-
   }, {
     key: "_bindEvent",
     value: function _bindEvent() {
@@ -2133,8 +1892,7 @@ var Slide = /*#__PURE__*/function () {
 
       this._el.addEventListener('touchmove', touchmove);
 
-      this._el.addEventListener('touchend', touchend); // 计算的位置需要去除多个因素，以下因素都会影响手指滑动的位置
-
+      this._el.addEventListener('touchend', touchend);
 
       var elCss = window.getComputedStyle(this._el);
       var elSize = mode ? this._el.clientWidth : this._el.clientHeight;
@@ -2169,21 +1927,11 @@ var Slide = /*#__PURE__*/function () {
         startPos = 0;
         movePos = 0;
       }
-      /**
-       * 计算当前位置的百分比
-       * @param {number} pos 当前手指位置
-       * @returns {number}
-       */
-
 
       function computePos(pos) {
         return Math.ceil((pos - elOffsetSize - elBorderSize) / elSize * 100);
       }
     }
-    /**
-     * 启动轮播图定时器
-     */
-
   }, {
     key: "openTimer",
     value: function openTimer() {
@@ -2195,31 +1943,16 @@ var Slide = /*#__PURE__*/function () {
         _this3._change();
       }, this._options.delay);
     }
-    /**
-     * 关闭轮播图定时器
-     */
-
   }, {
     key: "closeTimer",
     value: function closeTimer() {
       window.clearInterval(this._timer);
     }
-    /**
-     * 订阅 change 事件
-     * @param {changeHook} callback
-     */
-
   }, {
     key: "subscribe",
     value: function subscribe(callback) {
       this._changeHook.push(callback);
     }
-    /**
-     * 取消订阅 change 事件
-     * @param {changeHook} callback
-     * @returns {boolean}
-     */
-
   }, {
     key: "unsubscribe",
     value: function unsubscribe(callback) {
@@ -2233,11 +1966,6 @@ var Slide = /*#__PURE__*/function () {
         return false;
       }
     }
-    /**
-     * 向左或向右进行轮播一次
-     * @param {boolean} direction 方向，true 为左，false 为右
-     */
-
   }, {
     key: "move",
     value: function move(direction) {
@@ -2247,11 +1975,6 @@ var Slide = /*#__PURE__*/function () {
 
       this._change();
     }
-    /**
-     * 跳转到指定索引位置
-     * @param {number} index
-     */
-
   }, {
     key: "change",
     value: function change(index) {
@@ -2259,11 +1982,6 @@ var Slide = /*#__PURE__*/function () {
 
       this._change();
     }
-    /**
-     * 更新子元素时刷新轮播图
-     * @param {(elChild: HTMLElement) => void} updateChildren 需要在该函数内对子节点增删改查
-     */
-
   }, {
     key: "update",
     value: function update(updateChildren) {

@@ -83,11 +83,11 @@ type Options = {
   nav: boolean // 是否开启导航栏
   navOptions: NavOptions // 导航配置
   bindEvent: boolean // 是否绑定事件
-  control: boolean // 是否显示控件
+  control: slideControlStyle // 是否显示控件
 }
 
 // 导航栏位置
-enum Position {
+enum slideNavPosition {
   top = 'Top',
   right = 'Right',
   bottom = 'Bottom',
@@ -98,9 +98,15 @@ enum Position {
 type NavOptions = {
   style: string, // 导航点样式，过渡属性需要在 transition 字段中设置
   highStyle: string, // 导航点高亮样式，过渡属性需要在 transition 字段中设置
-  position: Position, // 放置位置
+  position: slideNavPosition, // 放置位置
   range: number, // 放置位置的方位，范围 0 ~ 1
-  transition, // 导航点动画过渡时间，单位 ms
+  transition: number, // 导航点动画过渡时间，单位 ms
+}
+
+// 控件样式
+export enum slideControlStyle {
+  default = 'Default',
+  fade = 'Fade',
 }
 ```
 - API

@@ -5,8 +5,8 @@
       "@/*": [
         "*"
       ],
-      "utils/*": [
-        "utils/*"
+      "utils": [
+        "./utils/index.ts"
       ]
     }
   }

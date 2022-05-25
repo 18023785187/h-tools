@@ -1,7 +1,10 @@
 {
   "extends": "./tsconfig.path.json",
+  "include": [
+    "./src/**/*.ts"
+  ],
   "compilerOptions": {
-    "removeComments": false,
+    "removeComments": true,
     "sourceMap": true,
     "declaration": true,
     "strict": true,
@@ -9,6 +12,5 @@
     "moduleResolution": "node",
     "target": "es6",
     "outDir": "build"
-  },
-  "include": [".src/index.ts", "./src/components/*.ts", "./src/utils/*.ts"]
+  }
 }
