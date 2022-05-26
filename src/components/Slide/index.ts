@@ -29,7 +29,7 @@ const defaultOptions: Options = {
   control: undefined,
 }
 
-type changeHook = (index?: number) => void
+type changeHook = (index: number) => void
 
 /**
  * 轮播图，支持横向和纵向，支持移动端和 pc 端

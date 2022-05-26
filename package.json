@@ -1,13 +1,13 @@
 {
   "name": "h-tools-js",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "具有轮播图、瀑布流、懒加载、事件代理器等功能的组件库",
   "keywords": [
     "h",
     "h-tools-js",
     "components"
   ],
-  "main": "./build/h.js",
+  "main": "./build/h.min.js",
   "types": "./build/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

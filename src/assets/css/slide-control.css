@@ -3,35 +3,46 @@
   position: absolute;
   top: 50%;
   left: 0;
-  width: 5vmax;
+  width: 7vmax;
   height: 7vmax;
   display: flex;
   justify-content: center;
   align-items: center;
   transform: translate3d(0, -50%, 0);
-  color: #ddd;
-  background-color: rgba(0, 0, 0, 0.25);
-  border-top-right-radius: 50%;
-  border-bottom-right-radius: 50%;
+  color: var(--slide-control-color);
+  background-color: var(--slide-control-background-color);
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
   cursor: pointer;
+}
+
+.slide-control-default-left:hover {
+  color: var(--slide-control-color-high);
+  background-color: var(--slide-control-background-color-high);
 }
 
 .slide-control-default-right {
   position: absolute;
   top: 50%;
   right: 0;
-  width: 5vmax;
+  width: 7vmax;
   height: 7vmax;
   display: flex;
   justify-content: center;
   align-items: center;
   transform: translate3d(0, -50%, 0);
-  color: #ddd;
-  background-color: rgba(0, 0, 0, 0.25);
-  border-top-left-radius: 50%;
-  border-bottom-left-radius: 50%;
+  color: var(--slide-control-color);
+  background-color: var(--slide-control-background-color);
+  border-top-left-radius: 100%;
+  border-bottom-left-radius: 100%;
   cursor: pointer;
 }
+
+.slide-control-default-right:hover {
+  color: var(--slide-control-color-high);
+  background-color: var(--slide-control-background-color-high);
+}
+
 /* default end */
 
 /* fade start */
@@ -53,10 +64,15 @@
   opacity: 0;
   transition: all 0.3s;
   transform: translate3d(-100%, -50%, 0);
-  color: #ddd;
-  background-color: rgba(0, 0, 0, 0.25);
+  color: var(--slide-control-color);
+  background-color: var(--slide-control-background-color);
   border-radius: 50%;
   cursor: pointer;
+}
+
+.slide-control-fade-left:hover {
+  color: var(--slide-control-color-high);
+  background-color: var(--slide-control-background-color-high);
 }
 
 .slide-control-fade-right {
@@ -71,9 +87,15 @@
   opacity: 0;
   transition: all 0.3s;
   transform: translate3d(100%, -50%, 0);
-  color: #ddd;
-  background-color: rgba(0, 0, 0, 0.25);
+  color: var(--slide-control-color);
+  background-color: var(--slide-control-background-color);
   border-radius: 50%;
   cursor: pointer;
 }
+
+.slide-control-fade-right:hover {
+  color: var(--slide-control-color-high);
+  background-color: var(--slide-control-background-color-high);
+}
+
 /* fade end */

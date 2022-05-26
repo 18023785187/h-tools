@@ -1,3 +1,10 @@
 
 @import url('./font.css');
 @import url('./slide-control.css');
+
+:root {
+  --slide-control-color: #ddd;
+  --slide-control-background-color: rgba(0, 0, 0, 0.25);
+  --slide-control-color-high: rgba(0, 0, 0, 0.25);
+  --slide-control-background-color-high: #ddd;
+}

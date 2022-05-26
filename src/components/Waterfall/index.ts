@@ -58,6 +58,8 @@ export class Waterfall {
 
     this._heights = []
 
+    this._handleOptions()
+
     if (!isMobile()) { // 如果不是移动端，需要添加视口尺寸改变事件重置瀑布流布局
       window.addEventListener(
         'resize',
@@ -68,6 +70,7 @@ export class Waterfall {
 
   // 处理options参数
   private _handleOptions(): void {
+    if(!this._children.length) return
     const width = this._el.clientWidth
     const childWidth = (this._children[0] as HTMLElement).offsetWidth
 
@@ -85,17 +88,25 @@ export class Waterfall {
    */
   private _layout(transition: number = 0): void {
     const { _box, _children, _heights, _marginTop, _margin } = this
+    if (!_children[0]) {
+      _box.style.cssText +=
+        `
+          height: 0px;
+          transition: all ${transition}ms;
+        `
+      return
+    }
     const childWidth: number = (_children[0] as HTMLElement).offsetWidth
 
     for (; this._pos < this._children.length; ++this._pos) {
-      handler(this._pos)
+      handle(this._pos)
     }
 
     /**
      * 布局处理
      * @param {number} i 当前处理项的索引
      */
-    function handler(i: number): void {
+    function handle(i: number): void {
       window.requestAnimationFrame(() => {
         (_children[i] as HTMLElement).style.cssText += `position: absolute;` // 设置绝对定位，使元素统一起点位置
 
@@ -133,6 +144,6 @@ export class Waterfall {
    * 更新，当有新的内容物时需要调用更新方法使新内容物布局，在推入的情况下使用
    */
   public update(): void {
-    this._layout()
+    this._pos ? this._layout() : this.reset()
   }
 }

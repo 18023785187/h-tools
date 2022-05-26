@@ -29,6 +29,7 @@
     #app {
       width: 100vw;
       border: 1px solid red;
+      box-sizing: border-box;
     }
 
     .item {
@@ -43,10 +44,9 @@
 </head>
 
 <body>
-  <div id="btn">添加元素</div>
+  <div id="btn" onclick="add()">添加元素</div>
   <div id="app">
     <div class="box">
-      <!-- <div class="item"></div>
       <div class="item"></div>
       <div class="item"></div>
       <div class="item"></div>
@@ -63,9 +63,49 @@
       <div class="item"></div>
       <div class="item"></div>
       <div class="item"></div>
-      <div class="item"></div> -->
+      <div class="item"></div>
+      <div class="item"></div>
     </div>
   </div>
+  <script src="./h.js"></script>
+  <script>
+    // 设置高度
+    const items = document.getElementsByClassName('item')
+    for (let i = 0; i < items.length; ++i) {
+      const item = items[i]
+      item.style.height = Math.floor(Math.random() * 400) + 100 + 'px' // [100, 500)
+    }
+
+    const { Waterfall } = h
+    console.log(Waterfall)
+
+    const waterfall = new Waterfall(document.getElementById('app'))
+    waterfall.update()
+
+    for (let i = 0; i < items.length; ++i) {
+      const item = items[i]
+      item.textContent = '点击删除'
+      item.onclick = function () {
+        item.remove()
+        waterfall.reset(200)
+      }
+    }
+
+    // 添加元素
+    const box = document.getElementsByClassName('box')[0]
+    function add() {
+      const item = document.createElement('div')
+      item.className = 'item'
+      item.style.height = Math.floor(Math.random() * 400) + 100 + 'px' // [100, 500)
+      item.textContent = '点击删除'
+      item.onclick = function () {
+        item.remove()
+        waterfall.reset(200)
+      }
+      box.appendChild(item)
+      waterfall.update()
+    }
+  </script>
 </body>
 
 </html>

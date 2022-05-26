@@ -13,7 +13,7 @@ export declare type Options = {
     bindEvent: boolean;
     control?: slideControlStyle;
 };
-declare type changeHook = (index?: number) => void;
+declare type changeHook = (index: number) => void;
 export declare class Slide {
     private _el;
     private _elChild;
