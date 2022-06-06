@@ -1,8 +1,10 @@
 
 @import url('./font.css');
-@import url('./slide-control.css');
+@import url('./Slide/index.css');
+@import url('./Carousel/index.css');
 
 :root {
+  /* slide */
   --slide-control-color: #ddd;
   --slide-control-background-color: rgba(0, 0, 0, 0.25);
   --slide-control-color-high: rgba(0, 0, 0, 0.25);

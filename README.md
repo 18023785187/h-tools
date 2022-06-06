@@ -366,3 +366,54 @@ eventListener.reflect(On)
 - 杂项
 
   EventListener 并不是真正的绑定事件，而是获取事件代理池 on 对象中的键，如果键存在，则以键作为事件名称绑定一个侦听器，当事件被触发会调用侦听器，由侦听器去遍历 on 对象中对应键中的方法数组并调用，这实际上是一个代理操作。
+
+---
+
+#### Carousel
+
+走马灯，用于商品走马观花地展示。
+
+- 配置参数类型
+
+```typescript
+type Options = {
+    speed?: number /* 可选值，速率，必须大于 0，默认值为 1 */,
+}
+```
+
+- 使用
+
+```html
+<!-- html -->
+<div id='carousel'>
+  <div class='box'>
+    <item />
+    <item />
+    <item />
+    ...
+  </div>
+</div>
+```
+
+```css
+/* css */
+#carousel {
+  width: 100%;
+}
+```
+
+```javascript
+/* js */
+const el = document.getElementById('carousel')
+const carousel = new Carousel(el)
+```
+
+- api
+
+```typescript
+carousel.destroy()
+```
+
+清理函数，在 carousel 时解绑绑定的事件。
+
+---

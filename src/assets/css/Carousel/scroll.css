@@ -1,0 +1,24 @@
+.carousel-scroll-bar {
+  position: absolute;
+  bottom: 4%;
+  left: 2%;
+  width: 96%;
+  height: 1%;
+  background-color: #f3f3f3;
+  border-radius: 999px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.carousel-scroll-points {
+  width: 10%;
+  height: 400%;
+  background-color: #d8d8d8;
+  border-radius: 999px;
+  transform: translate3d(0, -40%, 0);
+  cursor: pointer;
+}
+
+.carousel-scroll-points:hover {
+  background-color: #ccc;
+}

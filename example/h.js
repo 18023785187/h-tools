@@ -23,17 +23,114 @@ return /******/ (() => { // webpackBootstrap
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(645);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_font_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(83);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_slide_control_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(66);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_Slide_index_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(879);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_Carousel_index_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(65);
 // Imports
+
 
 
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_font_css__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z);
-___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_slide_control_css__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z);
+___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_Slide_index_css__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z);
+___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_Carousel_index_css__WEBPACK_IMPORTED_MODULE_4__/* .default */ .Z);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n:root {\n  --slide-control-color: #ddd;\n  --slide-control-background-color: rgba(0, 0, 0, 0.25);\n  --slide-control-color-high: rgba(0, 0, 0, 0.25);\n  --slide-control-background-color-high: #ddd;\n}\n", "",{"version":3,"sources":["webpack://./src/assets/css/base.css"],"names":[],"mappings":";AAIA;EACE,2BAA2B;EAC3B,qDAAqD;EACrD,+CAA+C;EAC/C,2CAA2C;AAC7C","sourcesContent":["\n@import url('./font.css');\n@import url('./slide-control.css');\n\n:root {\n  --slide-control-color: #ddd;\n  --slide-control-background-color: rgba(0, 0, 0, 0.25);\n  --slide-control-color-high: rgba(0, 0, 0, 0.25);\n  --slide-control-background-color-high: #ddd;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n:root {\n  /* slide */\n  --slide-control-color: #ddd;\n  --slide-control-background-color: rgba(0, 0, 0, 0.25);\n  --slide-control-color-high: rgba(0, 0, 0, 0.25);\n  --slide-control-background-color-high: #ddd;\n}\n", "",{"version":3,"sources":["webpack://./src/assets/css/base.css"],"names":[],"mappings":";AAKA;EACE,UAAU;EACV,2BAA2B;EAC3B,qDAAqD;EACrD,+CAA+C;EAC/C,2CAA2C;AAC7C","sourcesContent":["\n@import url('./font.css');\n@import url('./Slide/index.css');\n@import url('./Carousel/index.css');\n\n:root {\n  /* slide */\n  --slide-control-color: #ddd;\n  --slide-control-background-color: rgba(0, 0, 0, 0.25);\n  --slide-control-color-high: rgba(0, 0, 0, 0.25);\n  --slide-control-background-color-high: #ddd;\n}\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ 65:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(537);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(645);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_scroll_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(710);
+// Imports
+
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_scroll_css__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "", "",{"version":3,"sources":[],"names":[],"mappings":"","sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ 710:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(537);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(645);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".carousel-scroll-bar {\n  position: absolute;\n  bottom: 4%;\n  left: 2%;\n  width: 96%;\n  height: 1%;\n  background-color: #f3f3f3;\n  border-radius: 999px;\n  opacity: 0;\n  transition: opacity 0.2s;\n}\n\n.carousel-scroll-points {\n  width: 10%;\n  height: 400%;\n  background-color: #d8d8d8;\n  border-radius: 999px;\n  transform: translate3d(0, -40%, 0);\n  cursor: pointer;\n}\n\n.carousel-scroll-points:hover {\n  background-color: #ccc;\n}\n", "",{"version":3,"sources":["webpack://./src/assets/css/Carousel/scroll.css"],"names":[],"mappings":"AAAA;EACE,kBAAkB;EAClB,UAAU;EACV,QAAQ;EACR,UAAU;EACV,UAAU;EACV,yBAAyB;EACzB,oBAAoB;EACpB,UAAU;EACV,wBAAwB;AAC1B;;AAEA;EACE,UAAU;EACV,YAAY;EACZ,yBAAyB;EACzB,oBAAoB;EACpB,kCAAkC;EAClC,eAAe;AACjB;;AAEA;EACE,sBAAsB;AACxB","sourcesContent":[".carousel-scroll-bar {\n  position: absolute;\n  bottom: 4%;\n  left: 2%;\n  width: 96%;\n  height: 1%;\n  background-color: #f3f3f3;\n  border-radius: 999px;\n  opacity: 0;\n  transition: opacity 0.2s;\n}\n\n.carousel-scroll-points {\n  width: 10%;\n  height: 400%;\n  background-color: #d8d8d8;\n  border-radius: 999px;\n  transform: translate3d(0, -40%, 0);\n  cursor: pointer;\n}\n\n.carousel-scroll-points:hover {\n  background-color: #ccc;\n}\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ 876:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(537);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(645);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "/* default start */\n.slide-control-default-left {\n  position: absolute;\n  top: 50%;\n  left: 0;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  transform: translate3d(0, -50%, 0);\n  color: var(--slide-control-color);\n  background-color: var(--slide-control-background-color);\n  border-top-right-radius: 100%;\n  border-bottom-right-radius: 100%;\n  cursor: pointer;\n}\n\n.slide-control-default-left:hover {\n  color: var(--slide-control-color-high);\n  background-color: var(--slide-control-background-color-high);\n}\n\n.slide-control-default-right {\n  position: absolute;\n  top: 50%;\n  right: 0;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  transform: translate3d(0, -50%, 0);\n  color: var(--slide-control-color);\n  background-color: var(--slide-control-background-color);\n  border-top-left-radius: 100%;\n  border-bottom-left-radius: 100%;\n  cursor: pointer;\n}\n\n.slide-control-default-right:hover {\n  color: var(--slide-control-color-high);\n  background-color: var(--slide-control-background-color-high);\n}\n\n/* default end */\n\n/* fade start */\n.slide-fade-el-hover:hover .slide-control-fade-left,\n.slide-fade-el-hover:hover .slide-control-fade-right {\n  opacity: 1;\n  transform: translate3d(0, -50%, 0);\n}\n\n.slide-control-fade-left {\n  position: absolute;\n  top: 50%;\n  left: 3%;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  opacity: 0;\n  transition: all 0.3s;\n  transform: translate3d(-100%, -50%, 0);\n  color: var(--slide-control-color);\n  background-color: var(--slide-control-background-color);\n  border-radius: 50%;\n  cursor: pointer;\n}\n\n.slide-control-fade-left:hover {\n  color: var(--slide-control-color-high);\n  background-color: var(--slide-control-background-color-high);\n}\n\n.slide-control-fade-right {\n  position: absolute;\n  top: 50%;\n  right: 3%;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  opacity: 0;\n  transition: all 0.3s;\n  transform: translate3d(100%, -50%, 0);\n  color: var(--slide-control-color);\n  background-color: var(--slide-control-background-color);\n  border-radius: 50%;\n  cursor: pointer;\n}\n\n.slide-control-fade-right:hover {\n  color: var(--slide-control-color-high);\n  background-color: var(--slide-control-background-color-high);\n}\n\n/* fade end */", "",{"version":3,"sources":["webpack://./src/assets/css/Slide/control.css"],"names":[],"mappings":"AAAA,kBAAkB;AAClB;EACE,kBAAkB;EAClB,QAAQ;EACR,OAAO;EACP,YAAY;EACZ,aAAa;EACb,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,kCAAkC;EAClC,iCAAiC;EACjC,uDAAuD;EACvD,6BAA6B;EAC7B,gCAAgC;EAChC,eAAe;AACjB;;AAEA;EACE,sCAAsC;EACtC,4DAA4D;AAC9D;;AAEA;EACE,kBAAkB;EAClB,QAAQ;EACR,QAAQ;EACR,YAAY;EACZ,aAAa;EACb,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,kCAAkC;EAClC,iCAAiC;EACjC,uDAAuD;EACvD,4BAA4B;EAC5B,+BAA+B;EAC/B,eAAe;AACjB;;AAEA;EACE,sCAAsC;EACtC,4DAA4D;AAC9D;;AAEA,gBAAgB;;AAEhB,eAAe;AACf;;EAEE,UAAU;EACV,kCAAkC;AACpC;;AAEA;EACE,kBAAkB;EAClB,QAAQ;EACR,QAAQ;EACR,YAAY;EACZ,aAAa;EACb,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,UAAU;EACV,oBAAoB;EACpB,sCAAsC;EACtC,iCAAiC;EACjC,uDAAuD;EACvD,kBAAkB;EAClB,eAAe;AACjB;;AAEA;EACE,sCAAsC;EACtC,4DAA4D;AAC9D;;AAEA;EACE,kBAAkB;EAClB,QAAQ;EACR,SAAS;EACT,YAAY;EACZ,aAAa;EACb,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,UAAU;EACV,oBAAoB;EACpB,qCAAqC;EACrC,iCAAiC;EACjC,uDAAuD;EACvD,kBAAkB;EAClB,eAAe;AACjB;;AAEA;EACE,sCAAsC;EACtC,4DAA4D;AAC9D;;AAEA,aAAa","sourcesContent":["/* default start */\n.slide-control-default-left {\n  position: absolute;\n  top: 50%;\n  left: 0;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  transform: translate3d(0, -50%, 0);\n  color: var(--slide-control-color);\n  background-color: var(--slide-control-background-color);\n  border-top-right-radius: 100%;\n  border-bottom-right-radius: 100%;\n  cursor: pointer;\n}\n\n.slide-control-default-left:hover {\n  color: var(--slide-control-color-high);\n  background-color: var(--slide-control-background-color-high);\n}\n\n.slide-control-default-right {\n  position: absolute;\n  top: 50%;\n  right: 0;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  transform: translate3d(0, -50%, 0);\n  color: var(--slide-control-color);\n  background-color: var(--slide-control-background-color);\n  border-top-left-radius: 100%;\n  border-bottom-left-radius: 100%;\n  cursor: pointer;\n}\n\n.slide-control-default-right:hover {\n  color: var(--slide-control-color-high);\n  background-color: var(--slide-control-background-color-high);\n}\n\n/* default end */\n\n/* fade start */\n.slide-fade-el-hover:hover .slide-control-fade-left,\n.slide-fade-el-hover:hover .slide-control-fade-right {\n  opacity: 1;\n  transform: translate3d(0, -50%, 0);\n}\n\n.slide-control-fade-left {\n  position: absolute;\n  top: 50%;\n  left: 3%;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  opacity: 0;\n  transition: all 0.3s;\n  transform: translate3d(-100%, -50%, 0);\n  color: var(--slide-control-color);\n  background-color: var(--slide-control-background-color);\n  border-radius: 50%;\n  cursor: pointer;\n}\n\n.slide-control-fade-left:hover {\n  color: var(--slide-control-color-high);\n  background-color: var(--slide-control-background-color-high);\n}\n\n.slide-control-fade-right {\n  position: absolute;\n  top: 50%;\n  right: 3%;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  opacity: 0;\n  transition: all 0.3s;\n  transform: translate3d(100%, -50%, 0);\n  color: var(--slide-control-color);\n  background-color: var(--slide-control-background-color);\n  border-radius: 50%;\n  cursor: pointer;\n}\n\n.slide-control-fade-right:hover {\n  color: var(--slide-control-color-high);\n  background-color: var(--slide-control-background-color-high);\n}\n\n/* fade end */"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ 879:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(537);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(645);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_control_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(876);
+// Imports
+
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_control_css__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "", "",{"version":3,"sources":[],"names":[],"mappings":"","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -61,28 +158,6 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "\n@font-face {\n  font-family: 'h-iconfont';\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") format('truetype');\n}\n\n.h-iconfont {\n  font-family: \"h-iconfont\" !important;\n  font-size: 3vmax;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n", "",{"version":3,"sources":["webpack://./src/assets/css/font.css"],"names":[],"mappings":";AACA;EACE,yBAAyB;EACzB,+DAAmD;AACrD;;AAEA;EACE,oCAAoC;EACpC,gBAAgB;EAChB,kBAAkB;EAClB,mCAAmC;EACnC,kCAAkC;AACpC","sourcesContent":["\n@font-face {\n  font-family: 'h-iconfont';\n  src: url('../font/iconfont.ttf') format('truetype');\n}\n\n.h-iconfont {\n  font-family: \"h-iconfont\" !important;\n  font-size: 3vmax;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n"],"sourceRoot":""}]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ 66:
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(537);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(645);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-// Imports
-
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* default start */\n.slide-control-default-left {\n  position: absolute;\n  top: 50%;\n  left: 0;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  transform: translate3d(0, -50%, 0);\n  color: var(--slide-control-color);\n  background-color: var(--slide-control-background-color);\n  border-top-right-radius: 100%;\n  border-bottom-right-radius: 100%;\n  cursor: pointer;\n}\n\n.slide-control-default-left:hover {\n  color: var(--slide-control-color-high);\n  background-color: var(--slide-control-background-color-high);\n}\n\n.slide-control-default-right {\n  position: absolute;\n  top: 50%;\n  right: 0;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  transform: translate3d(0, -50%, 0);\n  color: var(--slide-control-color);\n  background-color: var(--slide-control-background-color);\n  border-top-left-radius: 100%;\n  border-bottom-left-radius: 100%;\n  cursor: pointer;\n}\n\n.slide-control-default-right:hover {\n  color: var(--slide-control-color-high);\n  background-color: var(--slide-control-background-color-high);\n}\n\n/* default end */\n\n/* fade start */\n.slide-fade-el-hover:hover .slide-control-fade-left,\n.slide-fade-el-hover:hover .slide-control-fade-right {\n  opacity: 1;\n  transform: translate3d(0, -50%, 0);\n}\n\n.slide-control-fade-left {\n  position: absolute;\n  top: 50%;\n  left: 3%;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  opacity: 0;\n  transition: all 0.3s;\n  transform: translate3d(-100%, -50%, 0);\n  color: var(--slide-control-color);\n  background-color: var(--slide-control-background-color);\n  border-radius: 50%;\n  cursor: pointer;\n}\n\n.slide-control-fade-left:hover {\n  color: var(--slide-control-color-high);\n  background-color: var(--slide-control-background-color-high);\n}\n\n.slide-control-fade-right {\n  position: absolute;\n  top: 50%;\n  right: 3%;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  opacity: 0;\n  transition: all 0.3s;\n  transform: translate3d(100%, -50%, 0);\n  color: var(--slide-control-color);\n  background-color: var(--slide-control-background-color);\n  border-radius: 50%;\n  cursor: pointer;\n}\n\n.slide-control-fade-right:hover {\n  color: var(--slide-control-color-high);\n  background-color: var(--slide-control-background-color-high);\n}\n\n/* fade end */", "",{"version":3,"sources":["webpack://./src/assets/css/slide-control.css"],"names":[],"mappings":"AAAA,kBAAkB;AAClB;EACE,kBAAkB;EAClB,QAAQ;EACR,OAAO;EACP,YAAY;EACZ,aAAa;EACb,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,kCAAkC;EAClC,iCAAiC;EACjC,uDAAuD;EACvD,6BAA6B;EAC7B,gCAAgC;EAChC,eAAe;AACjB;;AAEA;EACE,sCAAsC;EACtC,4DAA4D;AAC9D;;AAEA;EACE,kBAAkB;EAClB,QAAQ;EACR,QAAQ;EACR,YAAY;EACZ,aAAa;EACb,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,kCAAkC;EAClC,iCAAiC;EACjC,uDAAuD;EACvD,4BAA4B;EAC5B,+BAA+B;EAC/B,eAAe;AACjB;;AAEA;EACE,sCAAsC;EACtC,4DAA4D;AAC9D;;AAEA,gBAAgB;;AAEhB,eAAe;AACf;;EAEE,UAAU;EACV,kCAAkC;AACpC;;AAEA;EACE,kBAAkB;EAClB,QAAQ;EACR,QAAQ;EACR,YAAY;EACZ,aAAa;EACb,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,UAAU;EACV,oBAAoB;EACpB,sCAAsC;EACtC,iCAAiC;EACjC,uDAAuD;EACvD,kBAAkB;EAClB,eAAe;AACjB;;AAEA;EACE,sCAAsC;EACtC,4DAA4D;AAC9D;;AAEA;EACE,kBAAkB;EAClB,QAAQ;EACR,SAAS;EACT,YAAY;EACZ,aAAa;EACb,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,UAAU;EACV,oBAAoB;EACpB,qCAAqC;EACrC,iCAAiC;EACjC,uDAAuD;EACvD,kBAAkB;EAClB,eAAe;AACjB;;AAEA;EACE,sCAAsC;EACtC,4DAA4D;AAC9D;;AAEA,aAAa","sourcesContent":["/* default start */\n.slide-control-default-left {\n  position: absolute;\n  top: 50%;\n  left: 0;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  transform: translate3d(0, -50%, 0);\n  color: var(--slide-control-color);\n  background-color: var(--slide-control-background-color);\n  border-top-right-radius: 100%;\n  border-bottom-right-radius: 100%;\n  cursor: pointer;\n}\n\n.slide-control-default-left:hover {\n  color: var(--slide-control-color-high);\n  background-color: var(--slide-control-background-color-high);\n}\n\n.slide-control-default-right {\n  position: absolute;\n  top: 50%;\n  right: 0;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  transform: translate3d(0, -50%, 0);\n  color: var(--slide-control-color);\n  background-color: var(--slide-control-background-color);\n  border-top-left-radius: 100%;\n  border-bottom-left-radius: 100%;\n  cursor: pointer;\n}\n\n.slide-control-default-right:hover {\n  color: var(--slide-control-color-high);\n  background-color: var(--slide-control-background-color-high);\n}\n\n/* default end */\n\n/* fade start */\n.slide-fade-el-hover:hover .slide-control-fade-left,\n.slide-fade-el-hover:hover .slide-control-fade-right {\n  opacity: 1;\n  transform: translate3d(0, -50%, 0);\n}\n\n.slide-control-fade-left {\n  position: absolute;\n  top: 50%;\n  left: 3%;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  opacity: 0;\n  transition: all 0.3s;\n  transform: translate3d(-100%, -50%, 0);\n  color: var(--slide-control-color);\n  background-color: var(--slide-control-background-color);\n  border-radius: 50%;\n  cursor: pointer;\n}\n\n.slide-control-fade-left:hover {\n  color: var(--slide-control-color-high);\n  background-color: var(--slide-control-background-color-high);\n}\n\n.slide-control-fade-right {\n  position: absolute;\n  top: 50%;\n  right: 3%;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  opacity: 0;\n  transition: all 0.3s;\n  transform: translate3d(100%, -50%, 0);\n  color: var(--slide-control-color);\n  background-color: var(--slide-control-background-color);\n  border-radius: 50%;\n  cursor: pointer;\n}\n\n.slide-control-fade-right:hover {\n  color: var(--slide-control-color-high);\n  background-color: var(--slide-control-background-color-high);\n}\n\n/* fade end */"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -693,6 +768,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
+  "Carousel": () => (/* reexport */ Carousel),
   "EventListener": () => (/* reexport */ EventListener),
   "LazyLoad": () => (/* reexport */ LazyLoad),
   "Slide": () => (/* reexport */ Slide),
@@ -2013,7 +2089,194 @@ var Slide = /*#__PURE__*/function () {
 
   return Slide;
 }();
+;// CONCATENATED MODULE: ./src/components/Carousel/index.ts
+function Carousel_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Carousel_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function Carousel_createClass(Constructor, protoProps, staticProps) { if (protoProps) Carousel_defineProperties(Constructor.prototype, protoProps); if (staticProps) Carousel_defineProperties(Constructor, staticProps); return Constructor; }
+
+
+var Carousel_defaultOptions = {
+  speed: 1
+};
+var Run;
+
+(function (Run) {
+  Run[Run["min"] = 0] = "min";
+  Run[Run["max"] = 50] = "max";
+  Run[Run["step"] = 0.05] = "step";
+})(Run || (Run = {}));
+
+var Carousel = /*#__PURE__*/function () {
+  function Carousel(el, options) {
+    Carousel_classCallCheck(this, Carousel);
+
+    this._el = el;
+
+    if (!el.firstElementChild) {
+      throw new Error("el need a child element");
+    }
+
+    this._elChild = el.firstElementChild;
+
+    if (!checkType(options, 'object')) {
+      this._options = Object.assign({}, Carousel_defaultOptions);
+    } else {
+      var speed = options.speed;
+      var newOptions = {};
+      newOptions.speed = checkType(speed, 'number') ? speed : Carousel_defaultOptions.speed;
+
+      if (newOptions.speed <= 0) {
+        throw new Error('The speed has to be greater than zero');
+      }
+
+      this._options = newOptions;
+    }
+
+    this._pos = 0;
+    this._flag = true;
+
+    this._layout();
+
+    this._createScroll();
+
+    this.destroy = this._bindEvent();
+
+    this._run();
+  }
+
+  Carousel_createClass(Carousel, [{
+    key: "_layout",
+    value: function _layout() {
+      this._el.style.display = 'none';
+      this._el.style.cssText += "position: relative; overflow: hidden;";
+      this._elChild.style.cssText += "display: flex; float: left;";
+      var children = this._elChild.children;
+
+      for (var i = 0, len = children.length; i < len; ++i) {
+        var child = children[i].cloneNode(true);
+
+        this._elChild.appendChild(child);
+      }
+
+      this._el.style.display = '';
+    }
+  }, {
+    key: "_createScroll",
+    value: function _createScroll() {
+      var scrollBar = document.createElement('div');
+      scrollBar.className = 'carousel-scroll-bar';
+      var scrollPoints = document.createElement('div');
+      scrollPoints.className = 'carousel-scroll-points';
+      scrollBar.appendChild(scrollPoints);
+
+      this._el.appendChild(scrollBar);
+
+      this._scrollBar = scrollBar;
+      this._barWidth = this._scrollBar.clientWidth;
+      this._pointsWidth = this._scrollBar.firstElementChild.clientWidth;
+    }
+  }, {
+    key: "_bindEvent",
+    value: function _bindEvent() {
+      var _this = this;
+
+      var timer;
+
+      var stop = function stop() {
+        clearTimeout(timer);
+        _this._flag = false;
+        _this._scrollBar.style.opacity = '1';
+      };
+
+      var run = function run() {
+        timer = setTimeout(function () {
+          _this._flag = true;
+
+          _this._run();
+
+          _this._scrollBar.style.opacity = '0';
+        }, 100);
+      };
+
+      this._el.addEventListener('mousemove', stop);
+
+      this._el.addEventListener('mouseout', run);
+
+      var points = this._scrollBar.firstElementChild;
+      var start;
+      var move;
+
+      var pointsMousedown = function pointsMousedown(e) {
+        e.preventDefault();
+        start = e.pageX;
+      };
+
+      var pointsMousemove = function pointsMousemove(e) {
+        if (!start) return;
+        move = e.pageX - start + _this._end;
+
+        if (move < 0) {
+          move = 0;
+        } else if (move > _this._barWidth - _this._pointsWidth) {
+          move = _this._barWidth - _this._pointsWidth;
+        }
+
+        points.style.transform = "translate3d(".concat(move, "px, -40%, 0)");
+        _this._pos = move / (_this._barWidth - _this._pointsWidth) * 50;
+        _this._elChild.style.transform = "translate3d(-".concat(_this._pos, "%, 0, 0)");
+        stop();
+      };
+
+      var pointsMouseup = function pointsMouseup(e) {
+        start = undefined;
+        _this._end = move;
+        run();
+      };
+
+      points.addEventListener('mousedown', pointsMousedown);
+      document.addEventListener('mousemove', pointsMousemove);
+      document.addEventListener('mouseup', pointsMouseup);
+      var resize = throttle(function () {
+        _this._barWidth = _this._scrollBar.clientWidth;
+        _this._pointsWidth = _this._scrollBar.firstElementChild.clientWidth;
+      }, 200);
+      window.addEventListener('resize', resize);
+      return function () {
+        document.removeEventListener('mousemove', pointsMousemove);
+        document.removeEventListener('mouseup', pointsMouseup);
+        window.removeEventListener('resize', resize);
+      };
+    }
+  }, {
+    key: "_update",
+    value: function _update() {
+      if (!this._flag) return;
+      this._pos += Run.step * this._options.speed;
+
+      if (this._pos >= Run.max) {
+        this._pos = Run.min;
+      }
+
+      this._elChild.style.transform = "translate3d(-".concat(this._pos, "%, 0, 0)");
+      this._end = (this._barWidth - this._pointsWidth) * this._pos / 50;
+      var points = this._scrollBar.firstElementChild;
+      points.style.transform = "translate3d(".concat(this._end, "px, -40%, 0)");
+
+      this._run();
+    }
+  }, {
+    key: "_run",
+    value: function _run() {
+      requestAnimationFrame(this._update.bind(this));
+    }
+  }]);
+
+  return Carousel;
+}();
 ;// CONCATENATED MODULE: ./src/index.ts
+
 
 
 
