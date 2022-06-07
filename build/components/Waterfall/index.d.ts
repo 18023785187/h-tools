@@ -12,6 +12,7 @@ export declare class Waterfall {
     private _marginTop?;
     private _margin?;
     private _heights;
+    destroy: () => void;
     constructor(el: HTMLElement, options?: Options);
     private _handleOptions;
     private _layout;

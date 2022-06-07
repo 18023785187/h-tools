@@ -25,6 +25,7 @@ export declare class Slide {
     private _index;
     private _timer?;
     private _changeHook;
+    destroy: () => void;
     constructor(el: HTMLElement, options?: {
         [key: string]: any;
     });

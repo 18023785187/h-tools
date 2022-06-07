@@ -45,7 +45,7 @@ export class Slide {
   private _index: number // 当前索引
   private _timer?: number // 定时器
   private _changeHook: changeHook[] // change 事件发生时调用 hook
-
+  public destroy: () => void // 销毁时执行的回收方法
   constructor(el: HTMLElement, options?: { [key: string]: any }) {
     // 初始化节点
     this._el = el
@@ -102,6 +102,13 @@ export class Slide {
         throttle((e: Event) => { e.stopPropagation(); this.move(true) }, this._options.transition),
         throttle((e: Event) => { e.stopPropagation(); this.move(false) }, this._options.transition)
       )
+    }
+
+    this.destroy = () => {
+      this._el.remove()
+      if (this._navigation) {
+        this._navigation.destroy()
+      }
     }
   }
 

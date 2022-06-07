@@ -165,6 +165,12 @@ slide.update(
 
 updateChildren: (elChild: HTMLElement) => void 传入一个回调函数，该回调函数用于写入添加、插入、删除子节点的操作，提供 elChild elChild 为子节点的父元素，可使用 elChild 进行修改操作。
 
+```typescript
+slide.destroy()
+```
+
+清理函数，在 slide 时解绑绑定的事件。
+
 ---
 
 #### Waterfall
@@ -223,10 +229,16 @@ waterfall.reset(transition = 0)
 重新布局，参数 transition 为布局时的过渡时间，reset 用于重新布局或删除元素后布局或插入元素后布局。
 
 ```typescript
-typescriptwaterfall.update()
+waterfall.update()
 ```
 
 更新布局，在往后添加元素后使用。
+
+```typescript
+waterfall.destroy()
+```
+
+清理函数，在 waterfall 时解绑绑定的事件。
 
 - 注意
 

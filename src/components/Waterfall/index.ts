@@ -42,7 +42,7 @@ export class Waterfall {
   private _marginTop?: number // 上边距
   private _margin?: number // 左右边距
   private _heights: number[] // 每列高度数组，每个内容物排序都会插入最小高度的那列
-
+  public destroy: () => void // 销毁时执行的回收方法
   constructor(el: HTMLElement, options?: Options) {
     this._options = options
     this._el = el
@@ -61,16 +61,22 @@ export class Waterfall {
     this._handleOptions()
 
     if (!isMobile()) { // 如果不是移动端，需要添加视口尺寸改变事件重置瀑布流布局
-      window.addEventListener(
-        'resize',
-        throttleDebounce(this.reset.bind(this, 200), (options?.throttle ?? 200))
-      )
+      const resize = throttleDebounce(this.reset.bind(this, 200), (options?.throttle ?? 200))
+      window.addEventListener('resize', resize)
+      this.destroy = () => {
+        this._el.remove()
+        window.removeEventListener('resize', resize)
+      }
+    } else {
+      this.destroy = () => {
+        this._el.remove()
+      }
     }
   }
 
   // 处理options参数
   private _handleOptions(): void {
-    if(!this._children.length) return
+    if (!this._children.length) return
     const width = this._el.clientWidth
     const childWidth = (this._children[0] as HTMLElement).offsetWidth
 

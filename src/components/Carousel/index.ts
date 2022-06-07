@@ -166,6 +166,7 @@ export class Carousel {
 
     // 返回销毁时调用的清理方法
     return () => {
+      this._el.remove()
       document.removeEventListener('mousemove', pointsMousemove)
       document.removeEventListener('mouseup', pointsMouseup)
       window.removeEventListener('resize', resize)

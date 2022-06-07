@@ -52,7 +52,7 @@ export class Navigation {
   private _navList: HTMLElement // 导航栏元素
   private _prevIndex: number // 上一次高亮导航点，用于恢复样式
   private _moveHook!: moveHook // 鼠标移入导航点 hook
-
+  public destroy: () => void // 销毁时执行的回收方法
   constructor(el: HTMLElement, options: Options) {
     this._el = el
     this._options = options
@@ -78,10 +78,12 @@ export class Navigation {
 
     this._layout()
 
-    const layout = throttleDebounce(this._layout, 200)
-    window.addEventListener('resize', () => {
-      layout.call(this)
-    })
+    const layout = throttleDebounce(this._layout.bind(this), 200)
+    window.addEventListener('resize', layout)
+
+    this.destroy = () => {
+      window.removeEventListener('resize', layout)
+    }
   }
 
   /**

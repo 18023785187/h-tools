@@ -22,6 +22,7 @@ export declare class Navigation {
     private _navList;
     private _prevIndex;
     private _moveHook;
+    destroy: () => void;
     constructor(el: HTMLElement, options: Options);
     private _layout;
     change(index: number): void;

@@ -1,6 +1,6 @@
 {
   "name": "h-tools-js",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "description": "具有轮播图、瀑布流、懒加载、事件代理器等功能的组件库",
   "keywords": [
     "h",

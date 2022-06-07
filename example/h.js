@@ -1350,6 +1350,8 @@ function handleCompose(rootWidth, innerWidth) {
 
 var Waterfall = /*#__PURE__*/function () {
   function Waterfall(el, options) {
+    var _this = this;
+
     Waterfall_classCallCheck(this, Waterfall);
 
     var _a;
@@ -1370,7 +1372,18 @@ var Waterfall = /*#__PURE__*/function () {
     this._handleOptions();
 
     if (!isMobile()) {
-      window.addEventListener('resize', throttleDebounce(this.reset.bind(this, 200), (_a = options === null || options === void 0 ? void 0 : options.throttle) !== null && _a !== void 0 ? _a : 200));
+      var resize = throttleDebounce(this.reset.bind(this, 200), (_a = options === null || options === void 0 ? void 0 : options.throttle) !== null && _a !== void 0 ? _a : 200);
+      window.addEventListener('resize', resize);
+
+      this.destroy = function () {
+        _this._el.remove();
+
+        window.removeEventListener('resize', resize);
+      };
+    } else {
+      this.destroy = function () {
+        _this._el.remove();
+      };
     }
   }
 
@@ -1533,10 +1546,12 @@ var Navigation = /*#__PURE__*/function () {
 
     this._layout();
 
-    var layout = throttleDebounce(this._layout, 200);
-    window.addEventListener('resize', function () {
-      layout.call(_this);
-    });
+    var layout = throttleDebounce(this._layout.bind(this), 200);
+    window.addEventListener('resize', layout);
+
+    this.destroy = function () {
+      window.removeEventListener('resize', layout);
+    };
   }
 
   Navigation_createClass(Navigation, [{
@@ -1879,6 +1894,14 @@ var Slide = /*#__PURE__*/function () {
         _this.move(false);
       }, this._options.transition));
     }
+
+    this.destroy = function () {
+      _this._el.remove();
+
+      if (_this._navigation) {
+        _this._navigation.destroy();
+      }
+    };
   }
 
   Slide_createClass(Slide, [{
@@ -2244,6 +2267,8 @@ var Carousel = /*#__PURE__*/function () {
       }, 200);
       window.addEventListener('resize', resize);
       return function () {
+        _this._el.remove();
+
         document.removeEventListener('mousemove', pointsMousemove);
         document.removeEventListener('mouseup', pointsMouseup);
         window.removeEventListener('resize', resize);
