@@ -1305,6 +1305,42 @@ var LazyLoad = /*#__PURE__*/function () {
 
   return LazyLoad;
 }();
+;// CONCATENATED MODULE: ./src/utils/globalEvent.ts
+
+var map = {
+  document: new EventListener(document),
+  window: new EventListener(window)
+};
+
+function hasEventName(target, eventName) {
+  return map[target].on.hasOwnProperty(eventName);
+}
+
+function findIndexEventFunc(target, eventName, func) {
+  return map[target].on[eventName].findIndex(function (eventFunc) {
+    return eventFunc === func;
+  });
+}
+
+function addEventListener(target, eventName, func) {
+  if (!hasEventName(target, eventName)) {
+    map[target].on[eventName] = [];
+  }
+
+  var index = findIndexEventFunc(target, eventName, func);
+
+  if (index === -1) {
+    map[target].on[eventName].push(func);
+  }
+}
+function removeEventListener(target, eventName, func) {
+  if (!hasEventName(target, eventName)) return;
+  var index = findIndexEventFunc(target, eventName, func);
+
+  if (index !== -1) {
+    map[target].on[eventName].splice(index, 1);
+  }
+}
 ;// CONCATENATED MODULE: ./src/components/Waterfall/index.ts
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
@@ -1323,6 +1359,7 @@ function Waterfall_classCallCheck(instance, Constructor) { if (!(instance instan
 function Waterfall_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function Waterfall_createClass(Constructor, protoProps, staticProps) { if (protoProps) Waterfall_defineProperties(Constructor.prototype, protoProps); if (staticProps) Waterfall_defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 
@@ -1373,12 +1410,12 @@ var Waterfall = /*#__PURE__*/function () {
 
     if (!isMobile()) {
       var resize = throttleDebounce(this.reset.bind(this, 200), (_a = options === null || options === void 0 ? void 0 : options.throttle) !== null && _a !== void 0 ? _a : 200);
-      window.addEventListener('resize', resize);
+      addEventListener('window', 'resize', resize);
 
       this.destroy = function () {
         _this._el.remove();
 
-        window.removeEventListener('resize', resize);
+        removeEventListener('window', 'resize', resize);
       };
     } else {
       this.destroy = function () {
@@ -1480,6 +1517,7 @@ function Navigation_createClass(Constructor, protoProps, staticProps) { if (prot
 
 
 
+
 var Position;
 
 (function (Position) {
@@ -1547,10 +1585,10 @@ var Navigation = /*#__PURE__*/function () {
     this._layout();
 
     var layout = throttleDebounce(this._layout.bind(this), 200);
-    window.addEventListener('resize', layout);
+    addEventListener('window', 'resize', layout);
 
     this.destroy = function () {
-      window.removeEventListener('resize', layout);
+      removeEventListener('window', 'resize', layout);
     };
   }
 
@@ -2120,6 +2158,7 @@ function Carousel_defineProperties(target, props) { for (var i = 0; i < props.le
 function Carousel_createClass(Constructor, protoProps, staticProps) { if (protoProps) Carousel_defineProperties(Constructor.prototype, protoProps); if (staticProps) Carousel_defineProperties(Constructor, staticProps); return Constructor; }
 
 
+
 var Carousel_defaultOptions = {
   speed: 1
 };
@@ -2259,19 +2298,19 @@ var Carousel = /*#__PURE__*/function () {
       };
 
       points.addEventListener('mousedown', pointsMousedown);
-      document.addEventListener('mousemove', pointsMousemove);
-      document.addEventListener('mouseup', pointsMouseup);
+      addEventListener('document', 'mousemove', pointsMousemove);
+      addEventListener('document', 'mousemove', pointsMouseup);
       var resize = throttle(function () {
         _this._barWidth = _this._scrollBar.clientWidth;
         _this._pointsWidth = _this._scrollBar.firstElementChild.clientWidth;
       }, 200);
-      window.addEventListener('resize', resize);
+      addEventListener('window', 'resize', resize);
       return function () {
         _this._el.remove();
 
-        document.removeEventListener('mousemove', pointsMousemove);
-        document.removeEventListener('mouseup', pointsMouseup);
-        window.removeEventListener('resize', resize);
+        removeEventListener('document', 'mousemove', pointsMousemove);
+        removeEventListener('document', 'mousemove', pointsMouseup);
+        removeEventListener('window', 'resize', resize);
       };
     }
   }, {

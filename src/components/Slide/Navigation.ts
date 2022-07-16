@@ -1,6 +1,7 @@
 
 import { slideNavStyle } from './navStyle'
 import { checkType, throttleDebounce } from 'utils'
+import { addEventListener, removeEventListener } from 'utils/globalEvent'
 
 export enum Position {
   top = 'Top',
@@ -79,10 +80,10 @@ export class Navigation {
     this._layout()
 
     const layout = throttleDebounce(this._layout.bind(this), 200)
-    window.addEventListener('resize', layout)
+    addEventListener('window', 'resize', layout)
 
     this.destroy = () => {
-      window.removeEventListener('resize', layout)
+      removeEventListener('window', 'resize', layout)
     }
   }
 
@@ -134,7 +135,7 @@ export class Navigation {
       this._navList.style.cssText += `top: ${(this._el.clientHeight - this._navList.clientHeight) * range}px;`
     }
 
-    if(this._options.transition) {
+    if (this._options.transition) {
       for (let i = 0; i < this._options.length; ++i) {
         (navItems[i] as HTMLElement).style.cssText += `transition: all ${this._options.transition}ms;`
       }

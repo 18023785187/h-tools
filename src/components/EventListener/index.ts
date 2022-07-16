@@ -1,7 +1,7 @@
 
 
 export type Listener<T> = (ev: T) => void
-type ListenerHandler = Listener<any> | Array<Listener<any>>
+export type ListenerHandler = Listener<any> | Array<Listener<any>>
 
 /**
  * 事件绑定对象类型，key 为事件名称，value 为事件函数或者事件函数数组
@@ -70,11 +70,11 @@ function invokeHandler<N extends keyof HTMLElementEventMap>(
  */
 export class EventListener {
   public on: On // 事件代理池
-  private _el: HTMLElement // 目标元素
+  private _el: HTMLElement | Document | Window // 目标元素
   private _listenerMap: ListenerMap
   get el() { return this._el }
 
-  constructor(el: HTMLElement, on?: On) {
+  constructor(el: HTMLElement | Document | Window, on?: On) {
     this.on = new Proxy<On>(on ?? {}, this._handle)
     this._el = el
     this._listenerMap = {}

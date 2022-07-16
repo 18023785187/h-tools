@@ -1,5 +1,6 @@
 
 import { checkType, throttle } from 'utils'
+import { addEventListener, removeEventListener } from 'utils/globalEvent'
 
 export type Options = {
   speed: number // 速率，必须大于 0，默认值为 1
@@ -44,7 +45,7 @@ export class Carousel {
       const newOptions = {} as Options
 
       newOptions.speed = checkType(speed, 'number') ? speed : defaultOptions.speed
-      if(newOptions.speed <= 0) {
+      if (newOptions.speed <= 0) {
         throw new Error('The speed has to be greater than zero')
       }
 
@@ -152,8 +153,8 @@ export class Carousel {
       run()
     }
     points.addEventListener('mousedown', pointsMousedown)
-    document.addEventListener('mousemove', pointsMousemove)
-    document.addEventListener('mouseup', pointsMouseup)
+    addEventListener('document', 'mousemove', pointsMousemove)
+    addEventListener('document', 'mousemove', pointsMouseup)
     // 拖动滑块 end
 
     // 窗口重置刷新滑块宽度 start
@@ -161,15 +162,15 @@ export class Carousel {
       this._barWidth = this._scrollBar.clientWidth
       this._pointsWidth = this._scrollBar.firstElementChild!.clientWidth
     }, 200)
-    window.addEventListener('resize', resize)
+    addEventListener('window', 'resize', resize)
     // 窗口重置刷新滑块宽度 end
 
     // 返回销毁时调用的清理方法
     return () => {
       this._el.remove()
-      document.removeEventListener('mousemove', pointsMousemove)
-      document.removeEventListener('mouseup', pointsMouseup)
-      window.removeEventListener('resize', resize)
+      removeEventListener('document', 'mousemove', pointsMousemove)
+      removeEventListener('document', 'mousemove', pointsMouseup)
+      removeEventListener('window', 'resize', resize)
     }
   }
 

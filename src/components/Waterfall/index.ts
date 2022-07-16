@@ -1,5 +1,6 @@
 
 import { throttleDebounce, isMobile } from 'utils'
+import { addEventListener, removeEventListener } from 'utils/globalEvent'
 
 export interface Options {
   marginTop?: number, // 每个排列元素的上边距
@@ -62,10 +63,10 @@ export class Waterfall {
 
     if (!isMobile()) { // 如果不是移动端，需要添加视口尺寸改变事件重置瀑布流布局
       const resize = throttleDebounce(this.reset.bind(this, 200), (options?.throttle ?? 200))
-      window.addEventListener('resize', resize)
+      addEventListener('window', 'resize', resize)
       this.destroy = () => {
         this._el.remove()
-        window.removeEventListener('resize', resize)
+        removeEventListener('window', 'resize', resize)
       }
     } else {
       this.destroy = () => {

@@ -1,4 +1,3 @@
-
 import ImageListener from './ImageListener'
 import ListNode from './ListNode'
 import { checkType, throttleDebounce } from 'utils'
@@ -21,7 +20,7 @@ function searchParent(parent: HTMLElement | null, props: string[], value: string
           break
         }
       }
-      if(flag) break
+      if (flag) break
     } catch (e) {
       parent = parent.parentNode as HTMLElement | null
       break
