@@ -14,7 +14,7 @@ module.exports = merge(commonConfig, {
     rules: [
       {
         test: /\.html$/,
-        //处理html文件的img图片(负责引入img，从而能被url-loader处理)
+        // 处理 html 文件的 img 图片 ( 负责引入 img，从而能被 url-loader 处理 )
         loader: 'html-loader',
         options: {
           esModule: false,

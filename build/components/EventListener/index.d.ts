@@ -9,7 +9,7 @@ export declare class EventListener {
     on: On;
     private _el;
     private _listenerMap;
-    get el(): Window | HTMLElement | Document;
+    get el(): Window | Document | HTMLElement;
     constructor(el: HTMLElement | Document | Window, on?: On);
     private _handle;
     private _createListener;

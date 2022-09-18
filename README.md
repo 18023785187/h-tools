@@ -5,7 +5,7 @@
 <a href="https://github.com/18023785187/h-tools/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/h-tools-js.svg" alt="License"></a>
 <a href="https://github.com/18023785187/h-tools/search?l=javascript"><img src="https://img.shields.io/github/languages/top/18023785187/h-tools.svg" alt="TopLang"></a>
 
-#### 🚀 具有轮播图、瀑布流、懒加载、事件代理器等功能的组件库
+#### 🚀 具有轮播图、瀑布流、懒加载、事件代理器等功能的工具库
 
 ---
 

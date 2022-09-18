@@ -1,7 +1,7 @@
 {
   "name": "h-tools-js",
   "version": "1.5.8",
-  "description": "具有轮播图、瀑布流、懒加载、事件代理器等功能的组件库",
+  "description": "具有轮播图、瀑布流、懒加载、事件代理器等功能的工具库",
   "keywords": [
     "h",
     "h-tools-js",
@@ -11,8 +11,9 @@
   "types": "./build/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cross-env NODE_ENV=production webpack --config ./scripts/build.js",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --config ./scripts/start.js"
+    "build": "cross-env NODE_ENV=production webpack --config ./scripts/build.js && npm run example:update",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --config ./scripts/start.js",
+    "example:update": "node ./scripts/example.js"
   },
   "author": "Mmmmm",
   "license": "MIT",
@@ -22,6 +23,7 @@
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
     "babel-loader": "^8.2.2",
+    "concurrently": "^7.4.0",
     "core-js": "^3.16.2",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",

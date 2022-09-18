@@ -36,7 +36,7 @@ ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_font_css__WEBPACK
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_Slide_index_css__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z);
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_Carousel_index_css__WEBPACK_IMPORTED_MODULE_4__/* .default */ .Z);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n:root {\n  /* slide */\n  --slide-control-color: #ddd;\n  --slide-control-background-color: rgba(0, 0, 0, 0.25);\n  --slide-control-color-high: rgba(0, 0, 0, 0.25);\n  --slide-control-background-color-high: #ddd;\n}\n", "",{"version":3,"sources":["webpack://./src/assets/css/base.css"],"names":[],"mappings":";AAKA;EACE,UAAU;EACV,2BAA2B;EAC3B,qDAAqD;EACrD,+CAA+C;EAC/C,2CAA2C;AAC7C","sourcesContent":["\n@import url('./font.css');\n@import url('./Slide/index.css');\n@import url('./Carousel/index.css');\n\n:root {\n  /* slide */\n  --slide-control-color: #ddd;\n  --slide-control-background-color: rgba(0, 0, 0, 0.25);\n  --slide-control-color-high: rgba(0, 0, 0, 0.25);\n  --slide-control-background-color-high: #ddd;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "\r\n:root {\r\n  /* slide */\r\n  --slide-control-color: #ddd;\r\n  --slide-control-background-color: rgba(0, 0, 0, 0.25);\r\n  --slide-control-color-high: rgba(0, 0, 0, 0.25);\r\n  --slide-control-background-color-high: #ddd;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/assets/css/base.css"],"names":[],"mappings":";AAKA;EACE,UAAU;EACV,2BAA2B;EAC3B,qDAAqD;EACrD,+CAA+C;EAC/C,2CAA2C;AAC7C","sourcesContent":["\r\n@import url('./font.css');\r\n@import url('./Slide/index.css');\r\n@import url('./Carousel/index.css');\r\n\r\n:root {\r\n  /* slide */\r\n  --slide-control-color: #ddd;\r\n  --slide-control-background-color: rgba(0, 0, 0, 0.25);\r\n  --slide-control-color-high: rgba(0, 0, 0, 0.25);\r\n  --slide-control-background-color-high: #ddd;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -83,7 +83,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, "", "",{"version":3,"sources":[],"names
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".carousel-scroll-bar {\n  position: absolute;\n  bottom: 4%;\n  left: 2%;\n  width: 96%;\n  height: 1%;\n  background-color: #f3f3f3;\n  border-radius: 999px;\n  opacity: 0;\n  transition: opacity 0.2s;\n}\n\n.carousel-scroll-points {\n  width: 10%;\n  height: 400%;\n  background-color: #d8d8d8;\n  border-radius: 999px;\n  transform: translate3d(0, -40%, 0);\n  cursor: pointer;\n}\n\n.carousel-scroll-points:hover {\n  background-color: #ccc;\n}\n", "",{"version":3,"sources":["webpack://./src/assets/css/Carousel/scroll.css"],"names":[],"mappings":"AAAA;EACE,kBAAkB;EAClB,UAAU;EACV,QAAQ;EACR,UAAU;EACV,UAAU;EACV,yBAAyB;EACzB,oBAAoB;EACpB,UAAU;EACV,wBAAwB;AAC1B;;AAEA;EACE,UAAU;EACV,YAAY;EACZ,yBAAyB;EACzB,oBAAoB;EACpB,kCAAkC;EAClC,eAAe;AACjB;;AAEA;EACE,sBAAsB;AACxB","sourcesContent":[".carousel-scroll-bar {\n  position: absolute;\n  bottom: 4%;\n  left: 2%;\n  width: 96%;\n  height: 1%;\n  background-color: #f3f3f3;\n  border-radius: 999px;\n  opacity: 0;\n  transition: opacity 0.2s;\n}\n\n.carousel-scroll-points {\n  width: 10%;\n  height: 400%;\n  background-color: #d8d8d8;\n  border-radius: 999px;\n  transform: translate3d(0, -40%, 0);\n  cursor: pointer;\n}\n\n.carousel-scroll-points:hover {\n  background-color: #ccc;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".carousel-scroll-bar {\r\n  position: absolute;\r\n  bottom: 4%;\r\n  left: 2%;\r\n  width: 96%;\r\n  height: 1%;\r\n  background-color: #f3f3f3;\r\n  border-radius: 999px;\r\n  opacity: 0;\r\n  transition: opacity 0.2s;\r\n}\r\n\r\n.carousel-scroll-points {\r\n  width: 10%;\r\n  height: 400%;\r\n  background-color: #d8d8d8;\r\n  border-radius: 999px;\r\n  transform: translate3d(0, -40%, 0);\r\n  cursor: pointer;\r\n}\r\n\r\n.carousel-scroll-points:hover {\r\n  background-color: #ccc;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/assets/css/Carousel/scroll.css"],"names":[],"mappings":"AAAA;EACE,kBAAkB;EAClB,UAAU;EACV,QAAQ;EACR,UAAU;EACV,UAAU;EACV,yBAAyB;EACzB,oBAAoB;EACpB,UAAU;EACV,wBAAwB;AAC1B;;AAEA;EACE,UAAU;EACV,YAAY;EACZ,yBAAyB;EACzB,oBAAoB;EACpB,kCAAkC;EAClC,eAAe;AACjB;;AAEA;EACE,sBAAsB;AACxB","sourcesContent":[".carousel-scroll-bar {\r\n  position: absolute;\r\n  bottom: 4%;\r\n  left: 2%;\r\n  width: 96%;\r\n  height: 1%;\r\n  background-color: #f3f3f3;\r\n  border-radius: 999px;\r\n  opacity: 0;\r\n  transition: opacity 0.2s;\r\n}\r\n\r\n.carousel-scroll-points {\r\n  width: 10%;\r\n  height: 400%;\r\n  background-color: #d8d8d8;\r\n  border-radius: 999px;\r\n  transform: translate3d(0, -40%, 0);\r\n  cursor: pointer;\r\n}\r\n\r\n.carousel-scroll-points:hover {\r\n  background-color: #ccc;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -105,7 +105,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".carousel-scroll-bar {\n  position: ab
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* default start */\n.slide-control-default-left {\n  position: absolute;\n  top: 50%;\n  left: 0;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  transform: translate3d(0, -50%, 0);\n  color: var(--slide-control-color);\n  background-color: var(--slide-control-background-color);\n  border-top-right-radius: 100%;\n  border-bottom-right-radius: 100%;\n  cursor: pointer;\n}\n\n.slide-control-default-left:hover {\n  color: var(--slide-control-color-high);\n  background-color: var(--slide-control-background-color-high);\n}\n\n.slide-control-default-right {\n  position: absolute;\n  top: 50%;\n  right: 0;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  transform: translate3d(0, -50%, 0);\n  color: var(--slide-control-color);\n  background-color: var(--slide-control-background-color);\n  border-top-left-radius: 100%;\n  border-bottom-left-radius: 100%;\n  cursor: pointer;\n}\n\n.slide-control-default-right:hover {\n  color: var(--slide-control-color-high);\n  background-color: var(--slide-control-background-color-high);\n}\n\n/* default end */\n\n/* fade start */\n.slide-fade-el-hover:hover .slide-control-fade-left,\n.slide-fade-el-hover:hover .slide-control-fade-right {\n  opacity: 1;\n  transform: translate3d(0, -50%, 0);\n}\n\n.slide-control-fade-left {\n  position: absolute;\n  top: 50%;\n  left: 3%;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  opacity: 0;\n  transition: all 0.3s;\n  transform: translate3d(-100%, -50%, 0);\n  color: var(--slide-control-color);\n  background-color: var(--slide-control-background-color);\n  border-radius: 50%;\n  cursor: pointer;\n}\n\n.slide-control-fade-left:hover {\n  color: var(--slide-control-color-high);\n  background-color: var(--slide-control-background-color-high);\n}\n\n.slide-control-fade-right {\n  position: absolute;\n  top: 50%;\n  right: 3%;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  opacity: 0;\n  transition: all 0.3s;\n  transform: translate3d(100%, -50%, 0);\n  color: var(--slide-control-color);\n  background-color: var(--slide-control-background-color);\n  border-radius: 50%;\n  cursor: pointer;\n}\n\n.slide-control-fade-right:hover {\n  color: var(--slide-control-color-high);\n  background-color: var(--slide-control-background-color-high);\n}\n\n/* fade end */", "",{"version":3,"sources":["webpack://./src/assets/css/Slide/control.css"],"names":[],"mappings":"AAAA,kBAAkB;AAClB;EACE,kBAAkB;EAClB,QAAQ;EACR,OAAO;EACP,YAAY;EACZ,aAAa;EACb,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,kCAAkC;EAClC,iCAAiC;EACjC,uDAAuD;EACvD,6BAA6B;EAC7B,gCAAgC;EAChC,eAAe;AACjB;;AAEA;EACE,sCAAsC;EACtC,4DAA4D;AAC9D;;AAEA;EACE,kBAAkB;EAClB,QAAQ;EACR,QAAQ;EACR,YAAY;EACZ,aAAa;EACb,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,kCAAkC;EAClC,iCAAiC;EACjC,uDAAuD;EACvD,4BAA4B;EAC5B,+BAA+B;EAC/B,eAAe;AACjB;;AAEA;EACE,sCAAsC;EACtC,4DAA4D;AAC9D;;AAEA,gBAAgB;;AAEhB,eAAe;AACf;;EAEE,UAAU;EACV,kCAAkC;AACpC;;AAEA;EACE,kBAAkB;EAClB,QAAQ;EACR,QAAQ;EACR,YAAY;EACZ,aAAa;EACb,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,UAAU;EACV,oBAAoB;EACpB,sCAAsC;EACtC,iCAAiC;EACjC,uDAAuD;EACvD,kBAAkB;EAClB,eAAe;AACjB;;AAEA;EACE,sCAAsC;EACtC,4DAA4D;AAC9D;;AAEA;EACE,kBAAkB;EAClB,QAAQ;EACR,SAAS;EACT,YAAY;EACZ,aAAa;EACb,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,UAAU;EACV,oBAAoB;EACpB,qCAAqC;EACrC,iCAAiC;EACjC,uDAAuD;EACvD,kBAAkB;EAClB,eAAe;AACjB;;AAEA;EACE,sCAAsC;EACtC,4DAA4D;AAC9D;;AAEA,aAAa","sourcesContent":["/* default start */\n.slide-control-default-left {\n  position: absolute;\n  top: 50%;\n  left: 0;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  transform: translate3d(0, -50%, 0);\n  color: var(--slide-control-color);\n  background-color: var(--slide-control-background-color);\n  border-top-right-radius: 100%;\n  border-bottom-right-radius: 100%;\n  cursor: pointer;\n}\n\n.slide-control-default-left:hover {\n  color: var(--slide-control-color-high);\n  background-color: var(--slide-control-background-color-high);\n}\n\n.slide-control-default-right {\n  position: absolute;\n  top: 50%;\n  right: 0;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  transform: translate3d(0, -50%, 0);\n  color: var(--slide-control-color);\n  background-color: var(--slide-control-background-color);\n  border-top-left-radius: 100%;\n  border-bottom-left-radius: 100%;\n  cursor: pointer;\n}\n\n.slide-control-default-right:hover {\n  color: var(--slide-control-color-high);\n  background-color: var(--slide-control-background-color-high);\n}\n\n/* default end */\n\n/* fade start */\n.slide-fade-el-hover:hover .slide-control-fade-left,\n.slide-fade-el-hover:hover .slide-control-fade-right {\n  opacity: 1;\n  transform: translate3d(0, -50%, 0);\n}\n\n.slide-control-fade-left {\n  position: absolute;\n  top: 50%;\n  left: 3%;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  opacity: 0;\n  transition: all 0.3s;\n  transform: translate3d(-100%, -50%, 0);\n  color: var(--slide-control-color);\n  background-color: var(--slide-control-background-color);\n  border-radius: 50%;\n  cursor: pointer;\n}\n\n.slide-control-fade-left:hover {\n  color: var(--slide-control-color-high);\n  background-color: var(--slide-control-background-color-high);\n}\n\n.slide-control-fade-right {\n  position: absolute;\n  top: 50%;\n  right: 3%;\n  width: 7vmax;\n  height: 7vmax;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  opacity: 0;\n  transition: all 0.3s;\n  transform: translate3d(100%, -50%, 0);\n  color: var(--slide-control-color);\n  background-color: var(--slide-control-background-color);\n  border-radius: 50%;\n  cursor: pointer;\n}\n\n.slide-control-fade-right:hover {\n  color: var(--slide-control-color-high);\n  background-color: var(--slide-control-background-color-high);\n}\n\n/* fade end */"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* default start */\r\n.slide-control-default-left {\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 0;\r\n  width: 7vmax;\r\n  height: 7vmax;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  transform: translate3d(0, -50%, 0);\r\n  color: var(--slide-control-color);\r\n  background-color: var(--slide-control-background-color);\r\n  border-top-right-radius: 100%;\r\n  border-bottom-right-radius: 100%;\r\n  cursor: pointer;\r\n}\r\n\r\n.slide-control-default-left:hover {\r\n  color: var(--slide-control-color-high);\r\n  background-color: var(--slide-control-background-color-high);\r\n}\r\n\r\n.slide-control-default-right {\r\n  position: absolute;\r\n  top: 50%;\r\n  right: 0;\r\n  width: 7vmax;\r\n  height: 7vmax;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  transform: translate3d(0, -50%, 0);\r\n  color: var(--slide-control-color);\r\n  background-color: var(--slide-control-background-color);\r\n  border-top-left-radius: 100%;\r\n  border-bottom-left-radius: 100%;\r\n  cursor: pointer;\r\n}\r\n\r\n.slide-control-default-right:hover {\r\n  color: var(--slide-control-color-high);\r\n  background-color: var(--slide-control-background-color-high);\r\n}\r\n\r\n/* default end */\r\n\r\n/* fade start */\r\n.slide-fade-el-hover:hover .slide-control-fade-left,\r\n.slide-fade-el-hover:hover .slide-control-fade-right {\r\n  opacity: 1;\r\n  transform: translate3d(0, -50%, 0);\r\n}\r\n\r\n.slide-control-fade-left {\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 3%;\r\n  width: 7vmax;\r\n  height: 7vmax;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  opacity: 0;\r\n  transition: all 0.3s;\r\n  transform: translate3d(-100%, -50%, 0);\r\n  color: var(--slide-control-color);\r\n  background-color: var(--slide-control-background-color);\r\n  border-radius: 50%;\r\n  cursor: pointer;\r\n}\r\n\r\n.slide-control-fade-left:hover {\r\n  color: var(--slide-control-color-high);\r\n  background-color: var(--slide-control-background-color-high);\r\n}\r\n\r\n.slide-control-fade-right {\r\n  position: absolute;\r\n  top: 50%;\r\n  right: 3%;\r\n  width: 7vmax;\r\n  height: 7vmax;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  opacity: 0;\r\n  transition: all 0.3s;\r\n  transform: translate3d(100%, -50%, 0);\r\n  color: var(--slide-control-color);\r\n  background-color: var(--slide-control-background-color);\r\n  border-radius: 50%;\r\n  cursor: pointer;\r\n}\r\n\r\n.slide-control-fade-right:hover {\r\n  color: var(--slide-control-color-high);\r\n  background-color: var(--slide-control-background-color-high);\r\n}\r\n\r\n/* fade end */", "",{"version":3,"sources":["webpack://./src/assets/css/Slide/control.css"],"names":[],"mappings":"AAAA,kBAAkB;AAClB;EACE,kBAAkB;EAClB,QAAQ;EACR,OAAO;EACP,YAAY;EACZ,aAAa;EACb,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,kCAAkC;EAClC,iCAAiC;EACjC,uDAAuD;EACvD,6BAA6B;EAC7B,gCAAgC;EAChC,eAAe;AACjB;;AAEA;EACE,sCAAsC;EACtC,4DAA4D;AAC9D;;AAEA;EACE,kBAAkB;EAClB,QAAQ;EACR,QAAQ;EACR,YAAY;EACZ,aAAa;EACb,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,kCAAkC;EAClC,iCAAiC;EACjC,uDAAuD;EACvD,4BAA4B;EAC5B,+BAA+B;EAC/B,eAAe;AACjB;;AAEA;EACE,sCAAsC;EACtC,4DAA4D;AAC9D;;AAEA,gBAAgB;;AAEhB,eAAe;AACf;;EAEE,UAAU;EACV,kCAAkC;AACpC;;AAEA;EACE,kBAAkB;EAClB,QAAQ;EACR,QAAQ;EACR,YAAY;EACZ,aAAa;EACb,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,UAAU;EACV,oBAAoB;EACpB,sCAAsC;EACtC,iCAAiC;EACjC,uDAAuD;EACvD,kBAAkB;EAClB,eAAe;AACjB;;AAEA;EACE,sCAAsC;EACtC,4DAA4D;AAC9D;;AAEA;EACE,kBAAkB;EAClB,QAAQ;EACR,SAAS;EACT,YAAY;EACZ,aAAa;EACb,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,UAAU;EACV,oBAAoB;EACpB,qCAAqC;EACrC,iCAAiC;EACjC,uDAAuD;EACvD,kBAAkB;EAClB,eAAe;AACjB;;AAEA;EACE,sCAAsC;EACtC,4DAA4D;AAC9D;;AAEA,aAAa","sourcesContent":["/* default start */\r\n.slide-control-default-left {\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 0;\r\n  width: 7vmax;\r\n  height: 7vmax;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  transform: translate3d(0, -50%, 0);\r\n  color: var(--slide-control-color);\r\n  background-color: var(--slide-control-background-color);\r\n  border-top-right-radius: 100%;\r\n  border-bottom-right-radius: 100%;\r\n  cursor: pointer;\r\n}\r\n\r\n.slide-control-default-left:hover {\r\n  color: var(--slide-control-color-high);\r\n  background-color: var(--slide-control-background-color-high);\r\n}\r\n\r\n.slide-control-default-right {\r\n  position: absolute;\r\n  top: 50%;\r\n  right: 0;\r\n  width: 7vmax;\r\n  height: 7vmax;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  transform: translate3d(0, -50%, 0);\r\n  color: var(--slide-control-color);\r\n  background-color: var(--slide-control-background-color);\r\n  border-top-left-radius: 100%;\r\n  border-bottom-left-radius: 100%;\r\n  cursor: pointer;\r\n}\r\n\r\n.slide-control-default-right:hover {\r\n  color: var(--slide-control-color-high);\r\n  background-color: var(--slide-control-background-color-high);\r\n}\r\n\r\n/* default end */\r\n\r\n/* fade start */\r\n.slide-fade-el-hover:hover .slide-control-fade-left,\r\n.slide-fade-el-hover:hover .slide-control-fade-right {\r\n  opacity: 1;\r\n  transform: translate3d(0, -50%, 0);\r\n}\r\n\r\n.slide-control-fade-left {\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 3%;\r\n  width: 7vmax;\r\n  height: 7vmax;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  opacity: 0;\r\n  transition: all 0.3s;\r\n  transform: translate3d(-100%, -50%, 0);\r\n  color: var(--slide-control-color);\r\n  background-color: var(--slide-control-background-color);\r\n  border-radius: 50%;\r\n  cursor: pointer;\r\n}\r\n\r\n.slide-control-fade-left:hover {\r\n  color: var(--slide-control-color-high);\r\n  background-color: var(--slide-control-background-color-high);\r\n}\r\n\r\n.slide-control-fade-right {\r\n  position: absolute;\r\n  top: 50%;\r\n  right: 3%;\r\n  width: 7vmax;\r\n  height: 7vmax;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  opacity: 0;\r\n  transition: all 0.3s;\r\n  transform: translate3d(100%, -50%, 0);\r\n  color: var(--slide-control-color);\r\n  background-color: var(--slide-control-background-color);\r\n  border-radius: 50%;\r\n  cursor: pointer;\r\n}\r\n\r\n.slide-control-fade-right:hover {\r\n  color: var(--slide-control-color-high);\r\n  background-color: var(--slide-control-background-color-high);\r\n}\r\n\r\n/* fade end */"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -157,7 +157,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n@font-face {\n  font-family: 'h-iconfont';\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") format('truetype');\n}\n\n.h-iconfont {\n  font-family: \"h-iconfont\" !important;\n  font-size: 3vmax;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n", "",{"version":3,"sources":["webpack://./src/assets/css/font.css"],"names":[],"mappings":";AACA;EACE,yBAAyB;EACzB,+DAAmD;AACrD;;AAEA;EACE,oCAAoC;EACpC,gBAAgB;EAChB,kBAAkB;EAClB,mCAAmC;EACnC,kCAAkC;AACpC","sourcesContent":["\n@font-face {\n  font-family: 'h-iconfont';\n  src: url('../font/iconfont.ttf') format('truetype');\n}\n\n.h-iconfont {\n  font-family: \"h-iconfont\" !important;\n  font-size: 3vmax;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "\r\n@font-face {\r\n  font-family: 'h-iconfont';\r\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") format('truetype');\r\n}\r\n\r\n.h-iconfont {\r\n  font-family: \"h-iconfont\" !important;\r\n  font-size: 3vmax;\r\n  font-style: normal;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/assets/css/font.css"],"names":[],"mappings":";AACA;EACE,yBAAyB;EACzB,+DAAmD;AACrD;;AAEA;EACE,oCAAoC;EACpC,gBAAgB;EAChB,kBAAkB;EAClB,mCAAmC;EACnC,kCAAkC;AACpC","sourcesContent":["\r\n@font-face {\r\n  font-family: 'h-iconfont';\r\n  src: url('../font/iconfont.ttf') format('truetype');\r\n}\r\n\r\n.h-iconfont {\r\n  font-family: \"h-iconfont\" !important;\r\n  font-size: 3vmax;\r\n  font-style: normal;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -773,9 +773,12 @@ __webpack_require__.d(__webpack_exports__, {
   "LazyLoad": () => (/* reexport */ LazyLoad),
   "Slide": () => (/* reexport */ Slide),
   "Waterfall": () => (/* reexport */ Waterfall),
+  "isMobile": () => (/* reexport */ isMobile),
   "slideControlStyle": () => (/* reexport */ Style),
   "slideNavPosition": () => (/* reexport */ Position),
-  "slideNavStyle": () => (/* reexport */ slideNavStyle)
+  "slideNavStyle": () => (/* reexport */ slideNavStyle),
+  "throttle": () => (/* reexport */ throttle),
+  "throttleDebounce": () => (/* reexport */ throttleDebounce)
 });
 
 // EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
@@ -1305,6 +1308,42 @@ var LazyLoad = /*#__PURE__*/function () {
 
   return LazyLoad;
 }();
+;// CONCATENATED MODULE: ./src/utils/globalEvent.ts
+
+var map = {
+  document: new EventListener(document),
+  window: new EventListener(window)
+};
+
+function hasEventName(target, eventName) {
+  return map[target].on.hasOwnProperty(eventName);
+}
+
+function findIndexEventFunc(target, eventName, func) {
+  return map[target].on[eventName].findIndex(function (eventFunc) {
+    return eventFunc === func;
+  });
+}
+
+function addEventListener(target, eventName, func) {
+  if (!hasEventName(target, eventName)) {
+    map[target].on[eventName] = [];
+  }
+
+  var index = findIndexEventFunc(target, eventName, func);
+
+  if (index === -1) {
+    map[target].on[eventName].push(func);
+  }
+}
+function removeEventListener(target, eventName, func) {
+  if (!hasEventName(target, eventName)) return;
+  var index = findIndexEventFunc(target, eventName, func);
+
+  if (index !== -1) {
+    map[target].on[eventName].splice(index, 1);
+  }
+}
 ;// CONCATENATED MODULE: ./src/components/Waterfall/index.ts
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
@@ -1323,6 +1362,7 @@ function Waterfall_classCallCheck(instance, Constructor) { if (!(instance instan
 function Waterfall_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function Waterfall_createClass(Constructor, protoProps, staticProps) { if (protoProps) Waterfall_defineProperties(Constructor.prototype, protoProps); if (staticProps) Waterfall_defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 
@@ -1373,12 +1413,12 @@ var Waterfall = /*#__PURE__*/function () {
 
     if (!isMobile()) {
       var resize = throttleDebounce(this.reset.bind(this, 200), (_a = options === null || options === void 0 ? void 0 : options.throttle) !== null && _a !== void 0 ? _a : 200);
-      window.addEventListener('resize', resize);
+      addEventListener('window', 'resize', resize);
 
       this.destroy = function () {
         _this._el.remove();
 
-        window.removeEventListener('resize', resize);
+        removeEventListener('window', 'resize', resize);
       };
     } else {
       this.destroy = function () {
@@ -1480,6 +1520,7 @@ function Navigation_createClass(Constructor, protoProps, staticProps) { if (prot
 
 
 
+
 var Position;
 
 (function (Position) {
@@ -1547,10 +1588,10 @@ var Navigation = /*#__PURE__*/function () {
     this._layout();
 
     var layout = throttleDebounce(this._layout.bind(this), 200);
-    window.addEventListener('resize', layout);
+    addEventListener('window', 'resize', layout);
 
     this.destroy = function () {
-      window.removeEventListener('resize', layout);
+      removeEventListener('window', 'resize', layout);
     };
   }
 
@@ -2120,6 +2161,7 @@ function Carousel_defineProperties(target, props) { for (var i = 0; i < props.le
 function Carousel_createClass(Constructor, protoProps, staticProps) { if (protoProps) Carousel_defineProperties(Constructor.prototype, protoProps); if (staticProps) Carousel_defineProperties(Constructor, staticProps); return Constructor; }
 
 
+
 var Carousel_defaultOptions = {
   speed: 1
 };
@@ -2259,19 +2301,19 @@ var Carousel = /*#__PURE__*/function () {
       };
 
       points.addEventListener('mousedown', pointsMousedown);
-      document.addEventListener('mousemove', pointsMousemove);
-      document.addEventListener('mouseup', pointsMouseup);
+      addEventListener('document', 'mousemove', pointsMousemove);
+      addEventListener('document', 'mousemove', pointsMouseup);
       var resize = throttle(function () {
         _this._barWidth = _this._scrollBar.clientWidth;
         _this._pointsWidth = _this._scrollBar.firstElementChild.clientWidth;
       }, 200);
-      window.addEventListener('resize', resize);
+      addEventListener('window', 'resize', resize);
       return function () {
         _this._el.remove();
 
-        document.removeEventListener('mousemove', pointsMousemove);
-        document.removeEventListener('mouseup', pointsMouseup);
-        window.removeEventListener('resize', resize);
+        removeEventListener('document', 'mousemove', pointsMousemove);
+        removeEventListener('document', 'mousemove', pointsMouseup);
+        removeEventListener('window', 'resize', resize);
       };
     }
   }, {
@@ -2301,6 +2343,7 @@ var Carousel = /*#__PURE__*/function () {
   return Carousel;
 }();
 ;// CONCATENATED MODULE: ./src/index.ts
+
 
 
 
