@@ -4,10 +4,10 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["h"] = factory();
+		exports["hTools"] = factory();
 	else
-		root["h"] = factory();
-})(self, function() {
+		root["hTools"] = factory();
+})(self, () => {
 return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
@@ -16,10 +16,10 @@ return /******/ (() => { // webpackBootstrap
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   Z: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(537);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(81);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(645);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_font_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(83);
@@ -31,12 +31,20 @@ return /******/ (() => { // webpackBootstrap
 
 
 
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_font_css__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z);
-___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_Slide_index_css__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z);
-___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_Carousel_index_css__WEBPACK_IMPORTED_MODULE_4__/* .default */ .Z);
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_font_css__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z);
+___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_Slide_index_css__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z);
+___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_Carousel_index_css__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\r\n:root {\r\n  /* slide */\r\n  --slide-control-color: #ddd;\r\n  --slide-control-background-color: rgba(0, 0, 0, 0.25);\r\n  --slide-control-color-high: rgba(0, 0, 0, 0.25);\r\n  --slide-control-background-color-high: #ddd;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/assets/css/base.css"],"names":[],"mappings":";AAKA;EACE,UAAU;EACV,2BAA2B;EAC3B,qDAAqD;EACrD,+CAA+C;EAC/C,2CAA2C;AAC7C","sourcesContent":["\r\n@import url('./font.css');\r\n@import url('./Slide/index.css');\r\n@import url('./Carousel/index.css');\r\n\r\n:root {\r\n  /* slide */\r\n  --slide-control-color: #ddd;\r\n  --slide-control-background-color: rgba(0, 0, 0, 0.25);\r\n  --slide-control-color-high: rgba(0, 0, 0, 0.25);\r\n  --slide-control-background-color-high: #ddd;\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, `
+:root {
+  /* slide */
+  --slide-control-color: #ddd;
+  --slide-control-background-color: rgba(0, 0, 0, 0.25);
+  --slide-control-color-high: rgba(0, 0, 0, 0.25);
+  --slide-control-background-color-high: #ddd;
+}
+`, ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -47,10 +55,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, "\r\n:root {\r\n  /* slide */\r\n  --sl
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   Z: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(537);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(81);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(645);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_scroll_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(710);
@@ -58,10 +66,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, "\r\n:root {\r\n  /* slide */\r\n  --sl
 
 
 
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_scroll_css__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z);
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_scroll_css__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "", "",{"version":3,"sources":[],"names":[],"mappings":"","sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ``, ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -72,18 +80,42 @@ ___CSS_LOADER_EXPORT___.push([module.id, "", "",{"version":3,"sources":[],"names
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   Z: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(537);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(81);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(645);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 // Imports
 
 
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".carousel-scroll-bar {\r\n  position: absolute;\r\n  bottom: 4%;\r\n  left: 2%;\r\n  width: 96%;\r\n  height: 1%;\r\n  background-color: #f3f3f3;\r\n  border-radius: 999px;\r\n  opacity: 0;\r\n  transition: opacity 0.2s;\r\n}\r\n\r\n.carousel-scroll-points {\r\n  width: 10%;\r\n  height: 400%;\r\n  background-color: #d8d8d8;\r\n  border-radius: 999px;\r\n  transform: translate3d(0, -40%, 0);\r\n  cursor: pointer;\r\n}\r\n\r\n.carousel-scroll-points:hover {\r\n  background-color: #ccc;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/assets/css/Carousel/scroll.css"],"names":[],"mappings":"AAAA;EACE,kBAAkB;EAClB,UAAU;EACV,QAAQ;EACR,UAAU;EACV,UAAU;EACV,yBAAyB;EACzB,oBAAoB;EACpB,UAAU;EACV,wBAAwB;AAC1B;;AAEA;EACE,UAAU;EACV,YAAY;EACZ,yBAAyB;EACzB,oBAAoB;EACpB,kCAAkC;EAClC,eAAe;AACjB;;AAEA;EACE,sBAAsB;AACxB","sourcesContent":[".carousel-scroll-bar {\r\n  position: absolute;\r\n  bottom: 4%;\r\n  left: 2%;\r\n  width: 96%;\r\n  height: 1%;\r\n  background-color: #f3f3f3;\r\n  border-radius: 999px;\r\n  opacity: 0;\r\n  transition: opacity 0.2s;\r\n}\r\n\r\n.carousel-scroll-points {\r\n  width: 10%;\r\n  height: 400%;\r\n  background-color: #d8d8d8;\r\n  border-radius: 999px;\r\n  transform: translate3d(0, -40%, 0);\r\n  cursor: pointer;\r\n}\r\n\r\n.carousel-scroll-points:hover {\r\n  background-color: #ccc;\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, `.carousel-scroll-bar {
+  position: absolute;
+  bottom: 4%;
+  left: 2%;
+  width: 96%;
+  height: 1%;
+  background-color: #f3f3f3;
+  border-radius: 999px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.carousel-scroll-points {
+  width: 10%;
+  height: 400%;
+  background-color: #d8d8d8;
+  border-radius: 999px;
+  transform: translate3d(0, -40%, 0);
+  cursor: pointer;
+}
+
+.carousel-scroll-points:hover {
+  background-color: #ccc;
+}
+`, ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -94,18 +126,118 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".carousel-scroll-bar {\r\n  position: 
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   Z: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(537);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(81);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(645);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 // Imports
 
 
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* default start */\r\n.slide-control-default-left {\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 0;\r\n  width: 7vmax;\r\n  height: 7vmax;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  transform: translate3d(0, -50%, 0);\r\n  color: var(--slide-control-color);\r\n  background-color: var(--slide-control-background-color);\r\n  border-top-right-radius: 100%;\r\n  border-bottom-right-radius: 100%;\r\n  cursor: pointer;\r\n}\r\n\r\n.slide-control-default-left:hover {\r\n  color: var(--slide-control-color-high);\r\n  background-color: var(--slide-control-background-color-high);\r\n}\r\n\r\n.slide-control-default-right {\r\n  position: absolute;\r\n  top: 50%;\r\n  right: 0;\r\n  width: 7vmax;\r\n  height: 7vmax;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  transform: translate3d(0, -50%, 0);\r\n  color: var(--slide-control-color);\r\n  background-color: var(--slide-control-background-color);\r\n  border-top-left-radius: 100%;\r\n  border-bottom-left-radius: 100%;\r\n  cursor: pointer;\r\n}\r\n\r\n.slide-control-default-right:hover {\r\n  color: var(--slide-control-color-high);\r\n  background-color: var(--slide-control-background-color-high);\r\n}\r\n\r\n/* default end */\r\n\r\n/* fade start */\r\n.slide-fade-el-hover:hover .slide-control-fade-left,\r\n.slide-fade-el-hover:hover .slide-control-fade-right {\r\n  opacity: 1;\r\n  transform: translate3d(0, -50%, 0);\r\n}\r\n\r\n.slide-control-fade-left {\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 3%;\r\n  width: 7vmax;\r\n  height: 7vmax;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  opacity: 0;\r\n  transition: all 0.3s;\r\n  transform: translate3d(-100%, -50%, 0);\r\n  color: var(--slide-control-color);\r\n  background-color: var(--slide-control-background-color);\r\n  border-radius: 50%;\r\n  cursor: pointer;\r\n}\r\n\r\n.slide-control-fade-left:hover {\r\n  color: var(--slide-control-color-high);\r\n  background-color: var(--slide-control-background-color-high);\r\n}\r\n\r\n.slide-control-fade-right {\r\n  position: absolute;\r\n  top: 50%;\r\n  right: 3%;\r\n  width: 7vmax;\r\n  height: 7vmax;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  opacity: 0;\r\n  transition: all 0.3s;\r\n  transform: translate3d(100%, -50%, 0);\r\n  color: var(--slide-control-color);\r\n  background-color: var(--slide-control-background-color);\r\n  border-radius: 50%;\r\n  cursor: pointer;\r\n}\r\n\r\n.slide-control-fade-right:hover {\r\n  color: var(--slide-control-color-high);\r\n  background-color: var(--slide-control-background-color-high);\r\n}\r\n\r\n/* fade end */", "",{"version":3,"sources":["webpack://./src/assets/css/Slide/control.css"],"names":[],"mappings":"AAAA,kBAAkB;AAClB;EACE,kBAAkB;EAClB,QAAQ;EACR,OAAO;EACP,YAAY;EACZ,aAAa;EACb,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,kCAAkC;EAClC,iCAAiC;EACjC,uDAAuD;EACvD,6BAA6B;EAC7B,gCAAgC;EAChC,eAAe;AACjB;;AAEA;EACE,sCAAsC;EACtC,4DAA4D;AAC9D;;AAEA;EACE,kBAAkB;EAClB,QAAQ;EACR,QAAQ;EACR,YAAY;EACZ,aAAa;EACb,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,kCAAkC;EAClC,iCAAiC;EACjC,uDAAuD;EACvD,4BAA4B;EAC5B,+BAA+B;EAC/B,eAAe;AACjB;;AAEA;EACE,sCAAsC;EACtC,4DAA4D;AAC9D;;AAEA,gBAAgB;;AAEhB,eAAe;AACf;;EAEE,UAAU;EACV,kCAAkC;AACpC;;AAEA;EACE,kBAAkB;EAClB,QAAQ;EACR,QAAQ;EACR,YAAY;EACZ,aAAa;EACb,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,UAAU;EACV,oBAAoB;EACpB,sCAAsC;EACtC,iCAAiC;EACjC,uDAAuD;EACvD,kBAAkB;EAClB,eAAe;AACjB;;AAEA;EACE,sCAAsC;EACtC,4DAA4D;AAC9D;;AAEA;EACE,kBAAkB;EAClB,QAAQ;EACR,SAAS;EACT,YAAY;EACZ,aAAa;EACb,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,UAAU;EACV,oBAAoB;EACpB,qCAAqC;EACrC,iCAAiC;EACjC,uDAAuD;EACvD,kBAAkB;EAClB,eAAe;AACjB;;AAEA;EACE,sCAAsC;EACtC,4DAA4D;AAC9D;;AAEA,aAAa","sourcesContent":["/* default start */\r\n.slide-control-default-left {\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 0;\r\n  width: 7vmax;\r\n  height: 7vmax;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  transform: translate3d(0, -50%, 0);\r\n  color: var(--slide-control-color);\r\n  background-color: var(--slide-control-background-color);\r\n  border-top-right-radius: 100%;\r\n  border-bottom-right-radius: 100%;\r\n  cursor: pointer;\r\n}\r\n\r\n.slide-control-default-left:hover {\r\n  color: var(--slide-control-color-high);\r\n  background-color: var(--slide-control-background-color-high);\r\n}\r\n\r\n.slide-control-default-right {\r\n  position: absolute;\r\n  top: 50%;\r\n  right: 0;\r\n  width: 7vmax;\r\n  height: 7vmax;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  transform: translate3d(0, -50%, 0);\r\n  color: var(--slide-control-color);\r\n  background-color: var(--slide-control-background-color);\r\n  border-top-left-radius: 100%;\r\n  border-bottom-left-radius: 100%;\r\n  cursor: pointer;\r\n}\r\n\r\n.slide-control-default-right:hover {\r\n  color: var(--slide-control-color-high);\r\n  background-color: var(--slide-control-background-color-high);\r\n}\r\n\r\n/* default end */\r\n\r\n/* fade start */\r\n.slide-fade-el-hover:hover .slide-control-fade-left,\r\n.slide-fade-el-hover:hover .slide-control-fade-right {\r\n  opacity: 1;\r\n  transform: translate3d(0, -50%, 0);\r\n}\r\n\r\n.slide-control-fade-left {\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 3%;\r\n  width: 7vmax;\r\n  height: 7vmax;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  opacity: 0;\r\n  transition: all 0.3s;\r\n  transform: translate3d(-100%, -50%, 0);\r\n  color: var(--slide-control-color);\r\n  background-color: var(--slide-control-background-color);\r\n  border-radius: 50%;\r\n  cursor: pointer;\r\n}\r\n\r\n.slide-control-fade-left:hover {\r\n  color: var(--slide-control-color-high);\r\n  background-color: var(--slide-control-background-color-high);\r\n}\r\n\r\n.slide-control-fade-right {\r\n  position: absolute;\r\n  top: 50%;\r\n  right: 3%;\r\n  width: 7vmax;\r\n  height: 7vmax;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  opacity: 0;\r\n  transition: all 0.3s;\r\n  transform: translate3d(100%, -50%, 0);\r\n  color: var(--slide-control-color);\r\n  background-color: var(--slide-control-background-color);\r\n  border-radius: 50%;\r\n  cursor: pointer;\r\n}\r\n\r\n.slide-control-fade-right:hover {\r\n  color: var(--slide-control-color-high);\r\n  background-color: var(--slide-control-background-color-high);\r\n}\r\n\r\n/* fade end */"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, `/* default start */
+.slide-control-default-left {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 7vmax;
+  height: 7vmax;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate3d(0, -50%, 0);
+  color: var(--slide-control-color);
+  background-color: var(--slide-control-background-color);
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+  cursor: pointer;
+}
+
+.slide-control-default-left:hover {
+  color: var(--slide-control-color-high);
+  background-color: var(--slide-control-background-color-high);
+}
+
+.slide-control-default-right {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 7vmax;
+  height: 7vmax;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate3d(0, -50%, 0);
+  color: var(--slide-control-color);
+  background-color: var(--slide-control-background-color);
+  border-top-left-radius: 100%;
+  border-bottom-left-radius: 100%;
+  cursor: pointer;
+}
+
+.slide-control-default-right:hover {
+  color: var(--slide-control-color-high);
+  background-color: var(--slide-control-background-color-high);
+}
+
+/* default end */
+
+/* fade start */
+.slide-fade-el-hover:hover .slide-control-fade-left,
+.slide-fade-el-hover:hover .slide-control-fade-right {
+  opacity: 1;
+  transform: translate3d(0, -50%, 0);
+}
+
+.slide-control-fade-left {
+  position: absolute;
+  top: 50%;
+  left: 3%;
+  width: 7vmax;
+  height: 7vmax;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.3s;
+  transform: translate3d(-100%, -50%, 0);
+  color: var(--slide-control-color);
+  background-color: var(--slide-control-background-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slide-control-fade-left:hover {
+  color: var(--slide-control-color-high);
+  background-color: var(--slide-control-background-color-high);
+}
+
+.slide-control-fade-right {
+  position: absolute;
+  top: 50%;
+  right: 3%;
+  width: 7vmax;
+  height: 7vmax;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.3s;
+  transform: translate3d(100%, -50%, 0);
+  color: var(--slide-control-color);
+  background-color: var(--slide-control-background-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slide-control-fade-right:hover {
+  color: var(--slide-control-color-high);
+  background-color: var(--slide-control-background-color-high);
+}
+
+/* fade end */`, ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -116,10 +248,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, "/* default start */\r\n.slide-control-
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   Z: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(537);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(81);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(645);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_control_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(876);
@@ -127,10 +259,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, "/* default start */\r\n.slide-control-
 
 
 
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_control_css__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z);
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_control_css__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "", "",{"version":3,"sources":[],"names":[],"mappings":"","sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ``, ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -141,10 +273,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, "", "",{"version":3,"sources":[],"names
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   Z: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(537);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(81);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(645);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(667);
@@ -154,10 +286,23 @@ ___CSS_LOADER_EXPORT___.push([module.id, "", "",{"version":3,"sources":[],"names
 
 
 var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(506), __webpack_require__.b);
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\r\n@font-face {\r\n  font-family: 'h-iconfont';\r\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") format('truetype');\r\n}\r\n\r\n.h-iconfont {\r\n  font-family: \"h-iconfont\" !important;\r\n  font-size: 3vmax;\r\n  font-style: normal;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/assets/css/font.css"],"names":[],"mappings":";AACA;EACE,yBAAyB;EACzB,+DAAmD;AACrD;;AAEA;EACE,oCAAoC;EACpC,gBAAgB;EAChB,kBAAkB;EAClB,mCAAmC;EACnC,kCAAkC;AACpC","sourcesContent":["\r\n@font-face {\r\n  font-family: 'h-iconfont';\r\n  src: url('../font/iconfont.ttf') format('truetype');\r\n}\r\n\r\n.h-iconfont {\r\n  font-family: \"h-iconfont\" !important;\r\n  font-size: 3vmax;\r\n  font-style: normal;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, `
+@font-face {
+  font-family: 'h-iconfont';
+  src: url(${___CSS_LOADER_URL_REPLACEMENT_0___}) format('truetype');
+}
+
+.h-iconfont {
+  font-family: "h-iconfont" !important;
+  font-size: 3vmax;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+`, ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -174,68 +319,55 @@ ___CSS_LOADER_EXPORT___.push([module.id, "\r\n@font-face {\r\n  font-family: 'h-
   Author Tobias Koppers @sokra
 */
 module.exports = function (cssWithMappingToString) {
-  var list = []; // return the list of modules as css string
+  var list = [];
 
+  // return the list of modules as css string
   list.toString = function toString() {
     return this.map(function (item) {
       var content = "";
       var needLayer = typeof item[5] !== "undefined";
-
       if (item[4]) {
         content += "@supports (".concat(item[4], ") {");
       }
-
       if (item[2]) {
         content += "@media ".concat(item[2], " {");
       }
-
       if (needLayer) {
         content += "@layer".concat(item[5].length > 0 ? " ".concat(item[5]) : "", " {");
       }
-
       content += cssWithMappingToString(item);
-
       if (needLayer) {
         content += "}";
       }
-
       if (item[2]) {
         content += "}";
       }
-
       if (item[4]) {
         content += "}";
       }
-
       return content;
     }).join("");
-  }; // import a list of modules into the list
+  };
 
-
+  // import a list of modules into the list
   list.i = function i(modules, media, dedupe, supports, layer) {
     if (typeof modules === "string") {
       modules = [[null, modules, undefined]];
     }
-
     var alreadyImportedModules = {};
-
     if (dedupe) {
       for (var k = 0; k < this.length; k++) {
         var id = this[k][0];
-
         if (id != null) {
           alreadyImportedModules[id] = true;
         }
       }
     }
-
     for (var _k = 0; _k < modules.length; _k++) {
       var item = [].concat(modules[_k]);
-
       if (dedupe && alreadyImportedModules[item[0]]) {
         continue;
       }
-
       if (typeof layer !== "undefined") {
         if (typeof item[5] === "undefined") {
           item[5] = layer;
@@ -244,7 +376,6 @@ module.exports = function (cssWithMappingToString) {
           item[5] = layer;
         }
       }
-
       if (media) {
         if (!item[2]) {
           item[2] = media;
@@ -253,7 +384,6 @@ module.exports = function (cssWithMappingToString) {
           item[2] = media;
         }
       }
-
       if (supports) {
         if (!item[4]) {
           item[4] = "".concat(supports);
@@ -262,11 +392,9 @@ module.exports = function (cssWithMappingToString) {
           item[4] = supports;
         }
       }
-
       list.push(item);
     }
   };
-
   return list;
 };
 
@@ -281,56 +409,36 @@ module.exports = function (url, options) {
   if (!options) {
     options = {};
   }
-
   if (!url) {
     return url;
   }
+  url = String(url.__esModule ? url.default : url);
 
-  url = String(url.__esModule ? url.default : url); // If url is already wrapped in quotes, remove them
-
+  // If url is already wrapped in quotes, remove them
   if (/^['"].*['"]$/.test(url)) {
     url = url.slice(1, -1);
   }
-
   if (options.hash) {
     url += options.hash;
-  } // Should url be wrapped?
+  }
+
+  // Should url be wrapped?
   // See https://drafts.csswg.org/css-values-3/#urls
-
-
   if (/["'() \t\n]|(%20)/.test(url) || options.needQuotes) {
     return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
   }
-
   return url;
 };
 
 /***/ }),
 
-/***/ 537:
+/***/ 81:
 /***/ ((module) => {
 
 
 
-module.exports = function (item) {
-  var content = item[1];
-  var cssMapping = item[3];
-
-  if (!cssMapping) {
-    return content;
-  }
-
-  if (typeof btoa === "function") {
-    var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(cssMapping))));
-    var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
-    var sourceMapping = "/*# ".concat(data, " */");
-    var sourceURLs = cssMapping.sources.map(function (source) {
-      return "/*# sourceURL=".concat(cssMapping.sourceRoot || "").concat(source, " */");
-    });
-    return [content].concat(sourceURLs).concat([sourceMapping]).join("\n");
-  }
-
-  return [content].join("\n");
+module.exports = function (i) {
+  return i[1];
 };
 
 /***/ }),
@@ -341,24 +449,19 @@ module.exports = function (item) {
 
 
 var stylesInDOM = [];
-
 function getIndexByIdentifier(identifier) {
   var result = -1;
-
   for (var i = 0; i < stylesInDOM.length; i++) {
     if (stylesInDOM[i].identifier === identifier) {
       result = i;
       break;
     }
   }
-
   return result;
 }
-
 function modulesToDom(list, options) {
   var idCountMap = {};
   var identifiers = [];
-
   for (var i = 0; i < list.length; i++) {
     var item = list[i];
     var id = options.base ? item[0] + options.base : item[0];
@@ -373,7 +476,6 @@ function modulesToDom(list, options) {
       supports: item[4],
       layer: item[5]
     };
-
     if (indexByIdentifier !== -1) {
       stylesInDOM[indexByIdentifier].references++;
       stylesInDOM[indexByIdentifier].updater(obj);
@@ -386,59 +488,45 @@ function modulesToDom(list, options) {
         references: 1
       });
     }
-
     identifiers.push(identifier);
   }
-
   return identifiers;
 }
-
 function addElementStyle(obj, options) {
   var api = options.domAPI(options);
   api.update(obj);
-
   var updater = function updater(newObj) {
     if (newObj) {
       if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap && newObj.supports === obj.supports && newObj.layer === obj.layer) {
         return;
       }
-
       api.update(obj = newObj);
     } else {
       api.remove();
     }
   };
-
   return updater;
 }
-
 module.exports = function (list, options) {
   options = options || {};
   list = list || [];
   var lastIdentifiers = modulesToDom(list, options);
   return function update(newList) {
     newList = newList || [];
-
     for (var i = 0; i < lastIdentifiers.length; i++) {
       var identifier = lastIdentifiers[i];
       var index = getIndexByIdentifier(identifier);
       stylesInDOM[index].references--;
     }
-
     var newLastIdentifiers = modulesToDom(newList, options);
-
     for (var _i = 0; _i < lastIdentifiers.length; _i++) {
       var _identifier = lastIdentifiers[_i];
-
       var _index = getIndexByIdentifier(_identifier);
-
       if (stylesInDOM[_index].references === 0) {
         stylesInDOM[_index].updater();
-
         stylesInDOM.splice(_index, 1);
       }
     }
-
     lastIdentifiers = newLastIdentifiers;
   };
 };
@@ -451,12 +539,13 @@ module.exports = function (list, options) {
 
 
 var memo = {};
-/* istanbul ignore next  */
 
+/* istanbul ignore next  */
 function getTarget(target) {
   if (typeof memo[target] === "undefined") {
-    var styleTarget = document.querySelector(target); // Special case to return head of iframe instead of iframe itself
+    var styleTarget = document.querySelector(target);
 
+    // Special case to return head of iframe instead of iframe itself
     if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
       try {
         // This will throw an exception if access to iframe is blocked
@@ -467,25 +556,19 @@ function getTarget(target) {
         styleTarget = null;
       }
     }
-
     memo[target] = styleTarget;
   }
-
   return memo[target];
 }
+
 /* istanbul ignore next  */
-
-
 function insertBySelector(insert, style) {
   var target = getTarget(insert);
-
   if (!target) {
     throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
   }
-
   target.appendChild(style);
 }
-
 module.exports = insertBySelector;
 
 /***/ }),
@@ -502,7 +585,6 @@ function insertStyleElement(options) {
   options.insert(element, options.options);
   return element;
 }
-
 module.exports = insertStyleElement;
 
 /***/ }),
@@ -515,12 +597,10 @@ module.exports = insertStyleElement;
 /* istanbul ignore next  */
 function setAttributesWithoutAttributes(styleElement) {
   var nonce =  true ? __webpack_require__.nc : 0;
-
   if (nonce) {
     styleElement.setAttribute("nonce", nonce);
   }
 }
-
 module.exports = setAttributesWithoutAttributes;
 
 /***/ }),
@@ -533,59 +613,51 @@ module.exports = setAttributesWithoutAttributes;
 /* istanbul ignore next  */
 function apply(styleElement, options, obj) {
   var css = "";
-
   if (obj.supports) {
     css += "@supports (".concat(obj.supports, ") {");
   }
-
   if (obj.media) {
     css += "@media ".concat(obj.media, " {");
   }
-
   var needLayer = typeof obj.layer !== "undefined";
-
   if (needLayer) {
     css += "@layer".concat(obj.layer.length > 0 ? " ".concat(obj.layer) : "", " {");
   }
-
   css += obj.css;
-
   if (needLayer) {
     css += "}";
   }
-
   if (obj.media) {
     css += "}";
   }
-
   if (obj.supports) {
     css += "}";
   }
-
   var sourceMap = obj.sourceMap;
-
   if (sourceMap && typeof btoa !== "undefined") {
     css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
-  } // For old IE
+  }
 
+  // For old IE
   /* istanbul ignore if  */
-
-
   options.styleTagTransform(css, styleElement, options.options);
 }
-
 function removeStyleElement(styleElement) {
   // istanbul ignore if
   if (styleElement.parentNode === null) {
     return false;
   }
-
   styleElement.parentNode.removeChild(styleElement);
 }
+
 /* istanbul ignore next  */
-
-
 function domAPI(options) {
+  if (typeof document === "undefined") {
+    return {
+      update: function update() {},
+      remove: function remove() {}
+    };
+  }
   var styleElement = options.insertStyleElement(options);
   return {
     update: function update(obj) {
@@ -596,7 +668,6 @@ function domAPI(options) {
     }
   };
 }
-
 module.exports = domAPI;
 
 /***/ }),
@@ -614,11 +685,9 @@ function styleTagTransform(css, styleElement) {
     while (styleElement.firstChild) {
       styleElement.removeChild(styleElement.firstChild);
     }
-
     styleElement.appendChild(document.createTextNode(css));
   }
 }
-
 module.exports = styleTagTransform;
 
 /***/ }),
@@ -719,10 +788,13 @@ module.exports = __webpack_require__.p + "font/iconfont.ttf";
 /******/ 		var document = __webpack_require__.g.document;
 /******/ 		if (!scriptUrl && document) {
 /******/ 			if (document.currentScript)
-/******/ 				scriptUrl = document.currentScript.src
+/******/ 				scriptUrl = document.currentScript.src;
 /******/ 			if (!scriptUrl) {
 /******/ 				var scripts = document.getElementsByTagName("script");
-/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && !scriptUrl) scriptUrl = scripts[i--].src;
+/******/ 				}
 /******/ 			}
 /******/ 		}
 /******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
@@ -740,8 +812,8 @@ module.exports = __webpack_require__.p + "font/iconfont.ttf";
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			204: 0,
-/******/ 			539: 0
+/******/ 			782: 0,
+/******/ 			779: 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -759,6 +831,11 @@ module.exports = __webpack_require__.p + "font/iconfont.ttf";
 /******/ 		// no jsonp function
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/nonce */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nc = undefined;
+/******/ 	})();
+/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
@@ -768,17 +845,14 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "Carousel": () => (/* reexport */ Carousel),
-  "EventListener": () => (/* reexport */ EventListener),
-  "LazyLoad": () => (/* reexport */ LazyLoad),
-  "Slide": () => (/* reexport */ Slide),
-  "Waterfall": () => (/* reexport */ Waterfall),
-  "isMobile": () => (/* reexport */ isMobile),
-  "slideControlStyle": () => (/* reexport */ Style),
-  "slideNavPosition": () => (/* reexport */ Position),
-  "slideNavStyle": () => (/* reexport */ slideNavStyle),
-  "throttle": () => (/* reexport */ throttle),
-  "throttleDebounce": () => (/* reexport */ throttleDebounce)
+  Carousel: () => (/* reexport */ Carousel),
+  EventListener: () => (/* reexport */ EventListener),
+  LazyLoad: () => (/* reexport */ LazyLoad),
+  Slide: () => (/* reexport */ Slide),
+  Waterfall: () => (/* reexport */ Waterfall),
+  slideControlStyle: () => (/* reexport */ Style),
+  slideNavPosition: () => (/* reexport */ Position),
+  slideNavStyle: () => (/* reexport */ slideNavStyle)
 });
 
 // EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
@@ -828,17 +902,15 @@ var update = injectStylesIntoStyleTag_default()(base/* default */.Z, options);
 
 
 
-       /* harmony default export */ const css_base = (base/* default */.Z && base/* default.locals */.Z.locals ? base/* default.locals */.Z.locals : undefined);
+       /* harmony default export */ const css_base = (base/* default */.Z && base/* default */.Z.locals ? base/* default */.Z.locals : undefined);
 
 ;// CONCATENATED MODULE: ./src/components/EventListener/index.ts
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function invokeHandler(handler, event) {
   if (typeof handler === 'function') {
     handler.call(this, event);
@@ -848,41 +920,32 @@ function invokeHandler(handler, event) {
     }
   }
 }
-
 var EventListener = /*#__PURE__*/function () {
   function EventListener(el, on) {
     var _this = this;
-
     _classCallCheck(this, EventListener);
-
     this._handle = {
       set: function set(on, event, listenerHandler) {
         var isAdd = !Reflect.has(on, event);
         Reflect.set(on, event, listenerHandler);
-
         if (isAdd) {
           _this._add(event);
         }
-
         return true;
       },
       deleteProperty: function deleteProperty(on, event) {
         var isDel = Reflect.has(on, event);
-
         if (isDel) {
           _this._delete(event);
         }
-
         return Reflect.deleteProperty(on, event);
       }
     };
     this.on = new Proxy(on !== null && on !== void 0 ? on : {}, this._handle);
     this._el = el;
     this._listenerMap = {};
-
     this._add();
   }
-
   _createClass(EventListener, [{
     key: "el",
     get: function get() {
@@ -901,17 +964,13 @@ var EventListener = /*#__PURE__*/function () {
     value: function _add(event) {
       if (event) {
         var listener = this._createListener(event);
-
         this.el.addEventListener(event, listener, false);
         this._listenerMap[event] = listener;
       } else {
         var eventPool = Object.keys(this.on);
-
         for (var i = 0; i < eventPool.length; ++i) {
           var _event = eventPool[i];
-
           var _listener = this._createListener(_event);
-
           this.el.addEventListener(_event, _listener, false);
           this._listenerMap[_event] = _listener;
         }
@@ -925,7 +984,6 @@ var EventListener = /*#__PURE__*/function () {
         delete this._listenerMap[event];
       } else {
         var eventPool = Object.keys(this._listenerMap);
-
         for (var i = 0; i < eventPool.length; ++i) {
           var _event2 = eventPool[i];
           this.el.removeEventListener(_event2, this._listenerMap[_event2], false);
@@ -937,31 +995,26 @@ var EventListener = /*#__PURE__*/function () {
     key: "reflect",
     value: function reflect(on) {
       this._delete();
-
       this.on = new Proxy(on, this._handle);
-
       this._add();
     }
   }]);
-
   return EventListener;
 }();
 ;// CONCATENATED MODULE: ./src/components/LazyLoad/ImageListener.ts
+function ImageListener_typeof(o) { "@babel/helpers - typeof"; return ImageListener_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, ImageListener_typeof(o); }
 function ImageListener_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function ImageListener_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function ImageListener_createClass(Constructor, protoProps, staticProps) { if (protoProps) ImageListener_defineProperties(Constructor.prototype, protoProps); if (staticProps) ImageListener_defineProperties(Constructor, staticProps); return Constructor; }
-
+function ImageListener_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, ImageListener_toPropertyKey(descriptor.key), descriptor); } }
+function ImageListener_createClass(Constructor, protoProps, staticProps) { if (protoProps) ImageListener_defineProperties(Constructor.prototype, protoProps); if (staticProps) ImageListener_defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function ImageListener_toPropertyKey(arg) { var key = ImageListener_toPrimitive(arg, "string"); return ImageListener_typeof(key) === "symbol" ? key : String(key); }
+function ImageListener_toPrimitive(input, hint) { if (ImageListener_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (ImageListener_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 var ImageListener = /*#__PURE__*/function () {
   function ImageListener(el, src, options) {
     ImageListener_classCallCheck(this, ImageListener);
-
     this.el = el;
     this.src = src || '';
     this.options = options;
   }
-
   ImageListener_createClass(ImageListener, [{
     key: "_getDOMRect",
     value: function _getDOMRect(el) {
@@ -971,17 +1024,15 @@ var ImageListener = /*#__PURE__*/function () {
     key: "_checkInView",
     value: function _checkInView() {
       var _this$options = this.options,
-          viewport = _this$options.viewport,
-          preload = _this$options.preload;
-
+        viewport = _this$options.viewport,
+        preload = _this$options.preload;
       var _this$_getDOMRect = this._getDOMRect(this.el),
-          top = _this$_getDOMRect.top,
-          right = _this$_getDOMRect.right,
-          bottom = _this$_getDOMRect.bottom,
-          left = _this$_getDOMRect.left;
-
+        top = _this$_getDOMRect.top,
+        right = _this$_getDOMRect.right,
+        bottom = _this$_getDOMRect.bottom,
+        left = _this$_getDOMRect.left;
       var w = viewport.w,
-          h = viewport.h;
+        h = viewport.h;
       return top < h * preload && bottom > 0 && left < w * preload && right > 0;
     }
   }, {
@@ -994,62 +1045,49 @@ var ImageListener = /*#__PURE__*/function () {
         img.onerror = reject;
         return true;
       }
-
       return false;
     }
   }, {
     key: "load",
     value: function load() {
       var _this = this;
-
       var attempt = this.options.attempt;
-
       var resolve = function resolve() {
         _this.el.src = _this.src;
       };
-
       var reject = function reject(e) {
         var count = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
-
         if (count === attempt) {
           _this.el.src = _this.options.error;
           return;
         }
-
         _this._loadImg(resolve, reject.bind(_this, e, ++count));
       };
-
       return this._loadImg(resolve, reject);
     }
   }]);
-
   return ImageListener;
 }();
 
-
 ;// CONCATENATED MODULE: ./src/components/LazyLoad/ListNode.ts
-function ListNode_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function ListNode_createClass(Constructor, protoProps, staticProps) { if (protoProps) ListNode_defineProperties(Constructor.prototype, protoProps); if (staticProps) ListNode_defineProperties(Constructor, staticProps); return Constructor; }
-
+function ListNode_typeof(o) { "@babel/helpers - typeof"; return ListNode_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, ListNode_typeof(o); }
+function ListNode_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, ListNode_toPropertyKey(descriptor.key), descriptor); } }
+function ListNode_createClass(Constructor, protoProps, staticProps) { if (protoProps) ListNode_defineProperties(Constructor.prototype, protoProps); if (staticProps) ListNode_defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function ListNode_toPropertyKey(arg) { var key = ListNode_toPrimitive(arg, "string"); return ListNode_typeof(key) === "symbol" ? key : String(key); }
+function ListNode_toPrimitive(input, hint) { if (ListNode_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (ListNode_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 function ListNode_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Node = function Node(value) {
+var Node = /*#__PURE__*/ListNode_createClass(function Node(value) {
   ListNode_classCallCheck(this, Node);
-
   this.value = value;
   this.next = null;
-};
-
+});
 var ListNode = /*#__PURE__*/function () {
   function ListNode() {
     ListNode_classCallCheck(this, ListNode);
-
     this.head = null;
     this.tail = null;
     this.length = 0;
   }
-
   ListNode_createClass(ListNode, [{
     key: "add",
     value: function add(value) {
@@ -1061,7 +1099,6 @@ var ListNode = /*#__PURE__*/function () {
         this.tail.next = node;
         this.tail = node;
       }
-
       ++this.length;
     }
   }, {
@@ -1069,14 +1106,11 @@ var ListNode = /*#__PURE__*/function () {
     value: function remove(value) {
       var prev = null;
       var cur = this.head;
-
       while ((cur === null || cur === void 0 ? void 0 : cur.value) !== value) {
         prev = cur;
         cur = cur.next;
       }
-
       if (!cur) return;
-
       if (cur === this.head) {
         this.head = cur.next;
         !this.head && (this.tail = null);
@@ -1084,7 +1118,6 @@ var ListNode = /*#__PURE__*/function () {
         prev.next = cur.next;
         !cur.next && (this.tail = prev);
       }
-
       --this.length;
     }
   }, {
@@ -1096,8 +1129,7 @@ var ListNode = /*#__PURE__*/function () {
     key: "forEach",
     value: function forEach(callback) {
       var cur = this.head,
-          i = 0;
-
+        i = 0;
       while (cur) {
         callback.call(this, cur.value, i);
         cur = cur.next;
@@ -1105,19 +1137,15 @@ var ListNode = /*#__PURE__*/function () {
       }
     }
   }]);
-
   return ListNode;
 }();
-
 
 ;// CONCATENATED MODULE: ./src/utils/index.ts
 function checkType(value, type) {
   type = type[0].toUpperCase() + type.substring(1);
-
   if (Object.prototype.toString.call(value) === "[object ".concat(type, "]")) {
     return true;
   }
-
   return false;
 }
 function isMobile() {
@@ -1133,13 +1161,10 @@ function throttleDebounce(func) {
   var timer = null;
   return function () {
     var _this = this;
-
     for (var _len = arguments.length, rest = new Array(_len), _key = 0; _key < _len; _key++) {
       rest[_key] = arguments[_key];
     }
-
     if (timer != null) window.clearTimeout(timer);
-
     if (flag) {
       flag = false;
       func.apply(this, [].concat(rest));
@@ -1161,11 +1186,9 @@ function throttle(func, delay) {
       window.setTimeout(function () {
         flag = true;
       }, delay);
-
       for (var _len2 = arguments.length, rest = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
         rest[_key2] = arguments[_key2];
       }
-
       return func.apply(this, [].concat(rest));
     } else {
       return undefined;
@@ -1173,13 +1196,12 @@ function throttle(func, delay) {
   };
 }
 ;// CONCATENATED MODULE: ./src/components/LazyLoad/index.ts
+function LazyLoad_typeof(o) { "@babel/helpers - typeof"; return LazyLoad_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, LazyLoad_typeof(o); }
 function LazyLoad_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function LazyLoad_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function LazyLoad_createClass(Constructor, protoProps, staticProps) { if (protoProps) LazyLoad_defineProperties(Constructor.prototype, protoProps); if (staticProps) LazyLoad_defineProperties(Constructor, staticProps); return Constructor; }
-
-
+function LazyLoad_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, LazyLoad_toPropertyKey(descriptor.key), descriptor); } }
+function LazyLoad_createClass(Constructor, protoProps, staticProps) { if (protoProps) LazyLoad_defineProperties(Constructor.prototype, protoProps); if (staticProps) LazyLoad_defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function LazyLoad_toPropertyKey(arg) { var key = LazyLoad_toPrimitive(arg, "string"); return LazyLoad_typeof(key) === "symbol" ? key : String(key); }
+function LazyLoad_toPrimitive(input, hint) { if (LazyLoad_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (LazyLoad_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 
 
 
@@ -1187,34 +1209,26 @@ function searchParent(parent, props, value) {
   while (parent) {
     try {
       var flag = false;
-
       for (var i = 0; i < props.length; ++i) {
         var prop = props[i];
-
         if (getComputedStyle(parent)[prop] === value) {
           flag = true;
           break;
         }
       }
-
       if (flag) break;
     } catch (e) {
       parent = parent.parentNode;
       break;
     }
-
     parent = parent.parentNode;
   }
-
   return parent === null ? window : parent;
 }
-
 var LazyLoad = /*#__PURE__*/function () {
   function LazyLoad(options) {
     var _this = this;
-
     LazyLoad_classCallCheck(this, LazyLoad);
-
     this._options = this._handleOptions(options);
     this._listNode = new ListNode();
     this._viewport = {
@@ -1231,7 +1245,6 @@ var LazyLoad = /*#__PURE__*/function () {
       };
     }, this._options.throttle));
   }
-
   LazyLoad_createClass(LazyLoad, [{
     key: "_handleOptions",
     value: function _handleOptions(options) {
@@ -1244,11 +1257,11 @@ var LazyLoad = /*#__PURE__*/function () {
         eventListener: ['scroll']
       };
       var preload = options.preload,
-          loading = options.loading,
-          error = options.error,
-          attempt = options.attempt,
-          throttle = options.throttle,
-          eventListener = options.eventListener;
+        loading = options.loading,
+        error = options.error,
+        attempt = options.attempt,
+        throttle = options.throttle,
+        eventListener = options.eventListener;
       !checkType(preload, 'number') && (preload = 1);
       !checkType(loading, 'string') && (loading = '');
       !checkType(error, 'string') && (error = '');
@@ -1268,7 +1281,6 @@ var LazyLoad = /*#__PURE__*/function () {
     key: "_render",
     value: function _render() {
       var _this2 = this;
-
       window.requestAnimationFrame(function () {
         _this2._listNode.forEach(function (listener) {
           listener.load() && _this2._listNode.remove(listener);
@@ -1279,7 +1291,6 @@ var LazyLoad = /*#__PURE__*/function () {
     key: "update",
     value: function update() {
       var _this3 = this;
-
       var options = this._options;
       var oImg = document.querySelectorAll('[data-src]');
       oImg.forEach(function (img) {
@@ -1288,7 +1299,6 @@ var LazyLoad = /*#__PURE__*/function () {
           var el = img;
           var src = img.getAttribute('data-src');
           img.removeAttribute('data-src');
-
           _this3._listNode.add(new ImageListener(el, src, {
             preload: options.preload,
             loading: options.loading,
@@ -1296,7 +1306,6 @@ var LazyLoad = /*#__PURE__*/function () {
             attempt: options.attempt,
             viewport: _this3._viewport
           }));
-
           options.eventListener.forEach(function (event) {
             searchParent(img.parentNode, ['overflow', 'overflow-x', 'overflow-y'], 'scroll').addEventListener(event, _this3.render);
           });
@@ -1305,7 +1314,6 @@ var LazyLoad = /*#__PURE__*/function () {
       this.render();
     }
   }]);
-
   return LazyLoad;
 }();
 ;// CONCATENATED MODULE: ./src/utils/globalEvent.ts
@@ -1314,24 +1322,19 @@ var map = {
   document: new EventListener(document),
   window: new EventListener(window)
 };
-
 function hasEventName(target, eventName) {
   return map[target].on.hasOwnProperty(eventName);
 }
-
 function findIndexEventFunc(target, eventName, func) {
   return map[target].on[eventName].findIndex(function (eventFunc) {
     return eventFunc === func;
   });
 }
-
 function addEventListener(target, eventName, func) {
   if (!hasEventName(target, eventName)) {
     map[target].on[eventName] = [];
   }
-
   var index = findIndexEventFunc(target, eventName, func);
-
   if (index === -1) {
     map[target].on[eventName].push(func);
   }
@@ -1339,31 +1342,23 @@ function addEventListener(target, eventName, func) {
 function removeEventListener(target, eventName, func) {
   if (!hasEventName(target, eventName)) return;
   var index = findIndexEventFunc(target, eventName, func);
-
   if (index !== -1) {
     map[target].on[eventName].splice(index, 1);
   }
 }
 ;// CONCATENATED MODULE: ./src/components/Waterfall/index.ts
+function Waterfall_typeof(o) { "@babel/helpers - typeof"; return Waterfall_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, Waterfall_typeof(o); }
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
 function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
-
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 function Waterfall_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function Waterfall_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function Waterfall_createClass(Constructor, protoProps, staticProps) { if (protoProps) Waterfall_defineProperties(Constructor.prototype, protoProps); if (staticProps) Waterfall_defineProperties(Constructor, staticProps); return Constructor; }
-
-
+function Waterfall_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, Waterfall_toPropertyKey(descriptor.key), descriptor); } }
+function Waterfall_createClass(Constructor, protoProps, staticProps) { if (protoProps) Waterfall_defineProperties(Constructor.prototype, protoProps); if (staticProps) Waterfall_defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function Waterfall_toPropertyKey(arg) { var key = Waterfall_toPrimitive(arg, "string"); return Waterfall_typeof(key) === "symbol" ? key : String(key); }
+function Waterfall_toPrimitive(input, hint) { if (Waterfall_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (Waterfall_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 
 
 function handleCompose(rootWidth, innerWidth) {
@@ -1387,37 +1382,27 @@ function handleCompose(rootWidth, innerWidth) {
     };
   }(line);
 }
-
 var Waterfall = /*#__PURE__*/function () {
   function Waterfall(el, options) {
     var _this = this;
-
     Waterfall_classCallCheck(this, Waterfall);
-
     var _a;
-
     this._options = options;
     this._el = el;
     this._pos = 0;
-
     if (!this._el.firstElementChild) {
       throw new Error("el need a child element");
     }
-
     this._box = this._el.firstElementChild;
     this._box.style.position = 'relative';
     this._children = this._box.children;
     this._heights = [];
-
     this._handleOptions();
-
     if (!isMobile()) {
       var resize = throttleDebounce(this.reset.bind(this, 200), (_a = options === null || options === void 0 ? void 0 : options.throttle) !== null && _a !== void 0 ? _a : 200);
       addEventListener('window', 'resize', resize);
-
       this.destroy = function () {
         _this._el.remove();
-
         removeEventListener('window', 'resize', resize);
       };
     } else {
@@ -1426,24 +1411,19 @@ var Waterfall = /*#__PURE__*/function () {
       };
     }
   }
-
   Waterfall_createClass(Waterfall, [{
     key: "_handleOptions",
     value: function _handleOptions() {
       var _a;
-
       if (!this._children.length) return;
       var width = this._el.clientWidth;
       var childWidth = this._children[0].offsetWidth;
-
       var _ref = (_a = this._options) !== null && _a !== void 0 ? _a : {},
-          marginTop = _ref.marginTop,
-          minMargin = _ref.minMargin;
-
+        marginTop = _ref.marginTop,
+        minMargin = _ref.minMargin;
       var _handleCompose = handleCompose(width, childWidth, minMargin),
-          line = _handleCompose.line,
-          margin = _handleCompose.margin;
-
+        line = _handleCompose.line,
+        margin = _handleCompose.margin;
       this._margin = margin;
       this._marginTop = marginTop == null ? margin : marginTop;
       this._heights = new Array(line).fill(0);
@@ -1453,28 +1433,22 @@ var Waterfall = /*#__PURE__*/function () {
     value: function _layout() {
       var transition = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
       var _box = this._box,
-          _children = this._children,
-          _heights = this._heights,
-          _marginTop = this._marginTop,
-          _margin = this._margin;
-
+        _children = this._children,
+        _heights = this._heights,
+        _marginTop = this._marginTop,
+        _margin = this._margin;
       if (!_children[0]) {
         _box.style.cssText += "\n          height: 0px;\n          transition: all ".concat(transition, "ms;\n        ");
         return;
       }
-
       var childWidth = _children[0].offsetWidth;
-
       for (; this._pos < this._children.length; ++this._pos) {
         handle(this._pos);
       }
-
       function handle(i) {
         window.requestAnimationFrame(function () {
           _children[i].style.cssText += "position: absolute;";
-
           var insert = _heights.indexOf(Math.min.apply(Math, _toConsumableArray(_heights)));
-
           _children[i].style.cssText += "\n          transition: all ".concat(transition, "ms;\n          transform: translate3d(").concat(_margin * (insert + 1) + childWidth * insert, "px,").concat(_marginTop + _heights[insert], "px,0);\n        ");
           _heights[insert] += _marginTop + _children[i].offsetHeight;
           _box.style.cssText += "\n          height: ".concat(Math.max.apply(Math, _toConsumableArray(_heights)) + _margin, "px;\n          transition: all ").concat(transition, "ms;\n        ");
@@ -1486,9 +1460,7 @@ var Waterfall = /*#__PURE__*/function () {
     value: function reset() {
       var transition = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
       this._pos = 0;
-
       this._handleOptions();
-
       this._layout(transition);
     }
   }, {
@@ -1497,7 +1469,6 @@ var Waterfall = /*#__PURE__*/function () {
       this._pos ? this._layout() : this.reset();
     }
   }]);
-
   return Waterfall;
 }();
 ;// CONCATENATED MODULE: ./src/components/Slide/navStyle.ts
@@ -1512,27 +1483,25 @@ var slideNavStyle = {
   }
 };
 ;// CONCATENATED MODULE: ./src/components/Slide/Navigation.ts
+function Navigation_typeof(o) { "@babel/helpers - typeof"; return Navigation_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, Navigation_typeof(o); }
 function Navigation_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function Navigation_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function Navigation_createClass(Constructor, protoProps, staticProps) { if (protoProps) Navigation_defineProperties(Constructor.prototype, protoProps); if (staticProps) Navigation_defineProperties(Constructor, staticProps); return Constructor; }
-
+function Navigation_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, Navigation_toPropertyKey(descriptor.key), descriptor); } }
+function Navigation_createClass(Constructor, protoProps, staticProps) { if (protoProps) Navigation_defineProperties(Constructor.prototype, protoProps); if (staticProps) Navigation_defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function Navigation_toPropertyKey(arg) { var key = Navigation_toPrimitive(arg, "string"); return Navigation_typeof(key) === "symbol" ? key : String(key); }
+function Navigation_toPrimitive(input, hint) { if (Navigation_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (Navigation_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 
 
 
 var Position;
-
 (function (Position) {
   Position["top"] = "Top";
   Position["right"] = "Right";
   Position["bottom"] = "Bottom";
   Position["left"] = "Left";
 })(Position || (Position = {}));
-
 var defaultOptions = {
-  style: slideNavStyle.default.style,
-  highStyle: slideNavStyle.default.highStyle,
+  style: slideNavStyle["default"].style,
+  highStyle: slideNavStyle["default"].highStyle,
   position: Position.bottom,
   range: 0.5,
   transition: 0,
@@ -1540,11 +1509,11 @@ var defaultOptions = {
 };
 var amendmentNavOptions = function amendmentNavOptions(options) {
   var style = options.style,
-      highStyle = options.highStyle,
-      position = options.position,
-      range = options.range,
-      transition = options.transition,
-      length = options.length;
+    highStyle = options.highStyle,
+    position = options.position,
+    range = options.range,
+    transition = options.transition,
+    length = options.length;
   var newOptions = {};
   newOptions.style = checkType(style, 'string') ? style : defaultOptions.style;
   newOptions.highStyle = checkType(highStyle, 'string') ? highStyle : defaultOptions.highStyle;
@@ -1557,60 +1526,47 @@ var amendmentNavOptions = function amendmentNavOptions(options) {
 var Navigation = /*#__PURE__*/function () {
   function Navigation(el, options) {
     var _this = this;
-
     Navigation_classCallCheck(this, Navigation);
-
     this._el = el;
     this._options = options;
     var navList = document.createElement('div');
     navList.className = 'slide-navList';
-
     var _loop = function _loop(i) {
       var navItem = document.createElement('div');
       navItem.className = 'slide-navItem';
       navItem.addEventListener('mousemove', function () {
         _this.change(i);
-
         _this._moveHook(i);
       }, false);
       navList.appendChild(navItem);
     };
-
     for (var i = 0; i < this._options.length; ++i) {
       _loop(i);
     }
-
     this._el.appendChild(navList);
-
     this._navList = navList;
     this._prevIndex = 0;
-
     this._layout();
-
     var layout = throttleDebounce(this._layout.bind(this), 200);
     addEventListener('window', 'resize', layout);
-
     this.destroy = function () {
       removeEventListener('window', 'resize', layout);
     };
   }
-
   Navigation_createClass(Navigation, [{
     key: "_layout",
     value: function _layout() {
       var _this$_options = this._options,
-          position = _this$_options.position,
-          range = _this$_options.range;
+        position = _this$_options.position,
+        range = _this$_options.range;
       this._el.style.cssText += 'position: relative;';
       var width = this._el.clientWidth;
       var navItemSize = width * 0.02;
       var navItems = this._navList.children;
-
       for (var i = 0; i < this._options.length; ++i) {
         navItems[i].style.cssText += "width: ".concat(navItemSize, "px; height: ").concat(navItemSize, "px; cursor: pointer;");
         navItems[i].style.cssText += i ? this._options.style : this._options.highStyle;
       }
-
       if (position === Position.top) {
         this._navList.style.cssText += "\n        display: flex;\n        position: absolute;\n        top: 0;\n        z-index: 999;\n      ";
         this._navList.style.cssText += "left: ".concat((this._el.clientWidth - this._navList.clientWidth) * range, "px;");
@@ -1624,7 +1580,6 @@ var Navigation = /*#__PURE__*/function () {
         this._navList.style.cssText += "\n        position: absolute;\n        left: 0;\n        z-index: 999;\n      ";
         this._navList.style.cssText += "top: ".concat((this._el.clientHeight - this._navList.clientHeight) * range, "px;");
       }
-
       if (this._options.transition) {
         for (var _i = 0; _i < this._options.length; ++_i) {
           navItems[_i].style.cssText += "transition: all ".concat(this._options.transition, "ms;");
@@ -1643,9 +1598,7 @@ var Navigation = /*#__PURE__*/function () {
     key: "setLength",
     value: function setLength(length) {
       var _this2 = this;
-
       this.change(0);
-
       if (this._options.length > length) {
         for (var i = 0; i < this._options.length - length; ++i) {
           this._navList.removeChild(this._navList.children[this._navList.children.length - 1]);
@@ -1653,7 +1606,6 @@ var Navigation = /*#__PURE__*/function () {
       } else if (this._options.length < length) {
         var width = this._el.clientWidth;
         var navItemSize = width * 0.02;
-
         var _loop2 = function _loop2(_i2) {
           var navItem = document.createElement('div');
           navItem.className = 'slide-navItem';
@@ -1662,22 +1614,16 @@ var Navigation = /*#__PURE__*/function () {
           var _length = _this2._options.length;
           navItem.addEventListener('mousemove', function () {
             console.log(_length + _i2);
-
             _this2.change(_length + _i2);
-
             _this2._moveHook(_length + _i2);
           }, false);
-
           _this2._navList.appendChild(navItem);
         };
-
         for (var _i2 = 0; _i2 < length - this._options.length; ++_i2) {
           _loop2(_i2);
         }
       }
-
       this._options.length = length;
-
       this._layout();
     }
   }, {
@@ -1686,50 +1632,39 @@ var Navigation = /*#__PURE__*/function () {
       this._moveHook = callback;
     }
   }]);
-
   return Navigation;
 }();
 ;// CONCATENATED MODULE: ./src/components/Slide/Control.ts
+function Control_typeof(o) { "@babel/helpers - typeof"; return Control_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, Control_typeof(o); }
 function Control_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function Control_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function Control_createClass(Constructor, protoProps, staticProps) { if (protoProps) Control_defineProperties(Constructor.prototype, protoProps); if (staticProps) Control_defineProperties(Constructor, staticProps); return Constructor; }
-
+function Control_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, Control_toPropertyKey(descriptor.key), descriptor); } }
+function Control_createClass(Constructor, protoProps, staticProps) { if (protoProps) Control_defineProperties(Constructor.prototype, protoProps); if (staticProps) Control_defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function Control_toPropertyKey(arg) { var key = Control_toPrimitive(arg, "string"); return Control_typeof(key) === "symbol" ? key : String(key); }
+function Control_toPrimitive(input, hint) { if (Control_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (Control_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 var Style;
-
 (function (Style) {
   Style["default"] = "Default";
   Style["fade"] = "Fade";
 })(Style || (Style = {}));
-
 var Control = /*#__PURE__*/function () {
   function Control(el, style) {
     Control_classCallCheck(this, Control);
-
     this._el = el;
     this._style = style;
-
     this._createControl();
   }
-
   Control_createClass(Control, [{
     key: "_createControl",
     value: function _createControl() {
       switch (this._style) {
         case Style["default"]:
           this._createDefaultControl();
-
           break;
-
         case Style.fade:
           this._createFadeControl();
-
           break;
-
         default:
           this._createDefaultControl();
-
       }
     }
   }, {
@@ -1749,9 +1684,7 @@ var Control = /*#__PURE__*/function () {
       right.appendChild(rightIcon);
       this._left = left;
       this._right = right;
-
       this._el.appendChild(left);
-
       this._el.appendChild(right);
     }
   }, {
@@ -1772,9 +1705,7 @@ var Control = /*#__PURE__*/function () {
       this._left = left;
       this._right = right;
       this._el.className += ' slide-fade-el-hover';
-
       this._el.appendChild(left);
-
       this._el.appendChild(right);
     }
   }, {
@@ -1783,50 +1714,38 @@ var Control = /*#__PURE__*/function () {
       this._left.addEventListener('click', function (e) {
         return moveLeft(e);
       }, false);
-
       this._left.addEventListener('touchstart', function (e) {
         return moveLeft(e);
       }, false);
-
       this._left.addEventListener('touchend', function (e) {
         return e.stopPropagation();
       }, false);
-
       this._right.addEventListener('click', function (e) {
         return moveRight(e);
       }, false);
-
       this._right.addEventListener('touchstart', function (e) {
         return moveRight(e);
       }, false);
-
       this._right.addEventListener('touchend', function (e) {
         return e.stopPropagation();
       }, false);
     }
   }]);
-
   return Control;
 }();
 ;// CONCATENATED MODULE: ./src/components/Slide/index.ts
+function Slide_typeof(o) { "@babel/helpers - typeof"; return Slide_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, Slide_typeof(o); }
 function Slide_toConsumableArray(arr) { return Slide_arrayWithoutHoles(arr) || Slide_iterableToArray(arr) || Slide_unsupportedIterableToArray(arr) || Slide_nonIterableSpread(); }
-
 function Slide_nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
 function Slide_unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return Slide_arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return Slide_arrayLikeToArray(o, minLen); }
-
 function Slide_iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
-
 function Slide_arrayWithoutHoles(arr) { if (Array.isArray(arr)) return Slide_arrayLikeToArray(arr); }
-
-function Slide_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
+function Slide_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 function Slide_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function Slide_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function Slide_createClass(Constructor, protoProps, staticProps) { if (protoProps) Slide_defineProperties(Constructor.prototype, protoProps); if (staticProps) Slide_defineProperties(Constructor, staticProps); return Constructor; }
-
+function Slide_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, Slide_toPropertyKey(descriptor.key), descriptor); } }
+function Slide_createClass(Constructor, protoProps, staticProps) { if (protoProps) Slide_defineProperties(Constructor.prototype, protoProps); if (staticProps) Slide_defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function Slide_toPropertyKey(arg) { var key = Slide_toPrimitive(arg, "string"); return Slide_typeof(key) === "symbol" ? key : String(key); }
+function Slide_toPrimitive(input, hint) { if (Slide_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (Slide_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 
 
 
@@ -1846,22 +1765,16 @@ var Slide_defaultOptions = {
 var Slide = /*#__PURE__*/function () {
   function Slide(el, options) {
     var _this = this;
-
     Slide_classCallCheck(this, Slide);
-
     this._el = el;
-
     if (!el.firstElementChild) {
       throw new Error("el need a child element");
     }
-
     this._elChild = el.firstElementChild;
     this._children = Slide_toConsumableArray(this._elChild.children);
-
     if (!this._children.length) {
       throw new Error("no content");
     }
-
     if (!checkType(options, 'object')) {
       this._options = Object.assign(Object.assign({}, Slide_defaultOptions), {
         navOptions: amendmentNavOptions({
@@ -1870,13 +1783,13 @@ var Slide = /*#__PURE__*/function () {
       });
     } else {
       var mode = options.mode,
-          transition = options.transition,
-          delay = options.delay,
-          range = options.range,
-          nav = options.nav,
-          navOptions = options.navOptions,
-          bindEvent = options.bindEvent,
-          control = options.control;
+        transition = options.transition,
+        delay = options.delay,
+        range = options.range,
+        nav = options.nav,
+        navOptions = options.navOptions,
+        bindEvent = options.bindEvent,
+        control = options.control;
       var newOptions = {};
       newOptions.mode = checkType(mode, 'boolean') ? mode : Slide_defaultOptions.mode;
       newOptions.transition = checkType(transition, 'number') ? transition : Slide_defaultOptions.transition;
@@ -1892,59 +1805,43 @@ var Slide = /*#__PURE__*/function () {
       newOptions.control = Object.values(Style).includes(control) ? control : Slide_defaultOptions.control;
       this._options = newOptions;
     }
-
     this._pos = -100;
     this._index = 0;
     this._changeHook = [];
-
     this._layout();
-
     this.openTimer();
-
     if (this._options.nav) {
       this._navigation = new Navigation(this._el, this._options.navOptions);
       this.subscribe(function (i) {
         return _this._navigation.change(i);
       });
-
       this._navigation.bindEvent(function (i) {
         _this.closeTimer();
-
         _this._index = i;
-
         _this._change();
-
         _this.openTimer();
       });
     }
-
     if (this._options.bindEvent) {
       this._bindEvent();
     }
-
     if (this._options.control) {
       this._control = new Control(this._el, this._options.control);
-
       this._control.bindEvent(throttle(function (e) {
         e.stopPropagation();
-
         _this.move(true);
       }, this._options.transition), throttle(function (e) {
         e.stopPropagation();
-
         _this.move(false);
       }, this._options.transition));
     }
-
     this.destroy = function () {
       _this._el.remove();
-
       if (_this._navigation) {
         _this._navigation.destroy();
       }
     };
   }
-
   Slide_createClass(Slide, [{
     key: "_layout",
     value: function _layout() {
@@ -1952,22 +1849,15 @@ var Slide = /*#__PURE__*/function () {
       this._el.style.display = 'none';
       this._el.style.cssText += 'position: relative;';
       var childrenLen = this._children.length;
-
       var childHead = this._children[0].cloneNode(true);
-
       var childTail = this._children[childrenLen - 1].cloneNode(true);
-
       this._elChild.insertBefore(childTail, this._elChild.firstElementChild);
-
       this._elChild.appendChild(childHead);
-
       this._children = Slide_toConsumableArray(this._elChild.children);
       childrenLen += 2;
-
       if (this._options.mode) {
         this._el.style.cssText += 'overflow: hidden;';
         this._elChild.style.cssText += "display: flex; transform: translate3d(".concat(this._pos, "%, 0, 0);");
-
         for (var i = 0; i < childrenLen; ++i) {
           var child = this._children[i];
           child.style.cssText += "flex: 1 0 auto; display: block; width: 100%;";
@@ -1975,13 +1865,11 @@ var Slide = /*#__PURE__*/function () {
       } else {
         this._el.style.cssText += 'overflow: hidden;';
         this._elChild.style.cssText += "transform: translate3d(0, ".concat(this._pos, "%, 0); height: ").concat(height, "px;");
-
         for (var _i = 0; _i < childrenLen; ++_i) {
           var _child = this._children[_i];
           _child.style.cssText += "display: block; height: ".concat(height, "px;");
         }
       }
-
       this._el.style.display = '';
     }
   }, {
@@ -1989,9 +1877,8 @@ var Slide = /*#__PURE__*/function () {
     value: function _transition(flag) {
       var pos = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this._pos;
       var _this$_options = this._options,
-          mode = _this$_options.mode,
-          transition = _this$_options.transition;
-
+        mode = _this$_options.mode,
+        transition = _this$_options.transition;
       if (mode) {
         this._elChild.style.cssText += "transition: all ".concat(flag ? transition : 0, "ms; transform: translate3d(").concat(pos, "%, 0, 0);");
       } else {
@@ -2002,14 +1889,10 @@ var Slide = /*#__PURE__*/function () {
     key: "_change",
     value: function _change() {
       var _this2 = this;
-
       var transition = this._options.transition;
       this._pos = -100 * this._index - 100;
-
       this._transition(true);
-
       var childrenLen = this._children.length - 2;
-
       if (this._index >= childrenLen) {
         this._index = 0;
         this._pos = -100 * this._index - 100;
@@ -2023,7 +1906,6 @@ var Slide = /*#__PURE__*/function () {
           return _this2._transition();
         }, transition);
       }
-
       for (var i = 0, hookLen = this._changeHook.length; i < hookLen; ++i) {
         var hook = this._changeHook[i];
         hook(this._index);
@@ -2034,49 +1916,37 @@ var Slide = /*#__PURE__*/function () {
     value: function _bindEvent() {
       var self = this;
       var _this$_options2 = this._options,
-          mode = _this$_options2.mode,
-          range = _this$_options2.range;
-
+        mode = _this$_options2.mode,
+        range = _this$_options2.range;
       this._el.addEventListener('touchstart', touchstart);
-
       this._el.addEventListener('touchmove', touchmove);
-
       this._el.addEventListener('touchend', touchend);
-
       var elCss = window.getComputedStyle(this._el);
       var elSize = mode ? this._el.clientWidth : this._el.clientHeight;
       var elOffsetSize = mode ? this._el.getClientRects()[0].left : this._el.getClientRects()[0].top;
       var elBorderSize = mode ? parseFloat(elCss.borderLeftWidth.substring(0, elCss.borderLeftWidth.length - 2)) : parseFloat(elCss.borderTopWidth.substring(0, elCss.borderTopWidth.length - 2));
       var startPos = 0;
       var movePos = 0;
-
       function touchstart(e) {
         e.preventDefault();
         self.closeTimer();
         startPos = computePos(mode ? e.touches[0].pageX : e.touches[0].pageY);
       }
-
       function touchmove(e) {
         movePos = computePos(mode ? e.touches[0].pageX : e.touches[0].pageY) - startPos;
-
         self._transition(false, movePos + self._pos);
       }
-
       function touchend() {
         self.openTimer();
-
         if (movePos >= range) {
           self._index -= 1;
         } else if (movePos <= -range) {
           self._index += 1;
         }
-
         self._change();
-
         startPos = 0;
         movePos = 0;
       }
-
       function computePos(pos) {
         return Math.ceil((pos - elOffsetSize - elBorderSize) / elSize * 100);
       }
@@ -2085,10 +1955,8 @@ var Slide = /*#__PURE__*/function () {
     key: "openTimer",
     value: function openTimer() {
       var _this3 = this;
-
       this._timer = window.setInterval(function () {
         _this3._index += 1;
-
         _this3._change();
       }, this._options.delay);
     }
@@ -2106,10 +1974,8 @@ var Slide = /*#__PURE__*/function () {
     key: "unsubscribe",
     value: function unsubscribe(callback) {
       var i = this._changeHook.indexOf(callback);
-
       if (i !== -1) {
         this._changeHook.splice(i, 1);
-
         return true;
       } else {
         return false;
@@ -2121,96 +1987,74 @@ var Slide = /*#__PURE__*/function () {
       this.closeTimer();
       this.openTimer();
       direction ? --this._index : ++this._index;
-
       this._change();
     }
   }, {
     key: "change",
     value: function change(index) {
       this._index = index;
-
       this._change();
     }
   }, {
     key: "update",
     value: function update(updateChildren) {
       this._elChild.removeChild(this._children[0]);
-
       this._elChild.removeChild(this._children[this._children.length - 1]);
-
       updateChildren(this._elChild);
       this._children = Slide_toConsumableArray(this._elChild.children);
-
       if (this._options.nav) {
         this._navigation.setLength(this._children.length);
       }
-
       this._layout();
-
       this._change();
     }
   }]);
-
   return Slide;
 }();
 ;// CONCATENATED MODULE: ./src/components/Carousel/index.ts
+function Carousel_typeof(o) { "@babel/helpers - typeof"; return Carousel_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, Carousel_typeof(o); }
 function Carousel_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function Carousel_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function Carousel_createClass(Constructor, protoProps, staticProps) { if (protoProps) Carousel_defineProperties(Constructor.prototype, protoProps); if (staticProps) Carousel_defineProperties(Constructor, staticProps); return Constructor; }
-
+function Carousel_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, Carousel_toPropertyKey(descriptor.key), descriptor); } }
+function Carousel_createClass(Constructor, protoProps, staticProps) { if (protoProps) Carousel_defineProperties(Constructor.prototype, protoProps); if (staticProps) Carousel_defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function Carousel_toPropertyKey(arg) { var key = Carousel_toPrimitive(arg, "string"); return Carousel_typeof(key) === "symbol" ? key : String(key); }
+function Carousel_toPrimitive(input, hint) { if (Carousel_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (Carousel_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 
 
 var Carousel_defaultOptions = {
   speed: 1
 };
 var Run;
-
 (function (Run) {
   Run[Run["min"] = 0] = "min";
   Run[Run["max"] = 50] = "max";
   Run[Run["step"] = 0.05] = "step";
 })(Run || (Run = {}));
-
 var Carousel = /*#__PURE__*/function () {
   function Carousel(el, options) {
     Carousel_classCallCheck(this, Carousel);
-
     this._el = el;
-
     if (!el.firstElementChild) {
       throw new Error("el need a child element");
     }
-
     this._elChild = el.firstElementChild;
-
     if (!checkType(options, 'object')) {
       this._options = Object.assign({}, Carousel_defaultOptions);
     } else {
       var speed = options.speed;
       var newOptions = {};
       newOptions.speed = checkType(speed, 'number') ? speed : Carousel_defaultOptions.speed;
-
       if (newOptions.speed <= 0) {
         throw new Error('The speed has to be greater than zero');
       }
-
       this._options = newOptions;
     }
-
     this._pos = 0;
     this._flag = true;
-
     this._layout();
-
     this._createScroll();
-
     this.destroy = this._bindEvent();
-
     this._run();
   }
-
   Carousel_createClass(Carousel, [{
     key: "_layout",
     value: function _layout() {
@@ -2218,13 +2062,10 @@ var Carousel = /*#__PURE__*/function () {
       this._el.style.cssText += "position: relative; overflow: hidden;";
       this._elChild.style.cssText += "display: flex; float: left;";
       var children = this._elChild.children;
-
       for (var i = 0, len = children.length; i < len; ++i) {
         var child = children[i].cloneNode(true);
-
         this._elChild.appendChild(child);
       }
-
       this._el.style.display = '';
     }
   }, {
@@ -2235,9 +2076,7 @@ var Carousel = /*#__PURE__*/function () {
       var scrollPoints = document.createElement('div');
       scrollPoints.className = 'carousel-scroll-points';
       scrollBar.appendChild(scrollPoints);
-
       this._el.appendChild(scrollBar);
-
       this._scrollBar = scrollBar;
       this._barWidth = this._scrollBar.clientWidth;
       this._pointsWidth = this._scrollBar.firstElementChild.clientWidth;
@@ -2246,60 +2085,46 @@ var Carousel = /*#__PURE__*/function () {
     key: "_bindEvent",
     value: function _bindEvent() {
       var _this = this;
-
       var timer;
-
       var stop = function stop() {
         clearTimeout(timer);
         _this._flag = false;
         _this._scrollBar.style.opacity = '1';
       };
-
       var run = function run() {
         timer = setTimeout(function () {
           _this._flag = true;
-
           _this._run();
-
           _this._scrollBar.style.opacity = '0';
         }, 100);
       };
-
       this._el.addEventListener('mousemove', stop);
-
       this._el.addEventListener('mouseout', run);
-
       var points = this._scrollBar.firstElementChild;
       var start;
       var move;
-
       var pointsMousedown = function pointsMousedown(e) {
         e.preventDefault();
         start = e.pageX;
       };
-
       var pointsMousemove = function pointsMousemove(e) {
         if (!start) return;
         move = e.pageX - start + _this._end;
-
         if (move < 0) {
           move = 0;
         } else if (move > _this._barWidth - _this._pointsWidth) {
           move = _this._barWidth - _this._pointsWidth;
         }
-
         points.style.transform = "translate3d(".concat(move, "px, -40%, 0)");
         _this._pos = move / (_this._barWidth - _this._pointsWidth) * 50;
         _this._elChild.style.transform = "translate3d(-".concat(_this._pos, "%, 0, 0)");
         stop();
       };
-
       var pointsMouseup = function pointsMouseup(e) {
         start = undefined;
         _this._end = move;
         run();
       };
-
       points.addEventListener('mousedown', pointsMousedown);
       addEventListener('document', 'mousemove', pointsMousemove);
       addEventListener('document', 'mousemove', pointsMouseup);
@@ -2310,7 +2135,6 @@ var Carousel = /*#__PURE__*/function () {
       addEventListener('window', 'resize', resize);
       return function () {
         _this._el.remove();
-
         removeEventListener('document', 'mousemove', pointsMousemove);
         removeEventListener('document', 'mousemove', pointsMouseup);
         removeEventListener('window', 'resize', resize);
@@ -2321,16 +2145,13 @@ var Carousel = /*#__PURE__*/function () {
     value: function _update() {
       if (!this._flag) return;
       this._pos += Run.step * this._options.speed;
-
       if (this._pos >= Run.max) {
         this._pos = Run.min;
       }
-
       this._elChild.style.transform = "translate3d(-".concat(this._pos, "%, 0, 0)");
       this._end = (this._barWidth - this._pointsWidth) * this._pos / 50;
       var points = this._scrollBar.firstElementChild;
       points.style.transform = "translate3d(".concat(this._end, "px, -40%, 0)");
-
       this._run();
     }
   }, {
@@ -2339,11 +2160,9 @@ var Carousel = /*#__PURE__*/function () {
       requestAnimationFrame(this._update.bind(this));
     }
   }]);
-
   return Carousel;
 }();
 ;// CONCATENATED MODULE: ./src/index.ts
-
 
 
 
@@ -2356,4 +2175,3 @@ var Carousel = /*#__PURE__*/function () {
 /******/ })()
 ;
 });
-//# sourceMappingURL=h.js.map

@@ -1,1 +1,10 @@
+.vscode
 .gitignore
+public
+scripts
+src
+dev
+.editorconfig
+package-lock.json
+tsconfig.json
+tsconfig.path.json

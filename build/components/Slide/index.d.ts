@@ -3,7 +3,7 @@ import { Style as slideControlStyle } from './Control';
 export { Options as NavOptions, Position as slideNavPosition } from './Navigation';
 export { slideNavStyle } from './navStyle';
 export { Style as slideControlStyle } from './Control';
-export declare type Options = {
+export type Options = {
     mode: boolean;
     transition: number;
     delay: number;
@@ -13,7 +13,7 @@ export declare type Options = {
     bindEvent: boolean;
     control?: slideControlStyle;
 };
-declare type changeHook = (index: number) => void;
+type changeHook = (index: number) => void;
 export declare class Slide {
     private _el;
     private _elChild;

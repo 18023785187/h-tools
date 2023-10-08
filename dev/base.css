@@ -1,0 +1,16 @@
+html, body {
+  margin: 0;
+}
+
+.layout {
+  display: flex;
+  width: 100vw;
+}
+
+.layout .side {
+  flex: 0 0 200px;
+}
+
+.layout .container {
+  flex: 1;
+}

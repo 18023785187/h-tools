@@ -4,7 +4,7 @@ export declare enum Position {
     bottom = "Bottom",
     left = "Left"
 }
-export declare type Options = {
+export type Options = {
     style: string;
     highStyle: string;
     position: Position;
@@ -15,7 +15,7 @@ export declare type Options = {
 export declare const amendmentNavOptions: (options: {
     [key: string]: any;
 }) => Options;
-declare type moveHook = (index: number) => void;
+type moveHook = (index: number) => void;
 export declare class Navigation {
     private _el;
     private _options;

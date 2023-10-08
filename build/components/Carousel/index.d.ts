@@ -1,4 +1,4 @@
-export declare type Options = {
+export type Options = {
     speed: number;
 };
 export declare class Carousel {

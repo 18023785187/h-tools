@@ -4,7 +4,7 @@ module.exports = {
   output: {
     path: path.resolve('./', 'build'),
     filename: '[name].js',
-    library: 'h',
+    library: 'hTools',
     libraryTarget: 'umd',
   },
   module: {

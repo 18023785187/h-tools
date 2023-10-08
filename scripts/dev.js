@@ -7,9 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = merge(commonConfig, {
   mode: "development",
   devtool: "source-map",
-  entry: {
-    'h': path.resolve('./', 'src/index.ts'),
-  },
+  entry: './dev/index.ts',
   module: {
     rules: [
       {

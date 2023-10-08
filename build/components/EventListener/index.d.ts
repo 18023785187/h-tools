@@ -1,6 +1,6 @@
-export declare type Listener<T> = (ev: T) => void;
-export declare type ListenerHandler = Listener<any> | Array<Listener<any>>;
-export declare type On = {
+export type Listener<T> = (ev: T) => void;
+export type ListenerHandler = Listener<any> | Array<Listener<any>>;
+export type On = {
     [N in keyof HTMLElementEventMap]?: Listener<HTMLElementEventMap[N]> | Array<Listener<HTMLElementEventMap[N]>>;
 } & {
     [event: string]: ListenerHandler;
@@ -9,7 +9,7 @@ export declare class EventListener {
     on: On;
     private _el;
     private _listenerMap;
-    get el(): Window | Document | HTMLElement;
+    get el(): Window | HTMLElement | Document;
     constructor(el: HTMLElement | Document | Window, on?: On);
     private _handle;
     private _createListener;

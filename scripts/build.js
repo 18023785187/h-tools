@@ -5,10 +5,9 @@ const TerserWebpackPlugin = require('terser-webpack-plugin')
 
 module.exports = merge(commonConfig, {
   mode: "production",
-  devtool: "source-map",
   entry: {
-    'h': path.resolve('./', 'src/index.ts'),
-    'h.min': path.resolve('./', 'src/index.ts'),
+    'h-tools': path.resolve('./', 'src/index.ts'),
+    'h-tools.min': path.resolve('./', 'src/index.ts'),
   },
   optimization: {
     usedExports: true, // 表示只导出那些外部使用了的那些成员
